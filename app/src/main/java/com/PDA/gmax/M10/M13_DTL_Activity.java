@@ -741,6 +741,9 @@ public class M13_DTL_Activity extends BaseActivity {
 
         for(M13_DTL dtl : ListViewAdapter.getLotArray()){
 
+            System.out.println("dtl lot ='"+dtl.getLOT_NO()+"'");
+            System.out.println("tx lot ='"+tx_lot_no+"'");
+
             if(dtl.getLOT_NO().equals(tx_lot_no)){
 
                 dtl.setCHK(true);

@@ -153,12 +153,14 @@ public class S12_CUSTOM_Activity extends BaseActivity {
                     return;
                 }
 
-
                 for(S12_CUSTOM dtl : ListViewAdapter.getLotArray()){
-                    if(dtl.CHK){
+
+                    if(dtl.CHK ){
                         System.out.println("tx_carton_no:"+tx_carton_no);
                         tx_carton_no = dbSave(tx_req_no,tx_carton_no, dtl.LOT_NO);
-
+                        if(tx_carton_no.equals("")){
+                            break;
+                        }
                     }
                 }
                 System.out.println("tx_carton_no:"+tx_carton_no);
@@ -297,8 +299,8 @@ public class S12_CUSTOM_Activity extends BaseActivity {
         wkThd_dbQuery.start();   //스레드 시작
         try {
             wkThd_dbQuery.join();  //workingThread가 종료될때까지 Main 쓰레드를 정지함.
-
-            if (!sJson.equals("")) {
+            //System.out.println("sjson cont:"+sJson);
+            if (sJson.contains("CONT_NO")) {
                 try {
                     JSONArray ja = new JSONArray(sJson);
 
@@ -317,6 +319,10 @@ public class S12_CUSTOM_Activity extends BaseActivity {
                 } catch (Exception e1) {
                     TGSClass.AlertMessage(this, e1.getMessage());
                 }
+            }
+            else{
+                TGSClass.AlertMessage(this, sJson+"("+pLotNo+")");
+                result_carton ="";
             }
 
         } catch (InterruptedException ex) {

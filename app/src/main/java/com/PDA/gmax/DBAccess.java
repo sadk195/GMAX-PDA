@@ -15,13 +15,21 @@ public class DBAccess {
     public String URL;
     public String ACTION;
 
+
     public DBAccess(String pNameSpace, String pUrl) {
         //생성자
         this.NAMESPACE = pNameSpace;
         this.URL = pUrl;
     }
 
+    private boolean run = false;
     public String SendHttpMessage(String pMethod, ArrayList<PropertyInfo> pParams) {
+        if(run){
+            return "";
+        }
+
+        run = true;
+
         this.METHOD = pMethod;
         this.ACTION = NAMESPACE + pMethod;
 
@@ -56,6 +64,7 @@ public class DBAccess {
 
         }
 
+        run = false;
         return  response.toString();
     }
 }
