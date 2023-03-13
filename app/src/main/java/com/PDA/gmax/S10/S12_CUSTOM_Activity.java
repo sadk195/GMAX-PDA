@@ -163,11 +163,11 @@ public class S12_CUSTOM_Activity extends BaseActivity {
                         }
                     }
                 }
-                System.out.println("tx_carton_no:"+tx_carton_no);
-                if(tx_carton_no.equals("")){
+                //System.out.println("tx_carton_no:"+tx_carton_no);
+                /*if(tx_carton_no.equals("")){
                     TGSClass.AlertMessage(getApplicationContext(), "오류가 발생하였습니다.");
                     return;
-                }
+                }*/
 
                 // 저장 후 결과 값 돌려주기
                 Intent resultIntent = new Intent();
@@ -271,13 +271,17 @@ public class S12_CUSTOM_Activity extends BaseActivity {
         ////////////////////////////// 웹 서비스 호출 시 쓰레드 사용 ////////////////////////////////////////////////////////
         Thread wkThd_dbQuery = new Thread() {
             public void run() {
-                String sql = " EXEC DBO.XUSP_MES_S2002PA2_SET_LOT_CUSTOM ";
+                String sql = " DECLARE  @RTN_MSG NVARCHAR(200)='' " ;
+                sql += " EXEC DBO.XUSP_MES_S2002PA2_SET_LOT_CUSTOM ";
                 sql += " @CUD_CHAR = 'C',";
                 sql += " @PACKING_NO = '" + pReqNo + "',";
                 sql += " @DN_REQ_NO = '" + pReqNo + "',";
                 sql += " @CONT_NO = '" + pCartonNo + "',";
                 sql += " @LOT_NO = '" + pLotNo + "',";
-                sql += " @USER_ID = '" + vUSER_ID + "'";
+                sql += " @USER_ID = '" + vUSER_ID + "',";
+                sql += " @RTN_MSG =  @RTN_MSG  OUTPUT";
+                sql += " SELECT  @RTN_MSG AS RTN_MSG ";
+
                 sql += ";";
                 System.out.println("lot save : " + sql);
 
@@ -299,16 +303,29 @@ public class S12_CUSTOM_Activity extends BaseActivity {
         wkThd_dbQuery.start();   //스레드 시작
         try {
             wkThd_dbQuery.join();  //workingThread가 종료될때까지 Main 쓰레드를 정지함.
-            //System.out.println("sjson cont:"+sJson);
+            System.out.println("sjson cont:"+sJson);
             if (sJson.contains("CONT_NO")) {
                 try {
                     JSONArray ja = new JSONArray(sJson);
+/*
+                    String vMSG = "";
+                    String vStatus = "";
+
+                    if (ja.length() > 0) {
+
+                        JSONObject jObject = ja.getJSONObject(0);
+
+                        vMSG = !jObject.isNull("RTN_MSG") ? jObject.getString("RTN_MSG") : "";
+
+                        if(!vMSG.equals("")){
+                            TGSClass.AlertMessage(this, vMSG);
+                            return "";
+                        }
+                    }*/
 
                     for (int idx = 0; idx < ja.length(); idx++) {
 
                         JSONObject jObject = ja.getJSONObject(idx);
-
-                        S12_CUSTOM item = new S12_CUSTOM();
 
                         result_carton = jObject.getString("CONT_NO");        //품번
 
@@ -321,8 +338,8 @@ public class S12_CUSTOM_Activity extends BaseActivity {
                 }
             }
             else{
-                TGSClass.AlertMessage(this, sJson+"("+pLotNo+")");
-                result_carton ="";
+                TGSClass.AlertMessage(this, sJson+"("+pLotNo+")",7500);
+                result_carton = "";
             }
 
         } catch (InterruptedException ex) {

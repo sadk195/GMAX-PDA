@@ -23,7 +23,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcbd5754-e15f-44b2-a046-e35df29f8671" name="Default Changelist" comment="프로젝트 명 변경(example-&gt;pda)">
+    <list default="true" id="bcbd5754-e15f-44b2-a046-e35df29f8671" name="Default Changelist" comment="로트번호 삭제,수기입력 기능 수정">
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -32,13 +32,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/5/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/5/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/DBAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/DBAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M10/M13_DTL_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M10/M13_DTL_Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/S10/S12_CUSTOM_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/S10/S12_CUSTOM_Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/TGSClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/TGSClass.java" afterDir="false" />
     </list>
@@ -99,27 +94,27 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ApkExportedModule&quot;: &quot;GMAX.app&quot;,
-    &quot;BundleExportedModule&quot;: &quot;GMAX.app&quot;,
-    &quot;ExportBundle.BundlePathForGMAX.app&quot;: &quot;E:\\TGS\\company_dev\\gmax\\ANDROID\\GMAX_real\\app&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/TGS/company_dev/gmax/ANDROID/GMAX_real&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Build Variants&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;two.files.diff.last.used.folder&quot;: &quot;E:/TGS/company_dev/gmax/ANDROID/GMAX_real/app/src/main/java/com&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ApkExportedModule": "GMAX.app",
+    "BundleExportedModule": "GMAX.app",
+    "ExportBundle.BundlePathForGMAX.app": "E:\\TGS\\company_dev\\gmax\\ANDROID\\GMAX_real\\app",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "E:/TGS/company_dev/EMKorea/ANDROID/SOURCE",
+    "project.structure.last.edited": "Build Variants",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "two.files.diff.last.used.folder": "E:/TGS/company_dev/gmax/ANDROID/GMAX_real/app/src/main/java/com"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ExportApk.BuildVariants&quot;: [
-      &quot;release&quot;
+  "keyToStringList": {
+    "ExportApk.BuildVariants": [
+      "release"
     ]
   }
-}</component>
+}]]></component>
   <component name="PsdUISettings">
     <option name="MODULE_TAB" value="Signing Configs" />
     <option name="LAST_EDITED_SIGNING_CONFIG" value="release" />
@@ -296,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676944046700</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="로트번호 삭제,수기입력 기능 수정">
+      <created>1678437878680</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678437878680</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -317,7 +319,8 @@
     <MESSAGE value="20230214 출하수기등록 기능 추가" />
     <MESSAGE value="20230215 출하수기등록 품목검색 기능 추가" />
     <MESSAGE value="프로젝트 명 변경(example-&gt;pda)" />
-    <option name="LAST_COMMIT_MESSAGE" value="프로젝트 명 변경(example-&gt;pda)" />
+    <MESSAGE value="로트번호 삭제,수기입력 기능 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="로트번호 삭제,수기입력 기능 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

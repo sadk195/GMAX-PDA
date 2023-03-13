@@ -137,7 +137,7 @@ public class TGSClass {
     }
 
     public static void AlertMessage(Context pContext, String pMessage) {
-        AlertMessage(pContext, pMessage, 500);
+        AlertMessage(pContext, pMessage, 5000);
     }
 
     public static void AlertMessage(Context pContext, String pMessage, int pTime) {
