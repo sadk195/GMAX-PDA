@@ -153,15 +153,19 @@ public class S12_CUSTOM_Activity extends BaseActivity {
                     return;
                 }
 
+                String current_cont =tx_carton_no;
                 for(S12_CUSTOM dtl : ListViewAdapter.getLotArray()){
 
                     if(dtl.CHK ){
-                        System.out.println("tx_carton_no:"+tx_carton_no);
-                        tx_carton_no = dbSave(tx_req_no,tx_carton_no, dtl.LOT_NO);
-                        if(tx_carton_no.equals("")){
+                        System.out.println("tx_carton_no:"+current_cont);
+                        current_cont = dbSave(tx_req_no,current_cont, dtl.LOT_NO);
+                        if(current_cont.equals("")){
                             break;
                         }
                     }
+                }
+                if(tx_carton_no== null){
+                    tx_carton_no = "";
                 }
                 //System.out.println("tx_carton_no:"+tx_carton_no);
                 /*if(tx_carton_no.equals("")){

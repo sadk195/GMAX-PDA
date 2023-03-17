@@ -127,10 +127,19 @@ public class M42_DTL_Activity extends BaseActivity {
                         QR_Code.setText(temp);
                         tx_QR_Code=QR_Code.getText().toString();
 
+                        //쿼리중복 방지(쓰레드 중복 방지)
+                        if(!QueryOn){
+                            return false;
+                        }
+                        QueryOn = false;
+                        //중복방지 타이머 실행
+                        SetTimerTask();
+
                         Scan_QR();
 
                         QR_Code.setText(tx_QR_Code);
                         QR_Code.setSelection(QR_Code.getText().length());
+
                         return true;
 
                     }
@@ -145,6 +154,7 @@ public class M42_DTL_Activity extends BaseActivity {
             }
         });
     }
+
 
     //리스트 데이터 조회
     private void dbSave() {
@@ -222,20 +232,15 @@ public class M42_DTL_Activity extends BaseActivity {
 
             }
 
-            if (!err.equals("TRUE")) {
-                dataSaveLog("투입 오류","Resling");
-                dataSaveLog(err_name,"Resling");
 
-                TGSClass.AlertMessage(getApplicationContext(), err_name,5000);
-            }
-            else if(err.equals("")){
+            if(err.equals("")){
                 dataSaveLog("투입 오류(코드없음)","Resling");
                 dataSaveLog(tx_QR_Code,"Resling");
 
                 TGSClass.AlertMessage(getApplicationContext(), " 오류가 발생하였습니다 다시 스캔하여주십시오",5000);
                 return;
             }
-            else{
+            else if (err.equals("TRUE")) {
                 dataSaveLog("투입 성공","Resling");
                 TGSClass.AlertMessage(getApplicationContext(),  err_name);
 
@@ -251,8 +256,15 @@ public class M42_DTL_Activity extends BaseActivity {
 
                 ListViewAdapter.addPkgItem(item);
                 ListViewAdapter.notifyDataSetChanged();
+            }
+            else{
+                dataSaveLog("투입 실패","Resling");
+                dataSaveLog(err_name,"Resling");
+
+                TGSClass.AlertMessage(getApplicationContext(), err_name,5000);
 
             }
+
             tx_QR_Code = vItem.LOT_NO;
 
         }

@@ -32,6 +32,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import www.sanju.motiontoast.MotionToast;
 
@@ -90,6 +92,42 @@ public class BaseActivity extends AppCompatActivity {
 
         //== DecimalFormat init ==//
         decimalForm = new DecimalFormat("###,###");
+    }
+
+
+    //쿼리중복 방지
+
+    //쿼리 중복실행 방지를 위해 설정된 시간에 한번씩만 스캔 가능하도록 설정
+    protected final Integer QueryMaxTime = 4;
+    protected Integer QueryCount = 0;
+    protected Timer Query_Timer = new Timer();
+    protected TimerTask QuerytimerTask;
+    protected boolean QueryOn = true;
+
+    protected void SetTimerTask(){
+        QueryCount = 0;
+        Query_Timer = new Timer();
+
+        QuerytimerTask = new TimerTask() {
+            @Override
+            public void run() {
+                // 반복실행할 구문
+                QueryCount++;
+                System.out.println("timer check:"+QueryCount);
+                System.out.println("thread QueryOn:"+QueryOn);
+
+                if(QueryCount>QueryMaxTime){
+                    // timer 종료
+                    Query_Timer.cancel();
+                    QueryOn = true;
+                    System.out.println("timer end:"+QueryOn);
+
+                }
+            }
+        };
+
+        // timer 실행
+        Query_Timer.schedule(QuerytimerTask, 0, 1000);
     }
 
     //== 권한 가져오기 ==//

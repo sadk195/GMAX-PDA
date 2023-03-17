@@ -23,7 +23,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcbd5754-e15f-44b2-a046-e35df29f8671" name="Default Changelist" comment="로트번호 삭제,수기입력 기능 수정">
+    <list default="true" id="bcbd5754-e15f-44b2-a046-e35df29f8671" name="Default Changelist" comment="수기입력 오류 사항 표기 기능 &#10;출하관리 오류 사항 수정">
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -32,9 +32,65 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/androidTest/debug/com/example/gmax/test/BuildConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/apk_ide_redirect_file/debug/redirect.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/apk_ide_redirect_file/debug/redirect.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debugAndroidTest/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debugAndroidTest/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_app_classes_jar/debug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_app_classes_jar/debug/classes.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/data_binding_base_class_log_artifact/debugAndroidTest/out/com.example.gmax.test-binding_classes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_0/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_0/graph.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_1/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_1/graph.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_2/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_2/graph.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_3/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_3/graph.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_4/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_4/graph.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_5/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_5/graph.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/2/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/2/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/3/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/3/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/4/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/4/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/5/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/5/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/6/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/6/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/7/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/7/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/9/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/9/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/1/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debugAndroidTest/out" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debugAndroidTest/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebugAndroidTest/tmp/debugAndroidTest/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebugAndroidTest/tmp/debugAndroidTest/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebugAndroidTest/tmp/debugAndroidTest/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebugAndroidTest/tmp/debugAndroidTest/zip-cache/androidResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debugAndroidTest/classes/com/example/gmax/test/BuildConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debugAndroidTest/manifest-merger-blame-debug-androidTest-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debugAndroidTest/manifest-merger-blame-debug-androidTest-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/output-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/output-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debugAndroidTest/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debugAndroidTest/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debugAndroidTest/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debugAndroidTest/output-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/output-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debugAndroidTest/out/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debugAndroidTest/out/output-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debugAndroidTest/out/resources-debugAndroidTest.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debugAndroidTest/out/resources-debugAndroidTest.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debugAndroidTest/out/com/example/gmax/test/BuildConfig.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debugAndroidTest/out/d5aa4b9c318196fc2331c4e1740c0b9f943f6b53b5e627cdff4a4529c7fedfba_3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/signing_config_versions/debug/signing-config-versions.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/signing_config_versions/debug/signing-config-versions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/source_set_path_map/debugAndroidTest/file-map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/source_set_path_map/debugAndroidTest/file-map.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/androidTest/debug/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/androidTest/debug/output-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/output-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugAndroidTestJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugAndroidTestJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/BaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/BaseActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M40/M41_DTL_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M40/M41_DTL_Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M40/M42_DTL_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M40/M42_DTL_Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M40/M44_DTL_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M40/M44_DTL_Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/S10/S12_CUSTOM_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/S10/S12_CUSTOM_Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/S10/S12_PKG_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/S10/S12_PKG_Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/TGSClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/TGSClass.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,27 +150,27 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ApkExportedModule": "GMAX.app",
-    "BundleExportedModule": "GMAX.app",
-    "ExportBundle.BundlePathForGMAX.app": "E:\\TGS\\company_dev\\gmax\\ANDROID\\GMAX_real\\app",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "E:/TGS/company_dev/EMKorea/ANDROID/SOURCE",
-    "project.structure.last.edited": "Build Variants",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "two.files.diff.last.used.folder": "E:/TGS/company_dev/gmax/ANDROID/GMAX_real/app/src/main/java/com"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ApkExportedModule&quot;: &quot;GMAX.app&quot;,
+    &quot;BundleExportedModule&quot;: &quot;GMAX.app&quot;,
+    &quot;ExportBundle.BundlePathForGMAX.app&quot;: &quot;E:\\TGS\\company_dev\\gmax\\ANDROID\\GMAX_real\\app&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/TGS/company_dev/EMKorea/ANDROID/SOURCE&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Build Variants&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;two.files.diff.last.used.folder&quot;: &quot;E:/TGS/company_dev/gmax/ANDROID/GMAX_real/app/src/main/java/com&quot;
   },
-  "keyToStringList": {
-    "ExportApk.BuildVariants": [
-      "release"
+  &quot;keyToStringList&quot;: {
+    &quot;ExportApk.BuildVariants&quot;: [
+      &quot;release&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="PsdUISettings">
     <option name="MODULE_TAB" value="Signing Configs" />
     <option name="LAST_EDITED_SIGNING_CONFIG" value="release" />
@@ -298,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678437878680</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="수기입력 오류 사항 표기 기능 &#10;출하관리 오류 사항 수정">
+      <created>1678697888866</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678697888866</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -320,7 +383,8 @@
     <MESSAGE value="20230215 출하수기등록 품목검색 기능 추가" />
     <MESSAGE value="프로젝트 명 변경(example-&gt;pda)" />
     <MESSAGE value="로트번호 삭제,수기입력 기능 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="로트번호 삭제,수기입력 기능 수정" />
+    <MESSAGE value="수기입력 오류 사항 표기 기능 &#10;출하관리 오류 사항 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="수기입력 오류 사항 표기 기능 &#10;출하관리 오류 사항 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -332,7 +396,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/BaseActivity.java</url>
-          <line>356</line>
+          <line>394</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">

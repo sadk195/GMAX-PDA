@@ -13,9 +13,9 @@ import android.widget.Spinner;
 
 import androidx.annotation.Nullable;
 
-import com.PDA.gmax.GetComboData;
 import com.PDA.gmax.BaseActivity;
 import com.PDA.gmax.DBAccess;
+import com.PDA.gmax.GetComboData;
 import com.PDA.gmax.R;
 import com.PDA.gmax.TGSClass;
 
@@ -162,6 +162,11 @@ public class S12_PKG_Activity extends BaseActivity {
                     lot_no.setText(temp);
                     tx_lot_no=lot_no.getText().toString();
 
+                    str_carton_no = String.valueOf(selected_no);
+                    if(selected_no==0){
+                        str_carton_no="";
+                    }
+
                     dbSave(req_no.getText().toString(), str_carton_no,lot_no.getText().toString());
 
                     lot_no.requestFocus();
@@ -176,6 +181,7 @@ public class S12_PKG_Activity extends BaseActivity {
             public void onClick(View v) {
                 Intent intent = TGSClass.ChangeView(getPackageName(), S12_CUSTOM_Activity.class);
                 intent.putExtra("REQ_NO", tx_req_no);
+                str_carton_no = String.valueOf(selected_no);
                 intent.putExtra("CARTON_NO",str_carton_no);
                 startActivityForResult(intent, 1);
             }
@@ -229,6 +235,8 @@ public class S12_PKG_Activity extends BaseActivity {
                 }
                 listview.setAdapter(ListViewAdapter);
                 ListViewAdapter.notifyDataSetChanged();
+
+                lot_no.requestFocus();
 
             } catch (JSONException ex) {
                 TGSClass.AlertMessage(this, ex.getMessage(),5000);
@@ -328,7 +336,9 @@ public class S12_PKG_Activity extends BaseActivity {
                 //String sql = "EXEC DBO.XUSP_MES_S2002PA2_GET_LIST ";
                 sql += "@FLAG ='"+cudFlag+"',"; //
                 sql += "@DN_REQ_NO ='" + pReqNo + "',";
-                sql += "@CONT_NO ='" + pCartonNO +"',"; //carton 번호 조회시 빈값으로 조회
+               // sql += "@CONT_NO ='" + pCartonNO +"',";
+                sql += "@CONT_NO ='" + selected_no +"',";
+
                 sql += "@USER_ID ='" + vUSER_ID + "'";
                 sql += ";";
 
@@ -438,6 +448,7 @@ public class S12_PKG_Activity extends BaseActivity {
                     selected_no = ((GetComboData) parent.getSelectedItem()).getNUM();
 
                     start();
+
                 }
                 @Override
                 public void onNothingSelected(AdapterView<?> parent) {
@@ -449,12 +460,14 @@ public class S12_PKG_Activity extends BaseActivity {
 
             //scan하면
             if(Scan){
+
                 if(selected_no == 0) {
                     carton_no.setSelection(CartonCount);
                     return;
                 }
                 else{
                     carton_no.setSelection(selected_no);
+                    return;
                 }
             }
 
@@ -496,8 +509,24 @@ public class S12_PKG_Activity extends BaseActivity {
                 start();
                 break;
             case S12_CUSTOM_REQUEST_CODE:
-                //str_carton_no = data.getStringExtra("CONT_NO");
-                selected_no =0;
+                str_carton_no = data.getStringExtra("CONT_NO");
+                System.out.println("cont1:"+str_carton_no);
+                if(str_carton_no.equals("")){
+                    selected_no =0;
+                }
+                else{
+                    try{
+
+                        selected_no = Integer.parseInt(str_carton_no);
+                    }
+                    catch(Exception e){
+                        System.out.println("error:"+e.getMessage());
+                        selected_no =0;
+                    }
+
+                }
+                System.out.println("cont2:"+selected_no);
+
                 dbQuery_getComboData(true);
                 start();
                 break;
