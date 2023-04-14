@@ -110,7 +110,7 @@ public class M43_DTL_Activity extends BaseActivity {
                                 JSONArray ja = new JSONArray(sJson);
                                 JSONObject jObject = ja.getJSONObject(0);
                                 err = jObject.getString("ERR");
-                                err_name = jObject.getString("ERR_NANE");
+                                err_name = jObject.getString("ERR_NAME");
 
                             }
 

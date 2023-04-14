@@ -60,6 +60,7 @@ public class M13_DTL implements Serializable {   //Serializable 객체를 파라
     private int IDX;
     private String END_CUST_NM;
 
+    private String INSP_FLG;
 
 
     public String getITEM_CD(){return ITEM_CD;}
@@ -176,7 +177,9 @@ public class M13_DTL implements Serializable {   //Serializable 객체를 파라
 
     public void setEND_CUST_NM(String end_cust_nm) { END_CUST_NM = end_cust_nm;}
 
+    public String getINSP_FLG(){return INSP_FLG;}
 
+    public void setINSP_FLG(String insp_flg) { INSP_FLG = insp_flg;}
 
 
 }

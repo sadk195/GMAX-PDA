@@ -266,6 +266,18 @@ public class S12_DTL_Activity extends BaseActivity {
                 String inv_mgr_parm = inv_mgr;        //담당자
                 String unit_cd = vUNIT_CD;        //단말기코드
 
+                System.out.println("cud_flag:"+cud_flag);
+                System.out.println("flag:"+flag);
+                System.out.println("bp_cd:"+bp_cd);
+                System.out.println("dn_req_no:"+dn_req_no);
+                System.out.println("dn_req_seq:"+dn_req_seq);
+                System.out.println("actual_gi_dt:"+actual_gi_dt);
+                System.out.println("trans_meth:"+trans_meth);
+                System.out.println("ar_flag:"+ar_flag);
+                System.out.println("vat_flag:"+vat_flag);
+                System.out.println("inv_mgr:"+inv_mgr);
+                System.out.println("vUNIT_CD:"+vUNIT_CD);
+
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
 
@@ -738,6 +750,8 @@ public class S12_DTL_Activity extends BaseActivity {
                 sql += " @FLAG = 'cmbTrans_support' ";
                 sql += ", @VALUE = '" + Value + "'";
                 sql += " ,@PLANT_CD = '" + vPLANT_CD + "'";
+
+                System.out.println("SQL:"+sql);
 
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 

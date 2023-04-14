@@ -158,7 +158,9 @@ public class S12_PKG_Activity extends BaseActivity {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) && keyCode == KeyEvent.KEYCODE_ENTER) {
 
-                    String temp=lot_no.getText().toString().replaceFirst(tx_lot_no,"");
+                    //String temp=lot_no.getText().toString().replaceFirst(tx_lot_no,"");
+                    String temp=lot_no.getText().toString();
+
                     lot_no.setText(temp);
                     tx_lot_no=lot_no.getText().toString();
 
@@ -170,7 +172,9 @@ public class S12_PKG_Activity extends BaseActivity {
                     dbSave(req_no.getText().toString(), str_carton_no,lot_no.getText().toString());
 
                     lot_no.requestFocus();
+                    lot_no.setText("");
                     start();
+
                     return true;
                 }
                 return false;
@@ -332,8 +336,8 @@ public class S12_PKG_Activity extends BaseActivity {
                     cudFlag = "U";
                 }
 
-                String sql = "EXEC DBO.XUSP_MES_S2002PA2_GET_LIST_TEST ";
-                //String sql = "EXEC DBO.XUSP_MES_S2002PA2_GET_LIST ";
+                //String sql = "EXEC DBO.XUSP_MES_S2002PA2_GET_LIST_TEST ";
+                String sql = "EXEC DBO.XUSP_MES_S2002PA2_GET_LIST ";
                 sql += "@FLAG ='"+cudFlag+"',"; //
                 sql += "@DN_REQ_NO ='" + pReqNo + "',";
                // sql += "@CONT_NO ='" + pCartonNO +"',";
@@ -509,6 +513,7 @@ public class S12_PKG_Activity extends BaseActivity {
                 start();
                 break;
             case S12_CUSTOM_REQUEST_CODE:
+                if(data == null) return;
                 str_carton_no = data.getStringExtra("CONT_NO");
                 System.out.println("cont1:"+str_carton_no);
                 if(str_carton_no.equals("")){

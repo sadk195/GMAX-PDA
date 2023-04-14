@@ -215,7 +215,9 @@ public class M13_DTL_Activity extends BaseActivity {
 
                     //바코드 입력시 텍스트 리프레시를 위해서 설정
 
-                    String temp = lot_no.getText().toString().replaceFirst(tx_lot_no, "");
+                    //String temp = lot_no.getText().toString().replaceFirst(tx_lot_no, "");
+                    String temp = lot_no.getText().toString();
+
                     //temp = "M1000221103001001001";
                     lot_no.setText(temp);
                     tx_lot_no = lot_no.getText().toString();
@@ -223,8 +225,11 @@ public class M13_DTL_Activity extends BaseActivity {
                     //일반등록
                     Auto_Input();
 
+
                     lot_no.setText(tx_lot_no);
+                    lot_no.setText("");
                     lot_no.setSelection(lot_no.getText().length());
+
 
                     return true;
                 }
@@ -289,6 +294,7 @@ public class M13_DTL_Activity extends BaseActivity {
                     item.setCHK                (jObject.getString("CHK_FLAG").equals("Y") ? true:false);//로트스캔 여부
                     item.setIDX                (idx);
                     item.setEND_CUST_NM        (jObject.getString("END_CUST_NM")); //최종고객
+                    item.setINSP_FLG           (jObject.getString("INSP_FLG"));
                     ListViewAdapter.addPkgItem(item);
                 }
 
@@ -753,6 +759,8 @@ public class M13_DTL_Activity extends BaseActivity {
                 ListViewAdapter.notifyDataSetChanged();
 
                 dbLotSave(dtl);
+                TGSClass.AlertMessage(getApplicationContext(), "입고처리 되었습니다.");
+
             }
         }
 
