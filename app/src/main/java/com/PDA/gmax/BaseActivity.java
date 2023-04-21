@@ -21,8 +21,10 @@ import com.google.zxing.integration.android.IntentIntegrator;
 
 import org.ksoap2.serialization.PropertyInfo;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -31,6 +33,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -517,6 +520,73 @@ public class BaseActivity extends AppCompatActivity {
         } catch (IOException e){
             /* Exception */
         }
+    }
+
+
+    public static void SetSaveTempData(String _log, String _fileName) {
+        /* SD CARD 하위에 LOG 폴더를 생성하기 위해 미리 dirPath에 생성 할 폴더명을 추가 */
+        String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Temp/";
+        System.out.println("dir:"+dirPath);
+        File file = new File(dirPath);
+
+        //현재날짜 시간 가져오기
+        long now = System.currentTimeMillis();
+
+        Date date = new Date(now);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+
+        String getTime = sdf.format(date);
+
+
+        // 일치하는 폴더가 없으면 생성
+        if (!file.exists())
+            file.mkdirs();
+
+        // txt 파일 생성
+        File savefile = new File(dirPath + "Temp_" + _fileName + ".txt");
+        try {
+            BufferedWriter bfw = new BufferedWriter(new FileWriter(savefile, true));
+            //BufferedWriter bfw = new BufferedWriter(new FileWriter(dirPath + "LOG_" + _fileName + ".txt", true));
+            bfw.write(getTime+" // ");
+            bfw.write(_log);
+            bfw.write("\n");
+            bfw.flush();
+            bfw.close();
+        } catch (IOException e){
+            /* Exception */
+        }
+    }
+
+    public static List<String> GetTempData(String _fileName) {
+        /* SD CARD 하위에 LOG 폴더를 생성하기 위해 미리 dirPath에 생성 할 폴더명을 추가 */
+        String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Temp/";
+        System.out.println("dir:"+dirPath);
+        File file = new File(dirPath);
+
+        // 일치하는 폴더가 없으면 생성
+        if (!file.exists())
+            file.mkdirs();
+
+
+        List<String> stringList = new ArrayList<>();
+
+        // txt 파일 생성
+        File savefile = new File(dirPath + "Temp_" + _fileName + ".txt");
+        try {
+            BufferedReader bfr = new BufferedReader( new FileReader(savefile));
+
+            String line="";
+            while((line = bfr.readLine()) != null){
+                stringList.add(line);
+            }
+
+            bfr.close();
+        } catch (IOException e){
+            /* Exception */
+        }
+
+        savefile.delete();
+        return stringList;
     }
     /**
      * 텍스트뷰 생성

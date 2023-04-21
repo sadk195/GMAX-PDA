@@ -86,18 +86,18 @@ public class M13_DTL_ListViewAdapter extends BaseAdapter {
 
         chk.setText(item2.getCHK()? "OK":"X");
 
-        if(item2.getINSP_FLG().equals("Y")){
-            item_nm.setBackgroundColor(Color.parseColor("#FFFF33"));
-            lot_no.setBackgroundColor(Color.parseColor("#FFFF33"));
-            chk.setBackgroundColor(Color.parseColor("#FFFF33"));
-            return convertView;
-        }
+
         if(item2.getCHK()){
             //chk.setBackgroundColor(Color.parseColor("#99CCFF"));
 
             item_nm.setBackgroundColor(Color.parseColor("#82FF66"));
             lot_no.setBackgroundColor(Color.parseColor("#82FF66"));
             chk.setBackgroundColor(Color.parseColor("#82FF66"));
+            if(item2.getINSP_FLG().equals("Y")){
+                item_nm.setBackgroundColor(Color.parseColor("#FFFF33"));
+                lot_no.setBackgroundColor(Color.parseColor("#FFFF33"));
+                chk.setBackgroundColor(Color.parseColor("#FFFF33"));
+            }
 
         }
         else{
