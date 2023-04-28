@@ -48,6 +48,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppGJTheme"
         android:usesCleartextTraffic="true" >
         <activity
@@ -96,6 +97,9 @@
             android:name="com.PDA.gmax.ErrorPopupActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.PDA.gmax.ErrorPopupActivity2"
+            android:theme="@android:style/Theme.Dialog" />
         <activity
             android:name="com.PDA.gmax.MenuActivity"
             android:exported="false"

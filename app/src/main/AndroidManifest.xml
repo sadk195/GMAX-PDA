@@ -68,6 +68,9 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.PDA.gmax.ErrorPopupActivity2"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
             android:name="com.PDA.gmax.MenuActivity"
             android:exported="false"
             android:screenOrientation="portrait" />

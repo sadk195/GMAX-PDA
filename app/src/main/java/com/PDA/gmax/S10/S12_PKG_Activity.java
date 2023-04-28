@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 
 import com.PDA.gmax.BaseActivity;
 import com.PDA.gmax.DBAccess;
+import com.PDA.gmax.ErrorPopupActivity2;
 import com.PDA.gmax.GetComboData;
 import com.PDA.gmax.R;
 import com.PDA.gmax.TGSClass;
@@ -65,6 +66,7 @@ public class S12_PKG_Activity extends BaseActivity {
     //== ListView Adapter 선언 ==//
     S12_PKG_ListViewAdapter ListViewAdapter; //데이터를 완전히 초기화 하는것이 아니라 수정처리 하기때문에 전역 선언
 
+    private ErrorPopupActivity2 errorPopup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -169,12 +171,12 @@ public class S12_PKG_Activity extends BaseActivity {
                         str_carton_no="";
                     }
 
+
                     dbSave(req_no.getText().toString(), str_carton_no,lot_no.getText().toString());
 
                     lot_no.requestFocus();
                     lot_no.setText("");
                     start();
-
                     return true;
                 }
                 return false;
@@ -288,6 +290,21 @@ public class S12_PKG_Activity extends BaseActivity {
                 try {
                     JSONArray ja = new JSONArray(sJson);
                     System.out.println("sjson:"+sJson);
+
+                    if(sJson.contains("ERR")){
+                        String err ="";
+                        String err_name="";
+
+                        JSONObject jObject = ja.getJSONObject(0);
+                        err = jObject.getString("ERR");
+                        err_name = jObject.getString("ERR_NAME");
+                        Intent error_intent = TGSClass.ChangeView(getPackageName(), ErrorPopupActivity2.class);
+                        error_intent.putExtra("MSG", err_name);
+                        startActivity(error_intent);
+                    }
+
+
+
                     for (int idx = 0; idx < ja.length(); idx++) {
                         JSONObject jObject = ja.getJSONObject(idx);
 

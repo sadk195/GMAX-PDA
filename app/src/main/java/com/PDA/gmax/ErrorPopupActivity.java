@@ -6,8 +6,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.PDA.gmax.R;
-
 public class ErrorPopupActivity extends AppCompatActivity {
 
     public TextView lbl_error_msg;
@@ -25,6 +23,9 @@ public class ErrorPopupActivity extends AppCompatActivity {
 
         //== 가져온 값을 바인딩 ==//
         lbl_error_msg.setText(vErrorMSG);
+
+
+
     }
 
     public void mOnClose(View v){
