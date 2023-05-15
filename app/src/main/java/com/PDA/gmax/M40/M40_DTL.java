@@ -15,6 +15,7 @@ public class M40_DTL implements Serializable {   //Serializable 객체를 파라
      * STATUS                  //검사여부
      * */
 
+    public int NO;
     public String CODE;
     public String AREA_DENSITY;
     public String LOT_NO;
@@ -24,6 +25,10 @@ public class M40_DTL implements Serializable {   //Serializable 객체를 파라
     public String QR_VALUE_ALL;
     public String STATUS;
     public boolean CHK = false;
+
+    public String getNO(){return String.valueOf(NO);}
+
+    public void setNO(int no ) { NO = no; }
 
     public String getCODE(){return CODE;}
 

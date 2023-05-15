@@ -49,6 +49,7 @@ public class M44_DTL_ListViewAdapter extends BaseAdapter {
 
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
         LinearLayout ContentView    = (LinearLayout)convertView.findViewById(R.id.ContentView);
+        TextView no                 = (TextView) convertView.findViewById(R.id.no);            //품번
         TextView code               = (TextView) convertView.findViewById(R.id.code);            //품번
         TextView roll_no               = (TextView) convertView.findViewById(R.id.roll_no);            //품번
         TextView length             = (TextView) convertView.findViewById(R.id.length);          //길이
@@ -58,6 +59,7 @@ public class M44_DTL_ListViewAdapter extends BaseAdapter {
 
         // 아이템 내 각 위젯에 데이터 반영
         //투입된 아이템 Y 미투입 N
+        no.setText(item2.getNO());
         code.setText(item2.getCODE());
         roll_no.setText(item2.getROLL_NO());
         length.setText(item2.getLENGTH());
@@ -67,9 +69,10 @@ public class M44_DTL_ListViewAdapter extends BaseAdapter {
     }
 
 
-    public void addItem(String CODE,String AREA_DENSITY,String LOT_NO,String ROLL_NO,String WIDTH,String LENGTH,String QR_VALUE_ALL,String STATUS) {
+    public void addItem(int NO,String CODE,String AREA_DENSITY,String LOT_NO,String ROLL_NO,String WIDTH,String LENGTH,String QR_VALUE_ALL,String STATUS) {
         M40_DTL item = new M40_DTL();
 
+        item.setNO(NO);
         item.setCODE(CODE);
         item.setAREA_DENSITY(AREA_DENSITY);
         item.setLOT_NO(LOT_NO);

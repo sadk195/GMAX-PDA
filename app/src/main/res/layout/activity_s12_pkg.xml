@@ -111,7 +111,7 @@
                         android:layout_weight="20"
                         android:background="@drawable/bg_text"
                         android:enabled="false"
-                        android:ems="10"
+                        android:ems="100"
                         android:focusable="false"
                         android:inputType="date"
                         android:textSize="15dp" />

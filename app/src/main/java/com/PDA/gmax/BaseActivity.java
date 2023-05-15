@@ -101,7 +101,7 @@ public class BaseActivity extends AppCompatActivity {
     //쿼리중복 방지
 
     //쿼리 중복실행 방지를 위해 설정된 시간에 한번씩만 스캔 가능하도록 설정
-    protected final Integer QueryMaxTime = 2;
+    protected final Integer QueryMaxTime = 1;
     protected Integer QueryCount = 0;
     protected Timer Query_Timer = new Timer();
     protected TimerTask QuerytimerTask;

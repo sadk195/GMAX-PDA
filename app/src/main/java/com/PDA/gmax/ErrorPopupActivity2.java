@@ -3,6 +3,8 @@ package com.PDA.gmax;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
 
@@ -35,21 +37,36 @@ public class ErrorPopupActivity2 extends Activity {
         timerTask = new TimerTask() {
             @Override
             public void run() {
-                if(col){
-                    lbl_error_msg.setBackgroundColor(Color.parseColor("#ED1C24"));
-                    col = false;
-                }
-                else{
-                    lbl_error_msg.setBackgroundColor(Color.parseColor("#FFFF00"));
-                    col = true;
-                }
+                System.out.println("handler1:");
+
+                Message msg = handler.obtainMessage();
+                handler.sendMessage(msg);
             }
         };
 
         // timer 실행
         timer.schedule(timerTask, 0, 1000);
+
+
+        lbl_error_msg.setBackgroundColor(Color.parseColor("#ED1C24"));
+
     }
 
+
+    final Handler handler = new Handler(){
+        public void handleMessage(Message msg){
+            // 원래 하려던 동작 (UI변경 작업 등)
+            System.out.println("handler2:");
+            if(col){
+                lbl_error_msg.setBackgroundColor(Color.parseColor("#ED1C24"));
+                col = false;
+            }
+            else{
+                lbl_error_msg.setBackgroundColor(Color.parseColor("#FFFF00"));
+                col = true;
+            }
+        }
+    };
     public void mOnClose(View v){
         //== 액티비티(팝업) 닫기(앱 종료) ==//
         this.finish();

@@ -55,7 +55,8 @@ public class S12_PKG_Activity extends BaseActivity {
 
     //== Spinner 관련 변수 선언 ==//
     private String str_carton_no = "";
-
+    //== 오류메시지 관련 변수 선언 ==/
+    private String err ="",err_name="";
     //== View 선언(Button) ==//
     private Button btn_lot,btn_end,btn_custom;
 
@@ -173,6 +174,7 @@ public class S12_PKG_Activity extends BaseActivity {
 
 
                     dbSave(req_no.getText().toString(), str_carton_no,lot_no.getText().toString());
+                    SaveResult();
 
                     lot_no.requestFocus();
                     lot_no.setText("");
@@ -286,59 +288,13 @@ public class S12_PKG_Activity extends BaseActivity {
         try {
             wkThd_dbQuery.join();  //workingThread가 종료될때까지 Main 쓰레드를 정지함.
 
-            if (!sJson.equals("")) {
-                try {
-                    JSONArray ja = new JSONArray(sJson);
-                    System.out.println("sjson:"+sJson);
 
-                    if(sJson.contains("ERR")){
-                        String err ="";
-                        String err_name="";
-
-                        JSONObject jObject = ja.getJSONObject(0);
-                        err = jObject.getString("ERR");
-                        err_name = jObject.getString("ERR_NAME");
-                        Intent error_intent = TGSClass.ChangeView(getPackageName(), ErrorPopupActivity2.class);
-                        error_intent.putExtra("MSG", err_name);
-                        startActivity(error_intent);
-                    }
-
-
-
-                    for (int idx = 0; idx < ja.length(); idx++) {
-                        JSONObject jObject = ja.getJSONObject(idx);
-
-                        S12_PKG item = new S12_PKG();
-
-                        item.ITEM_CD            = jObject.getString("ITEM_CD");         //품번
-                        //String DN_NO = jObject.getString("DN_NO");  //출하요청번호
-                        //item.ITEM_NM            = jObject.getString("ITEM_NM");         //품명
-                        //item.REQ_QTY            = jObject.getString("REQ_QTY");         //요청수
-                        //item.REQ_STOCK          = jObject.getString("REQ_STOCK");       //요청잔량
-                        item.PACKING_CNT        = jObject.getString("PACKING_CNT");     //박스수
-                        item.QTY                = jObject.getString("GI_QTY");             //포장수
-                        item.CARTON_NO          = jObject.getString("CONT_NO");
-
-                        //LOT스캔 처리 후 데이터 적용
-                        ListViewAdapter.setShipmentItem(item.ITEM_CD,item.PACKING_CNT,item.QTY);
-                    }
-
-                    ListViewAdapter.notifyDataSetChanged();
-
-                    //carton번호 spinner 초기화
-                    dbQuery_getComboData(true);
-
-                } catch (JSONException ex) {
-                    System.out.println(ex.getMessage());
-                    //TGSClass.AlertMessage(this, ex.getMessage());
-                } catch (Exception e1) {
-                    TGSClass.AlertMessage(this, e1.getMessage(),5000);
-                }
-            }
         } catch (InterruptedException ex) {
 
         }
     }
+
+
 
     //리스트 데이터 조회
     private void dbQuery(final String pReqNo, final String pCartonNO) {
@@ -383,6 +339,56 @@ public class S12_PKG_Activity extends BaseActivity {
 
         } catch (InterruptedException ex) {
 
+        }
+    }
+
+    private void SaveResult(){
+        if (!sJson.equals("")) {
+            try {
+                JSONArray ja = new JSONArray(sJson);
+                System.out.println("sjson:"+sJson);
+
+                if(sJson.contains("ERR")){
+                    JSONObject jObject = ja.getJSONObject(0);
+                    err = jObject.getString("ERR");
+                    err_name = jObject.getString("ERR_NAME");
+
+                    Intent error_intent = TGSClass.ChangeView(getPackageName(), ErrorPopupActivity2.class);
+                    error_intent.putExtra("MSG", err_name);
+                    startActivity(error_intent);
+                }
+
+
+
+                for (int idx = 0; idx < ja.length(); idx++) {
+                    JSONObject jObject = ja.getJSONObject(idx);
+
+                    S12_PKG item = new S12_PKG();
+
+                    item.ITEM_CD            = jObject.getString("ITEM_CD");         //품번
+                    //String DN_NO = jObject.getString("DN_NO");  //출하요청번호
+                    //item.ITEM_NM            = jObject.getString("ITEM_NM");         //품명
+                    //item.REQ_QTY            = jObject.getString("REQ_QTY");         //요청수
+                    //item.REQ_STOCK          = jObject.getString("REQ_STOCK");       //요청잔량
+                    item.PACKING_CNT        = jObject.getString("PACKING_CNT");     //박스수
+                    item.QTY                = jObject.getString("GI_QTY");             //포장수
+                    item.CARTON_NO          = jObject.getString("CONT_NO");
+
+                    //LOT스캔 처리 후 데이터 적용
+                    ListViewAdapter.setShipmentItem(item.ITEM_CD,item.PACKING_CNT,item.QTY);
+                }
+
+                ListViewAdapter.notifyDataSetChanged();
+
+                //carton번호 spinner 초기화
+                dbQuery_getComboData(true);
+
+            } catch (JSONException ex) {
+                System.out.println(ex.getMessage());
+                //TGSClass.AlertMessage(this, ex.getMessage());
+            } catch (Exception e1) {
+                TGSClass.AlertMessage(this, e1.getMessage(),5000);
+            }
         }
     }
 
@@ -433,13 +439,18 @@ public class S12_PKG_Activity extends BaseActivity {
 
             //첫번째 항목 빈값으로 처리하고 선택시 모든 데이터 표출되도록 표시
             //MINOR_NM에 SELECT 조건 저장
+            System.out.println("lstItem:"+lstItem);
+
             GetComboData item = new GetComboData();
             item.setMINOR_CD("");
             item.setMINOR_NM("신규");
             item.setNUM(0);
             lstItem.add(item);
 
+            System.out.println("lstItem1:"+lstItem);
+
             for (int i = 0; i < ja.length(); i++) {
+                System.out.println("ja:"+i);
 
                 CartonCount++;
 
@@ -449,6 +460,8 @@ public class S12_PKG_Activity extends BaseActivity {
                 final String vMINOR_CD  = jObject.getString("CONT_NO");
                 final String vMINOR_NM  = jObject.getString("CONT_NO");
 
+                System.out.println("vMINOR_CD"+vMINOR_CD);
+                System.out.println("vMINOR_NM"+vMINOR_NM);
 
                 item = new GetComboData();
                 item.setMINOR_CD(vMINOR_CD);
@@ -458,6 +471,7 @@ public class S12_PKG_Activity extends BaseActivity {
             }
 
             ArrayAdapter<GetComboData> adapter = new ArrayAdapter<GetComboData>(this, android.R.layout.simple_dropdown_item_1line, lstItem);
+            System.out.println("carton_no"+carton_no);
 
             carton_no.setAdapter(adapter);
 
@@ -478,6 +492,7 @@ public class S12_PKG_Activity extends BaseActivity {
 
             //로딩시 기본값 세팅(사용하지 않음)
             //carton_no.setSelection(adapter.getPosition(itemBase));
+            System.out.println("Scan:"+Scan);
 
             //scan하면
             if(Scan){
@@ -491,16 +506,21 @@ public class S12_PKG_Activity extends BaseActivity {
                     return;
                 }
             }
+            System.out.println("first:"+first);
 
             //최초1회만 동작
             if(first){
                 //등록된 carton이 있을경우 첫번째 carton으로 설정
                 //없을경우 신규로 설정
                 if(CartonCount>0){
+                    System.out.println("first >0:"+CartonCount);
+
                     carton_no.setSelection(1);
                     str_carton_no="1";
                 }
                 else{
+                    System.out.println("first else:"+CartonCount);
+
                     carton_no.setSelection(0);
                     str_carton_no="0";
                 }

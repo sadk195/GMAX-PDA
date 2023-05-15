@@ -124,7 +124,7 @@ public class M44_DTL_Activity extends BaseActivity {
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) && keyCode == KeyEvent.KEYCODE_ENTER) {
                     try{
                         //바코드 입력시 텍스트 리프레시를 위해서 설정
-                        String temp=QR_Code.getText().toString().replaceFirst(tx_QR_Code,"");
+                        String temp=QR_Code.getText().toString();//.replaceFirst(tx_QR_Code,"");
                         //temp="MD221104-001";
                         QR_Code.setText(temp);
                         tx_QR_Code=QR_Code.getText().toString();
@@ -247,7 +247,10 @@ public class M44_DTL_Activity extends BaseActivity {
                 dataSaveLog("생산완료 저장 성공","Resling");
                 TGSClass.AlertMessage(getApplicationContext(),  err_name);
 
+                int NO = ListViewAdapter.getCount()+1;
+
                 M40_DTL item = new M40_DTL();
+                item.setNO              (NO);
                 item.setCODE            ( vItem.CODE);
                 item.setAREA_DENSITY    (vItem.AREA_DENSITY);
                 item.setLOT_NO          (vItem.LOT_NO);

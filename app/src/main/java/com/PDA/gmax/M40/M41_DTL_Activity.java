@@ -130,7 +130,7 @@ public class M41_DTL_Activity extends BaseActivity {
 
                     try{
                         //바코드 입력시 텍스트 리프레시를 위해서 설정
-                        String temp=QR_Code.getText().toString().replaceFirst(tx_QR_Code,"");
+                        String temp=QR_Code.getText().toString();//.replaceFirst(tx_QR_Code,"");
                         //temp="MD221104-001";
                         QR_Code.setText(temp);
                         tx_QR_Code=QR_Code.getText().toString();
@@ -213,6 +213,7 @@ public class M41_DTL_Activity extends BaseActivity {
         try {
             dataSaveLog("입고 스캔","Resling");
             dataSaveLog(tx_QR_Code,"Resling");
+            System.out.println("tx_qr_code:"+tx_QR_Code);
             vItem = new M40_DTL();
             vItem.QR_VALUE_ALL = tx_QR_Code;
 
@@ -257,7 +258,11 @@ public class M41_DTL_Activity extends BaseActivity {
                 dataSaveLog("입고 성공","Resling");
                 TGSClass.AlertMessage(getApplicationContext(),  err_name);
 
+                int NO = ListViewAdapter.getCount()+1;
+
+
                 M40_DTL item = new M40_DTL();
+                item.setNO              (NO);
                 item.setCODE            ( vItem.CODE);
                 item.setAREA_DENSITY    (vItem.AREA_DENSITY);
                 item.setLOT_NO          (vItem.LOT_NO);
@@ -286,6 +291,9 @@ public class M41_DTL_Activity extends BaseActivity {
         catch (Exception e){
             dataSaveLog("스캔오류","Resling");
             dataSaveLog(e.getMessage(),"Resling");
+            System.out.println("스캔오류:"+e.getMessage());
+            System.out.println("스캔오류:"+e.getStackTrace());
+
             TGSClass.AlertMessage(getApplicationContext(), " 오류가 발생하였습니다 다시 스캔하여주십시오",5000);
             return;
         }
