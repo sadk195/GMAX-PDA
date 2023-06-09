@@ -134,6 +134,8 @@ public class S12_PKG_Activity extends BaseActivity {
                 intent.putExtra("REQ_NO", req_no.getText().toString());
                 intent.putExtra("ITEM_CD", vItem.ITEM_CD );
                 intent.putExtra("ITEM_NM", vItem.ITEM_NM);
+                intent.putExtra("DN_REQ_SEQ", vItem.DN_REQ_SEQ);
+
                 startActivityForResult(intent, 0);
             }
         });
@@ -238,6 +240,7 @@ public class S12_PKG_Activity extends BaseActivity {
                     item.PACKING_CNT        = jObject.getString("PACKING_CNT");     //박스수
                     item.QTY                = jObject.getString("QTY");             //포장수
                     item.CARTON_NO          = jObject.getString("CONT_NO");
+                    item.DN_REQ_SEQ         = jObject.getString("DN_REQ_SEQ");
 
                     ListViewAdapter.addShipmentPKGItem(item);
                 }
@@ -319,6 +322,8 @@ public class S12_PKG_Activity extends BaseActivity {
                 sql += "@USER_ID ='" + vUSER_ID + "'";
                 sql += ";";
 
+
+                System.out.println("GETLIST:"+sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();

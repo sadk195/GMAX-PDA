@@ -19,6 +19,7 @@ public class S12_PKG implements Serializable {   //Serializable 객체를 파라
     public String PACKING_CNT;
     public String QTY;
     public String CARTON_NO;
+    public String DN_REQ_SEQ;
 
     public String getITEM_CD() { return ITEM_CD;}
 
@@ -48,7 +49,9 @@ public class S12_PKG implements Serializable {   //Serializable 객체를 파라
 
     public void setCARTON_NO(String qty) { CARTON_NO = qty; }
 
+    public String getDN_REQ_SEQ() { return DN_REQ_SEQ;}
 
+    public void setDN_REQ_SEQ(String dn_req_seq) { DN_REQ_SEQ = dn_req_seq; }
 
 
     //visible = false

@@ -28,7 +28,7 @@ public class S12_LOT_Activity extends BaseActivity {
 
     //== Intent에서 받을 변수 선언 ==//
     private String vMenuID, vMenuNm, vMenuRemark, vStartCommand;
-    private String tx_req_no,tx_lot_no="";
+    private String tx_req_no,tx_lot_no="",tx_dn_req_seq="";
 
     //== View 선언(EditText) ==//
     private EditText item_cd, item_nm,lot_no;
@@ -70,6 +70,7 @@ public class S12_LOT_Activity extends BaseActivity {
         vMenuRemark     = getIntent().getStringExtra("MENU_REMARK");
         vStartCommand   = getIntent().getStringExtra("START_COMMAND"); //다음 페이지에 가지고 넘어갈 코드
         tx_req_no       = getIntent().getStringExtra("REQ_NO");
+        tx_dn_req_seq    = getIntent().getStringExtra("DN_REQ_SEQ");
 
         //== ID값 바인딩 ==//
         item_cd         = (EditText) findViewById(R.id.item_cd);
@@ -196,6 +197,7 @@ public class S12_LOT_Activity extends BaseActivity {
                 //sql += " ,@DN_REQ_SEQ = '" + tx_req_seq + "'";
                 sql += " ,@ITEM_CD = '" + item_cd.getText().toString() + "'";
                 sql += " ,@USER_ID = '" + vPLANT_CD + "'";
+                sql += " ,@DN_REQ_SEQ = '" + tx_dn_req_seq + "'";
 
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
@@ -232,6 +234,8 @@ public class S12_LOT_Activity extends BaseActivity {
                 sql += " @CONT_NO = '" + delLot.CONT_NO + "',";
                 sql += " @LOT_NO = '" + delLot.LOT_NO + "',";
                 sql += " @USER_ID = '" + vUSER_ID + "'";
+                sql += " ,@DN_REQ_SEQ = '" + tx_dn_req_seq + "'";
+
                 sql += ";";
 
                 System.out.println("sql:" + sql);
