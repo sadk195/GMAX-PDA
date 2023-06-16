@@ -556,9 +556,12 @@ public class S12_PKG_Activity extends BaseActivity {
                 break;
             case S12_CUSTOM_REQUEST_CODE:
                 if(data == null) return;
-                str_carton_no = data.getStringExtra("CONT_NO");
+                //str_carton_no = data.getStringExtra("CONT_NO");
                 System.out.println("cont1:"+str_carton_no);
-                if(str_carton_no.equals("")){
+                if(str_carton_no ==null){
+                    selected_no =0;
+                }
+                else if(str_carton_no.equals("")){
                     selected_no =0;
                 }
                 else{

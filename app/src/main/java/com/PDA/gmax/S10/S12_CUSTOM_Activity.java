@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 
 import com.PDA.gmax.BaseActivity;
 import com.PDA.gmax.DBAccess;
+import com.PDA.gmax.ErrorPopupActivity2;
 import com.PDA.gmax.R;
 import com.PDA.gmax.TGSClass;
 
@@ -158,10 +159,18 @@ public class S12_CUSTOM_Activity extends BaseActivity {
 
                     if(dtl.CHK ){
                         System.out.println("tx_carton_no:"+current_cont);
-                        current_cont = dbSave(tx_req_no,current_cont, dtl.LOT_NO);
-                        if(current_cont.equals("")){
-                            break;
+                        dbSave(tx_req_no,current_cont, dtl.LOT_NO);
+                        if(!SaveResult()){
+                            start();
+                            return;
                         }
+                        if(current_cont.equals("0") || current_cont.equals("")){
+                            current_cont = GetSavedCarton(current_cont);
+                        }
+
+                        /*if(current_cont.equals("")){
+                            break;
+                        }*/
                     }
                 }
                 if(tx_carton_no== null){
@@ -244,7 +253,7 @@ public class S12_CUSTOM_Activity extends BaseActivity {
                 sql += ";";
 
 
-                System.out.println("sql:"+sql);
+                System.out.println("sql lot:"+sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
@@ -275,16 +284,19 @@ public class S12_CUSTOM_Activity extends BaseActivity {
         ////////////////////////////// 웹 서비스 호출 시 쓰레드 사용 ////////////////////////////////////////////////////////
         Thread wkThd_dbQuery = new Thread() {
             public void run() {
-                String sql = " DECLARE  @RTN_MSG NVARCHAR(200)='' " ;
-                sql += " EXEC DBO.XUSP_MES_S2002PA2_SET_LOT_CUSTOM ";
+                //String sql = " DECLARE  @RTN_MSG NVARCHAR(200)='' " ;
+                String sql = " " ;
+                sql += " EXEC DBO.XUSP_MES_S2002PA2_SET_LOT ";
                 sql += " @CUD_CHAR = 'C',";
                 sql += " @PACKING_NO = '" + pReqNo + "',";
                 sql += " @DN_REQ_NO = '" + pReqNo + "',";
                 sql += " @CONT_NO = '" + pCartonNo + "',";
                 sql += " @LOT_NO = '" + pLotNo + "',";
-                sql += " @USER_ID = '" + vUSER_ID + "',";
-                sql += " @RTN_MSG =  @RTN_MSG  OUTPUT";
-                sql += " SELECT  @RTN_MSG AS RTN_MSG ";
+                sql += " @USER_ID = '" + vUSER_ID + "'";
+
+                //sql += " @USER_ID = '" + vUSER_ID + "',";
+                //sql += " @RTN_MSG =  @RTN_MSG  OUTPUT";
+                //sql += " SELECT  @RTN_MSG AS RTN_MSG ";
 
                 sql += ";";
                 System.out.println("lot save : " + sql);
@@ -307,11 +319,11 @@ public class S12_CUSTOM_Activity extends BaseActivity {
         wkThd_dbQuery.start();   //스레드 시작
         try {
             wkThd_dbQuery.join();  //workingThread가 종료될때까지 Main 쓰레드를 정지함.
-            System.out.println("sjson cont:"+sJson);
+            /*       System.out.println("sjson cont:"+sJson);
             if (sJson.contains("CONT_NO")) {
                 try {
-                    JSONArray ja = new JSONArray(sJson);
-/*
+             JSONArray ja = new JSONArray(sJson);
+
                     String vMSG = "";
                     String vStatus = "";
 
@@ -325,7 +337,7 @@ public class S12_CUSTOM_Activity extends BaseActivity {
                             TGSClass.AlertMessage(this, vMSG);
                             return "";
                         }
-                    }*/
+                    }
 
                     for (int idx = 0; idx < ja.length(); idx++) {
 
@@ -345,13 +357,63 @@ public class S12_CUSTOM_Activity extends BaseActivity {
                 TGSClass.AlertMessage(this, sJson+"("+pLotNo+")",7500);
                 result_carton = "";
             }
-
+*/
         } catch (InterruptedException ex) {
 
         }
         return result_carton;
     }
+    private boolean SaveResult(){
+        if (!sJson.equals("")) {
+            try {
+                JSONArray ja = new JSONArray(sJson);
+                System.out.println("sjson:"+sJson);
 
+                if(sJson.contains("ERR")){
+                    JSONObject jObject = ja.getJSONObject(0);
+                    String err = jObject.getString("ERR");
+                    String err_name = jObject.getString("ERR_NAME");
+
+                    Intent error_intent = TGSClass.ChangeView(getPackageName(), ErrorPopupActivity2.class);
+                    error_intent.putExtra("MSG", err_name);
+                    startActivity(error_intent);
+                    return false;
+                }
+            } catch (JSONException ex) {
+                System.out.println(ex.getMessage());
+                //TGSClass.AlertMessage(this, ex.getMessage());
+                return false;
+            } catch (Exception e1) {
+                TGSClass.AlertMessage(this, e1.getMessage(),5000);
+                return false;
+            }
+            return true;
+        }
+        return false;
+
+    }
+
+    private String GetSavedCarton(String current){
+
+        if (!sJson.equals("")) {
+            try {
+                JSONArray ja = new JSONArray(sJson);
+                System.out.println("sjson:"+sJson);
+
+                if(sJson.contains("CONT_NO")){
+                    JSONObject jObject = ja.getJSONObject(0);
+                    current = jObject.getString("CONT_NO");
+                    System.out.println("cont_no update : "+current);
+                }
+            } catch (JSONException ex) {
+                System.out.println(ex.getMessage());
+                //TGSClass.AlertMessage(this, ex.getMessage());
+            } catch (Exception e1) {
+                TGSClass.AlertMessage(this, e1.getMessage(),5000);
+            }
+        }
+        return current;
+    }
 
     //로트번호 수기등록 체크
     //체크된 데이터 확인 및 입력한 수량만큼 로트 체크

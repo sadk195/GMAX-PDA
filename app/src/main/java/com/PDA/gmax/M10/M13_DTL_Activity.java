@@ -198,6 +198,14 @@ public class M13_DTL_Activity extends BaseActivity {
                     dn_no.setText(temp);
                     tx_dn_no=dn_no.getText().toString();
 
+                    //쿼리중복 방지(쓰레드 중복 방지)
+                    if(!QueryOn){
+                        return false;
+                    }
+                    QueryOn = false;
+                    //중복방지 타이머 실행
+                    SetTimerTask();
+
                     start();
 
                     lot_no.requestFocus();
@@ -361,6 +369,14 @@ public class M13_DTL_Activity extends BaseActivity {
 
 
     private void dbSave(int saveCnt) {
+
+        //쿼리중복 방지(쓰레드 중복 방지)
+        if(!QueryOn){
+            return;
+        }
+        QueryOn = false;
+        //중복방지 타이머 실행
+        SetTimerTask();
 
         String dlv_no_data = dn_no.getText().toString();
         dbQuery_update_ISSUE_MTHD(dlv_no_data); //공장별 품목수불현황에서 자품목 자동출고로 강제 조정
