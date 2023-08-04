@@ -19,8 +19,8 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.PDA.gmax.BaseActivity;
-import com.PDA.gmax.GetComboData;
 import com.PDA.gmax.DBAccess;
+import com.PDA.gmax.GetComboData;
 import com.PDA.gmax.R;
 import com.PDA.gmax.TGSClass;
 
@@ -808,9 +808,63 @@ public class S12_DTL_Activity extends BaseActivity {
     }
 
 
+    private String ChkApproval(String bp_cd,String Actual_gi_dt){
+        ////////////////////////////// 웹 서비스 호출 시 쓰레드 사용 ////////////////////////////////////////////////////////
+        Thread wkThd_dbQuery = new Thread() {
+            public void run() {
 
+                String sql = "EXEC DBO.XUSP_S_DN_HDR_CUSTOMER_DN_APPROVAL_CHECK_ANDROID ";
+                sql += "@BP_CD ='"+bp_cd+"',"; //
+                sql += "@BIZ_AREA ='" + vPLANT_CD + "',";
+                sql += "@ACTUAL_GI_DT ='" + Actual_gi_dt +"'";
+                sql += ";";
+
+                System.out.println("GET approval:"+sql);
+                DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
+
+                ArrayList<PropertyInfo> pParms = new ArrayList<>();
+
+                PropertyInfo parm = new PropertyInfo();
+                parm.setName("pSQL_Command");
+                parm.setValue(sql);
+                parm.setType(String.class);
+
+                pParms.add(parm);
+
+                sJson = dba.SendHttpMessage("GetSQLData", pParms);
+            }
+        };
+        wkThd_dbQuery.start();   //스레드 시작
+        try {
+            wkThd_dbQuery.join();  //workingThread가 종료될때까지 Main 쓰레드를 정지함.
+            System.out.println("GET sjson:"+sJson);
+
+            if (!sJson.equals("")&& sJson.contains("ERR_MSG")) {
+                try {
+                    JSONArray ja = new JSONArray(sJson);
+
+                    JSONObject jObject = ja.getJSONObject(0);
+
+                    String returnValue = (jObject.getString("ERR_MSG"));
+                    return returnValue;
+                } catch (JSONException ex) {
+                    TGSClass.AlertMessage(this, ex.getMessage());
+
+
+                } catch (Exception e1) {
+                    TGSClass.AlertMessage(this, e1.getMessage());
+
+
+                }
+            }
+        } catch (InterruptedException ex) {
+
+        }
+        return "";
+    }
     //출고처리 시작
     private void Shipment_ANDROID(){
+
         //GetComboData Partner = (GetComboData) cmbBizPartner.getSelectedItem();  //Class에 담겨진 데이터를 가져오기
         GetComboData User = (GetComboData) cmbMgmtUser.getSelectedItem();
         GetComboData Trans = (GetComboData) cmbTrans.getSelectedItem();
@@ -831,9 +885,13 @@ public class S12_DTL_Activity extends BaseActivity {
         String cmbTrans_st = Trans.getMINOR_CD();                  //운송방법
         String ar_flag_st = chkAR_checkvalue;                     //매출채권
         String vat_flag_st = chkVAT_checkvalue;                    //세금계산서
-//                String cmbMgmtUser_st   = User.getMINOR_CD();                   //등록자
+//                String cmbMgmtUser_st   = User.getMINOR_CD();    //등록자
         String cmbMgmtUser_st = "";                   //등록자
-
+        String ChkApp = ChkApproval(cmbBizPartner_st,dn_rq_dt_st);
+        if(!ChkApp.equals("")){
+            TGSClass.AlertMessage(getApplicationContext(), ChkApp);
+            return;
+        }
 
         //출하 BL 실행
         if (dbQuery_GET_BL(cud_flag_st, flag_st, cmbBizPartner_st, dn_req_no_st, dn_req_seq, dn_rq_dt_st,
@@ -843,7 +901,7 @@ public class S12_DTL_Activity extends BaseActivity {
         }
 
         if (!result_msg.contains("출하번호")) {
-            TGSClass.AlertMessage(getApplicationContext(), result_msg, 50000);
+            TGSClass.AlertMessage(getApplicationContext(), result_msg);
             return;
         }
         else{

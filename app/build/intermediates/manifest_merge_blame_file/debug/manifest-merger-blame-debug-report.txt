@@ -1,8 +1,8 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.PDA.gmax"
-4    android:versionCode="11"
-5    android:versionName="1.2.1" >
+4    android:versionCode="12"
+5    android:versionName="1.2.2" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="23"
@@ -11,841 +11,840 @@
 9-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml
 10    <!-- WebService 사용시 추가 할 코드 -->
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:6:5-67
-11-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:6:22-64
+11-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:5:5-67
+11-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:7:5-79
-12-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:7:22-76
+12-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:6:5-79
+12-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:6:22-76
 13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-13-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:8:5-76
-13-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:8:22-73
+13-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:7:5-76
+13-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:7:22-73
 14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-14-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:9:5-81
-14-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:9:22-78
+14-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:8:5-81
+14-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:8:22-78
 15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-15-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:10:5-80
-15-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:10:22-77
+15-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:9:5-80
+15-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:9:22-77
 16    <uses-permission android:name="android.permission.CAMERA" />
-16-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:11:5-65
-16-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:11:22-62
+16-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:10:5-65
+16-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:10:22-62
 17    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-17-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:12:5-83
-17-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:12:22-80
+17-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:11:5-83
+17-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:11:22-80
 18
 19    <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
 20    <uses-feature
-20-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:25:5-27:36
+20-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:25:5-27:36
 21        android:name="android.hardware.camera"
-21-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:26:9-47
+21-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:26:9-47
 22        android:required="false" />
-22-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:27:9-33
+22-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:27:9-33
 23    <uses-feature
-23-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:28:5-30:36
+23-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:28:5-30:36
 24        android:name="android.hardware.camera.front"
-24-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:29:9-53
+24-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:29:9-53
 25        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
-25-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:30:9-33
+25-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:30:9-33
 26    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
 27    <uses-feature
-27-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:33:5-35:36
+27-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:33:5-35:36
 28        android:name="android.hardware.camera.autofocus"
-28-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:34:9-57
+28-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:34:9-57
 29        android:required="false" />
-29-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:35:9-33
+29-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:35:9-33
 30    <uses-feature
-30-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:36:5-38:36
+30-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:36:5-38:36
 31        android:name="android.hardware.camera.flash"
-31-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:37:9-53
+31-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:37:9-53
 32        android:required="false" />
-32-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:38:9-33
+32-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:38:9-33
 33    <uses-feature
-33-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:39:5-41:36
+33-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:39:5-41:36
 34        android:name="android.hardware.screen.landscape"
-34-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:40:9-57
+34-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:40:9-57
 35        android:required="false" />
-35-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:41:9-33
+35-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:41:9-33
 36    <uses-feature
-36-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:42:5-44:36
+36-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:42:5-44:36
 37        android:name="android.hardware.wifi"
-37-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:43:9-45
+37-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:43:9-45
 38        android:required="false" />
-38-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:44:9-33
+38-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:44:9-33
 39
 40    <application
-40-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:14:5-395:19
+40-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:13:5-394:19
 41        android:name="com.PDA.gmax.MySession"
-41-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:15:9-46
+41-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:14:9-46
 42        android:allowBackup="true"
-42-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:16:9-35
+42-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:15:9-35
 43        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-43-->[androidx.core:core:1.5.0] C:\Users\User\.gradle\caches\transforms-3\d7944380c443ba4df2b5f0d083e74a73\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
+43-->[androidx.core:core:1.5.0] C:\Users\User\.gradle\caches\transforms-3\ce0ba8289a4a09d3a4e8f9cafa714d0f\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
 44        android:debuggable="true"
 45        android:extractNativeLibs="false"
 46        android:icon="@mipmap/ic_launcher"
-46-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:17:9-43
+46-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:16:9-43
 47        android:label="@string/app_name"
-47-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:18:9-41
+47-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:17:9-41
 48        android:roundIcon="@mipmap/ic_launcher_round"
-48-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:19:9-54
+48-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:18:9-54
 49        android:screenOrientation="portrait"
-49-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:20:9-45
+49-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:19:9-45
 50        android:supportsRtl="true"
-50-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:21:9-35
-51        android:testOnly="true"
-52        android:theme="@style/AppGJTheme"
-52-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:22:9-42
-53        android:usesCleartextTraffic="true" >
-53-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:23:9-44
-54        <activity
-54-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:24:9-33:20
-55            android:name="com.PDA.gmax.dialog_Loading"
-55-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:25:13-55
-56            android:exported="false"
-56-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:26:13-37
-57            android:label="@string/title_activity_loading"
-57-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:27:13-59
-58            android:theme="@style/AppGJTheme.NoActionBar" >
-58-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:28:13-58
-59            <meta-data
-59-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:30:13-32:36
-60                android:name="android.app.lib_name"
-60-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:31:17-52
-61                android:value="" />
-61-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:32:17-33
-62        </activity>
-63
-64        <provider
-65            android:name="androidx.core.content.FileProvider"
-65-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:36:13-62
-66            android:authorities="com.PDA.gmax.fileprovider"
-66-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:37:13-64
-67            android:exported="false"
-67-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:38:13-37
-68            android:grantUriPermissions="true" >
-68-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:39:13-47
-69            <meta-data
-69-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:40:13-42:63
-70                android:name="android.support.FILE_PROVIDER_PATHS"
-70-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:41:17-67
-71                android:resource="@xml/file_provider_paths" />
-71-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:42:17-60
-72        </provider>
-73
-74        <activity
-74-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:45:9-53:20
-75            android:name="com.PDA.gmax.SplashActivity"
-75-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:46:13-55
-76            android:exported="true"
-76-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:48:13-36
-77            android:screenOrientation="portrait" >
-77-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:47:13-49
-78            <intent-filter>
-78-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:49:13-52:29
-79                <action android:name="android.intent.action.MAIN" />
-79-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:50:17-68
-79-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:50:25-66
-80
-81                <category android:name="android.intent.category.LAUNCHER" />
-81-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:51:17-77
-81-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:51:27-74
-82            </intent-filter>
-83        </activity>
-84        <activity
-84-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:54:9-57:52
-85            android:name="com.PDA.gmax.ConfigActivity"
-85-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:55:13-55
-86            android:exported="false"
-86-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:56:13-37
-87            android:screenOrientation="portrait" />
-87-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:57:13-49
-88        <activity
-88-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:58:9-61:52
-89            android:name="com.PDA.gmax.MainActivity"
-89-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:59:13-53
-90            android:exported="true"
-90-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:60:13-36
-91            android:screenOrientation="portrait" />
-91-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:61:13-49
-92        <activity
-92-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:62:9-65:52
-93            android:name="com.PDA.gmax.RegisterActivity"
-93-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:63:13-57
-94            android:exported="false"
-94-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:64:13-37
-95            android:screenOrientation="portrait" />
-95-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:65:13-49
-96        <activity
-96-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:66:9-69:52
-97            android:name="com.PDA.gmax.ErrorPopupActivity"
-97-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:67:13-59
-98            android:exported="false"
-98-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:68:13-37
-99            android:screenOrientation="portrait" />
-99-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:69:13-49
-100        <activity
-100-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:70:9-72:59
-101            android:name="com.PDA.gmax.ErrorPopupActivity2"
-101-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:71:13-60
-102            android:theme="@android:style/Theme.Dialog" />
-102-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:72:13-56
-103        <activity
-103-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:73:9-76:52
-104            android:name="com.PDA.gmax.MenuActivity"
-104-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:74:13-53
-105            android:exported="false"
-105-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:75:13-37
-106            android:screenOrientation="portrait" />
-106-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:76:13-49
-107        <activity
-107-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:77:9-80:52
-108            android:name="com.PDA.gmax.M10.M10_Activity"
-108-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:78:13-57
-109            android:exported="false"
-109-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:79:13-37
-110            android:screenOrientation="portrait" />
-110-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:80:13-49
-111        <activity
-111-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:81:9-84:52
-112            android:name="com.PDA.gmax.M10.M11_HDR_Activity"
-112-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:82:13-61
-113            android:exported="false"
-113-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:83:13-37
-114            android:screenOrientation="portrait" />
-114-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:84:13-49
-115        <activity
-115-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:85:9-88:52
-116            android:name="com.PDA.gmax.M10.M11_DTL_Activity"
-116-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:86:13-61
-117            android:exported="false"
-117-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:87:13-37
-118            android:screenOrientation="portrait" />
-118-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:88:13-49
-119        <activity
-119-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:89:9-92:52
-120            android:name="com.PDA.gmax.M10.M12_QUERY_Activity"
-120-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:90:13-63
-121            android:exported="false"
-121-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:91:13-37
-122            android:screenOrientation="portrait" />
-122-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:92:13-49
-123        <activity
-123-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:93:9-97:63
-124            android:name="com.PDA.gmax.M10.M13_DTL_Activity"
-124-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:94:13-61
-125            android:exported="false"
-125-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:95:13-37
-126            android:screenOrientation="portrait"
-126-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:96:13-49
-127            android:windowSoftInputMode="stateAlwaysHidden" /> <!-- 자동으로 키보드 올라오는것 방지(windowSoftInputMode) -->
-127-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:97:13-60
-128        <activity
-128-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:98:9-102:63
-129            android:name="com.PDA.gmax.M10.M13_LOT_Activity"
-129-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:99:13-61
-130            android:exported="false"
-130-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:100:13-37
-131            android:screenOrientation="portrait"
-131-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:101:13-49
-132            android:windowSoftInputMode="stateAlwaysHidden" /> <!-- 자동으로 키보드 올라오는것 방지(windowSoftInputMode) -->
-132-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:102:13-60
-133        <activity
-133-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:103:9-106:52
-134            android:name="com.PDA.gmax.M10.M14_QUERY_Activity"
-134-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:104:13-63
-135            android:exported="false"
-135-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:105:13-37
-136            android:screenOrientation="portrait" />
-136-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:106:13-49
-137        <activity
-137-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:107:9-110:52
-138            android:name="com.PDA.gmax.I70.M20.M20_Activity"
-138-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:108:13-61
-139            android:exported="false"
-139-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:109:13-37
-140            android:screenOrientation="portrait" />
-140-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:110:13-49
-141        <activity
-141-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:111:9-114:52
-142            android:name="com.PDA.gmax.I70.M20.M21_HDR_Activity"
-142-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:112:13-65
-143            android:exported="false"
-143-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:113:13-37
-144            android:screenOrientation="portrait" />
-144-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:114:13-49
-145        <activity
-145-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:115:9-118:52
-146            android:name="com.PDA.gmax.I70.M20.M21_DTL_Activity"
-146-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:116:13-65
-147            android:exported="false"
-147-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:117:13-37
-148            android:screenOrientation="portrait" />
-148-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:118:13-49
-149        <activity
-149-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:119:9-122:52
-150            android:name="com.PDA.gmax.I70.M20.M22_QUERY_Activity"
-150-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:120:13-67
-151            android:exported="false"
-151-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:121:13-37
-152            android:screenOrientation="portrait" />
-152-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:122:13-49
-153        <activity
-153-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:123:9-126:52
-154            android:name="com.PDA.gmax.M40.M40_Activity"
-154-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:124:13-57
-155            android:exported="false"
-155-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:125:13-37
-156            android:screenOrientation="portrait" />
-156-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:126:13-49
-157        <activity
-157-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:127:9-131:55
-158            android:name="com.PDA.gmax.M40.M41_DTL_Activity"
-158-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:128:13-61
-159            android:exported="false"
-159-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:129:13-37
-160            android:screenOrientation="portrait"
-160-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:130:13-49
-161            android:windowSoftInputMode="adjustPan" />
-161-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:131:13-52
-162        <activity
-162-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:132:9-136:55
-163            android:name="com.PDA.gmax.M40.M41_QUERY_Activity"
-163-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:133:13-63
-164            android:exported="false"
-164-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:134:13-37
-165            android:screenOrientation="portrait"
-165-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:135:13-49
-166            android:windowSoftInputMode="adjustPan" />
-166-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:136:13-52
-167        <activity
-167-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:137:9-141:63
-168            android:name="com.PDA.gmax.M40.M42_DTL_Activity"
-168-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:138:13-61
-169            android:exported="false"
-169-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:139:13-37
-170            android:screenOrientation="portrait"
-170-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:140:13-49
-171            android:windowSoftInputMode="stateAlwaysHidden" />
-171-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:141:13-60
-172        <activity
-172-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:142:9-145:52
-173            android:name="com.PDA.gmax.M40.M43_QUERY_Activity"
-173-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:143:13-63
-174            android:exported="false"
-174-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:144:13-37
-175            android:screenOrientation="portrait" />
-175-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:145:13-49
-176        <activity
-176-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:146:9-150:63
-177            android:name="com.PDA.gmax.M40.M43_DTL_Activity"
-177-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:147:13-61
-178            android:exported="false"
-178-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:148:13-37
-179            android:screenOrientation="portrait"
-179-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:149:13-49
-180            android:windowSoftInputMode="stateAlwaysHidden" />
-180-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:150:13-60
-181        <activity
-181-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:151:9-155:63
-182            android:name="com.PDA.gmax.M40.M44_DTL_Activity"
-182-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:152:13-61
-183            android:exported="false"
-183-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:153:13-37
-184            android:screenOrientation="portrait"
-184-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:154:13-49
-185            android:windowSoftInputMode="stateAlwaysHidden" />
-185-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:155:13-60
-186        <activity
-186-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:156:9-159:52
-187            android:name="com.PDA.gmax.I10.I10_Activity"
-187-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:157:13-57
-188            android:exported="false"
-188-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:158:13-37
-189            android:screenOrientation="portrait" />
-189-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:159:13-49
-190        <activity
-190-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:160:9-163:52
-191            android:name="com.PDA.gmax.I10.I11_HDR_Activity"
-191-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:161:13-61
-192            android:exported="false"
-192-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:162:13-37
-193            android:screenOrientation="portrait" />
-193-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:163:13-49
-194        <activity
-194-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:164:9-167:52
-195            android:name="com.PDA.gmax.I10.I11_DTL_Activity"
-195-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:165:13-61
-196            android:exported="false"
-196-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:166:13-37
-197            android:screenOrientation="portrait" />
-197-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:167:13-49
-198        <activity
-198-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:168:9-171:52
-199            android:name="com.PDA.gmax.I10.I13_QUERY_Activity"
-199-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:169:13-63
-200            android:exported="false"
-200-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:170:13-37
-201            android:screenOrientation="portrait" />
-201-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:171:13-49
-202        <activity
-202-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:172:9-175:52
-203            android:name="com.PDA.gmax.I20.I20_Activity"
-203-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:173:13-57
-204            android:exported="false"
-204-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:174:13-37
-205            android:screenOrientation="portrait" />
-205-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:175:13-49
-206        <activity
-206-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:176:9-179:52
-207            android:name="com.PDA.gmax.I20.I21_HDR_Activity"
-207-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:177:13-61
-208            android:exported="false"
-208-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:178:13-37
-209            android:screenOrientation="portrait" />
-209-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:179:13-49
-210        <activity
-210-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:180:9-183:52
-211            android:name="com.PDA.gmax.I20.I21_DTL_Activity"
-211-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:181:13-61
-212            android:exported="false"
-212-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:182:13-37
-213            android:screenOrientation="portrait" />
-213-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:183:13-49
-214        <activity
-214-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:184:9-187:52
-215            android:name="com.PDA.gmax.I20.I22_HDR_Activity"
-215-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:185:13-61
-216            android:exported="false"
-216-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:186:13-37
-217            android:screenOrientation="portrait" />
-217-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:187:13-49
-218        <activity
-218-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:188:9-191:52
-219            android:name="com.PDA.gmax.I20.I22_DTL_Activity"
-219-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:189:13-61
-220            android:exported="false"
-220-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:190:13-37
-221            android:screenOrientation="portrait" />
-221-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:191:13-49
-222        <activity
-222-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:192:9-195:52
-223            android:name="com.PDA.gmax.I20.I25_QUERY_Activity"
-223-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:193:13-63
-224            android:exported="false"
-224-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:194:13-37
-225            android:screenOrientation="portrait" />
-225-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:195:13-49
-226        <activity
-226-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:196:9-199:52
-227            android:name="com.PDA.gmax.I20.I26_HDR_Activity"
-227-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:197:13-61
-228            android:exported="false"
-228-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:198:13-37
-229            android:screenOrientation="portrait" />
-229-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:199:13-49
-230        <activity
-230-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:200:9-203:52
-231            android:name="com.PDA.gmax.I20.I27_HDR_Activity"
-231-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:201:13-61
-232            android:exported="false"
-232-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:202:13-37
-233            android:screenOrientation="portrait" />
-233-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:203:13-49
-234        <activity
-234-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:204:9-207:52
-235            android:name="com.PDA.gmax.I20.I27_DTL_Activity"
-235-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:205:13-61
-236            android:exported="false"
-236-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:206:13-37
-237            android:screenOrientation="portrait" />
-237-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:207:13-49
-238        <activity
-238-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:208:9-211:52
-239            android:name="com.PDA.gmax.I30.I30_Activity"
-239-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:209:13-57
-240            android:exported="false"
-240-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:210:13-37
-241            android:screenOrientation="portrait" />
-241-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:211:13-49
-242        <activity
-242-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:212:9-215:52
-243            android:name="com.PDA.gmax.I30.I31_HDR_Activity"
-243-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:213:13-61
-244            android:exported="false"
-244-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:214:13-37
-245            android:screenOrientation="portrait" />
-245-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:215:13-49
-246        <activity
-246-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:216:9-219:52
-247            android:name="com.PDA.gmax.I30.I31_DTL_Activity"
-247-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:217:13-61
-248            android:exported="false"
-248-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:218:13-37
-249            android:screenOrientation="portrait" />
-249-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:219:13-49
-250        <activity
-250-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:220:9-223:52
-251            android:name="com.PDA.gmax.I30.I34_QUERY_Activity"
-251-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:221:13-63
-252            android:exported="false"
-252-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:222:13-37
-253            android:screenOrientation="portrait" />
-253-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:223:13-49
-254        <activity
-254-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:224:9-227:52
-255            android:name="com.PDA.gmax.I30.I35_HDR_Activity"
-255-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:225:13-61
-256            android:exported="false"
-256-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:226:13-37
-257            android:screenOrientation="portrait" />
-257-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:227:13-49
-258        <activity
-258-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:228:9-231:52
-259            android:name="com.PDA.gmax.I30.I35_DTL_Activity"
-259-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:229:13-61
-260            android:exported="false"
-260-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:230:13-37
-261            android:screenOrientation="portrait" />
-261-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:231:13-49
-262        <activity
-262-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:232:9-235:52
-263            android:name="com.PDA.gmax.I30.I36_QUERY_Activity"
-263-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:233:13-63
-264            android:exported="false"
-264-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:234:13-37
-265            android:screenOrientation="portrait" />
-265-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:235:13-49
-266        <activity
-266-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:236:9-239:52
-267            android:name="com.PDA.gmax.I30.I37_HDR_Activity"
-267-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:237:13-61
-268            android:exported="false"
-268-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:238:13-37
-269            android:screenOrientation="portrait" />
-269-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:239:13-49
-270        <activity
-270-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:240:9-243:52
-271            android:name="com.PDA.gmax.I30.I37_DTL_Activity"
-271-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:241:13-61
-272            android:exported="false"
-272-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:242:13-37
-273            android:screenOrientation="portrait" />
-273-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:243:13-49
-274        <activity
-274-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:244:9-247:52
-275            android:name="com.PDA.gmax.I30.I38_HDR_Activity"
-275-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:245:13-61
-276            android:exported="false"
-276-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:246:13-37
-277            android:screenOrientation="portrait" />
-277-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:247:13-49
-278        <activity
-278-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:248:9-251:52
-279            android:name="com.PDA.gmax.I30.I38_DTL_Activity"
-279-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:249:13-61
-280            android:exported="false"
-280-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:250:13-37
-281            android:screenOrientation="portrait" />
-281-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:251:13-49
-282        <activity
-282-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:252:9-255:52
-283            android:name="com.PDA.gmax.I40.I40_Activity"
-283-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:253:13-57
-284            android:exported="false"
-284-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:254:13-37
-285            android:screenOrientation="portrait" />
-285-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:255:13-49
-286        <activity
-286-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:256:9-259:52
-287            android:name="com.PDA.gmax.I50.I50_Activity"
-287-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:257:13-57
-288            android:exported="false"
-288-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:258:13-37
-289            android:screenOrientation="portrait" />
-289-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:259:13-49
-290        <activity
-290-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:260:9-263:52
-291            android:name="com.PDA.gmax.I60.I60_Activity"
-291-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:261:13-57
-292            android:exported="false"
-292-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:262:13-37
-293            android:screenOrientation="portrait" />
-293-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:263:13-49
-294        <activity
-294-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:264:9-267:52
-295            android:name="com.PDA.gmax.I60.I62_HDR_Activity"
-295-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:265:13-61
-296            android:exported="false"
-296-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:266:13-37
-297            android:screenOrientation="portrait" />
-297-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:267:13-49
-298        <activity
-298-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:268:9-271:52
-299            android:name="com.PDA.gmax.S10.S10_Activity"
-299-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:269:13-57
-300            android:exported="false"
-300-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:270:13-37
-301            android:screenOrientation="portrait" />
-301-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:271:13-49
-302        <activity
-302-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:272:9-275:52
-303            android:name="com.PDA.gmax.S10.S11_QUERY_Activity"
-303-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:273:13-63
-304            android:exported="false"
-304-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:274:13-37
-305            android:screenOrientation="portrait" />
-305-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:275:13-49
-306        <activity
-306-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:276:9-279:52
-307            android:name="com.PDA.gmax.S10.S11_DTL_Activity"
-307-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:277:13-61
-308            android:exported="false"
-308-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:278:13-37
-309            android:screenOrientation="portrait" />
-309-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:279:13-49
-310        <activity
-310-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:280:9-283:52
-311            android:name="com.PDA.gmax.S10.S12_HDR_Activity"
-311-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:281:13-61
-312            android:exported="false"
-312-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:282:13-37
-313            android:screenOrientation="portrait" />
-313-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:283:13-49
-314        <activity
-314-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:284:9-287:52
-315            android:name="com.PDA.gmax.S10.S12_DTL_Activity"
-315-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:285:13-61
-316            android:exported="false"
-316-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:286:13-37
-317            android:screenOrientation="portrait" />
-317-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:287:13-49
-318        <activity
-318-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:288:9-292:63
-319            android:name="com.PDA.gmax.S10.S12_PKG_Activity"
-319-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:289:13-61
-320            android:exported="false"
-320-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:290:13-37
-321            android:screenOrientation="portrait"
-321-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:291:13-49
-322            android:windowSoftInputMode="stateAlwaysHidden" /> <!-- 자동으로 키보드 올라오는것 방지(windowSoftInputMode) -->
-322-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:292:13-60
-323        <activity
-323-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:293:9-296:52
-324            android:name="com.PDA.gmax.S10.S12_LOT_Activity"
-324-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:294:13-61
-325            android:exported="false"
-325-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:295:13-37
-326            android:screenOrientation="portrait" />
-326-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:296:13-49
-327        <activity
-327-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:297:9-301:63
-328            android:name="com.PDA.gmax.S10.S12_CUSTOM_Activity"
-328-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:298:13-64
-329            android:exported="false"
-329-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:299:13-37
-330            android:screenOrientation="portrait"
-330-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:300:13-49
-331            android:windowSoftInputMode="stateAlwaysHidden" /> <!-- 자동으로 키보드 올라오는것 방지(windowSoftInputMode) -->
-331-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:301:13-60
-332        <activity
-332-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:302:9-305:52
-333            android:name="com.PDA.gmax.S10.S13_QUERY_Activity"
-333-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:303:13-63
-334            android:exported="false"
-334-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:304:13-37
-335            android:screenOrientation="portrait" />
-335-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:305:13-49
-336        <activity
-336-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:306:9-309:52
-337            android:name="com.PDA.gmax.S10.S14_HDR_Activity"
-337-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:307:13-61
-338            android:exported="false"
-338-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:308:13-37
-339            android:screenOrientation="portrait" />
-339-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:309:13-49
-340        <activity
-340-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:310:9-313:52
-341            android:name="com.PDA.gmax.S10.S14_DTL_Activity"
-341-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:311:13-61
-342            android:exported="false"
-342-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:312:13-37
-343            android:screenOrientation="portrait" />
-343-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:313:13-49
-344        <activity
-344-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:314:9-317:52
-345            android:name="com.PDA.gmax.S10.S15_QUERY_Activity"
-345-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:315:13-63
-346            android:exported="false"
-346-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:316:13-37
-347            android:screenOrientation="portrait" />
-347-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:317:13-49
-348        <activity
-348-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:318:9-321:52
-349            android:name="com.PDA.gmax.S10.S16_HDR_Activity"
-349-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:319:13-61
-350            android:exported="false"
-350-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:320:13-37
-351            android:screenOrientation="portrait" />
-351-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:321:13-49
-352        <activity
-352-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:322:9-325:52
-353            android:name="com.PDA.gmax.S10.S16_DTL_Activity"
-353-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:323:13-61
-354            android:exported="false"
-354-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:324:13-37
-355            android:screenOrientation="portrait" />
-355-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:325:13-49
-356        <activity
-356-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:326:9-329:52
-357            android:name="com.PDA.gmax.S10.S17_HDR_Activity"
-357-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:327:13-61
-358            android:exported="false"
-358-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:328:13-37
-359            android:screenOrientation="portrait" />
-359-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:329:13-49
-360        <activity
-360-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:330:9-333:52
-361            android:name="com.PDA.gmax.I70.I70_Activity"
-361-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:331:13-57
-362            android:exported="false"
-362-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:332:13-37
-363            android:screenOrientation="portrait" />
-363-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:333:13-49
-364        <activity
-364-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:334:9-337:52
-365            android:name="com.PDA.gmax.I70.I71_Activity"
-365-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:335:13-57
-366            android:exported="false"
-366-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:336:13-37
-367            android:screenOrientation="portrait" />
-367-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:337:13-49
-368        <activity
-368-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:338:9-341:52
-369            android:name="com.PDA.gmax.I70.I72_Activity"
-369-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:339:13-57
-370            android:exported="false"
-370-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:340:13-37
-371            android:screenOrientation="portrait" />
-371-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:341:13-49
-372        <activity
-372-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:342:9-345:52
-373            android:name="com.PDA.gmax.I70.I73_Activity"
-373-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:343:13-57
-374            android:exported="false"
-374-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:344:13-37
-375            android:screenOrientation="portrait" />
-375-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:345:13-49
-376        <activity
-376-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:346:9-349:52
-377            android:name="com.PDA.gmax.I70.I74_Activity"
-377-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:347:13-57
-378            android:exported="false"
-378-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:348:13-37
-379            android:screenOrientation="portrait" />
-379-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:349:13-49
-380        <activity
-380-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:350:9-353:52
-381            android:name="com.PDA.gmax.I70.I75_Activity"
-381-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:351:13-57
-382            android:exported="false"
-382-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:352:13-37
-383            android:screenOrientation="portrait" />
-383-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:353:13-49
-384        <activity
-384-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:354:9-357:52
-385            android:name="com.PDA.gmax.I70.I76_Activity"
-385-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:355:13-57
-386            android:exported="false"
-386-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:356:13-37
-387            android:screenOrientation="portrait" />
-387-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:357:13-49
-388        <activity
-388-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:358:9-361:52
-389            android:name="com.PDA.gmax.I70.I77_Activity"
-389-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:359:13-57
-390            android:exported="false"
-390-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:360:13-37
-391            android:screenOrientation="portrait" />
-391-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:361:13-49
-392        <activity
-392-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:362:9-365:52
-393            android:name="com.PDA.gmax.I70.I78_Activity"
-393-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:363:13-57
-394            android:exported="false"
-394-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:364:13-37
-395            android:screenOrientation="portrait" />
-395-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:365:13-49
-396        <activity
-396-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:366:9-369:52
-397            android:name="com.PDA.gmax.I70.I79_Activity"
-397-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:367:13-57
-398            android:exported="false"
-398-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:368:13-37
-399            android:screenOrientation="portrait" />
-399-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:369:13-49
-400        <activity
-400-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:370:9-373:52
-401            android:name="com.PDA.gmax.P10.P10_Activity"
-401-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:371:13-57
-402            android:exported="false"
-402-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:372:13-37
-403            android:screenOrientation="portrait" />
-403-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:373:13-49
-404        <activity
-404-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:374:9-377:52
-405            android:name="com.PDA.gmax.P10.P14_QUERY_Activity"
-405-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:375:13-63
-406            android:exported="false"
-406-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:376:13-37
-407            android:screenOrientation="portrait" />
-407-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:377:13-49
-408        <activity
-408-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:378:9-381:52
-409            android:name="com.PDA.gmax.P10.P14_SAVE_Activity"
-409-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:379:13-62
-410            android:exported="false"
-410-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:380:13-37
-411            android:screenOrientation="portrait" />
-411-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:381:13-49
-412        <activity
-412-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:382:9-385:52
-413            android:name="com.PDA.gmax.M30.M30_Activity"
-413-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:383:13-57
-414            android:exported="false"
-414-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:384:13-37
-415            android:screenOrientation="portrait" />
-415-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:385:13-49
-416        <activity
-416-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:386:9-389:52
-417            android:name="com.PDA.gmax.M30.M31_HDR_Activity"
-417-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:387:13-61
-418            android:exported="false"
-418-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:388:13-37
-419            android:screenOrientation="portrait" />
-419-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:389:13-49
-420        <activity
-420-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:390:9-394:63
-421            android:name="com.PDA.gmax.S10.S12_LOT_SEARCH_Activity"
-421-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:391:13-68
-422            android:exported="false"
-422-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:392:13-37
-423            android:screenOrientation="portrait"
-423-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:393:13-49
-424            android:windowSoftInputMode="stateAlwaysHidden" /> <!-- 자동으로 키보드 올라오는것 방지(windowSoftInputMode) -->
-424-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:394:13-60
-425        <activity
-425-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:47:9-53:63
-426            android:name="com.journeyapps.barcodescanner.CaptureActivity"
-426-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:48:13-74
-427            android:clearTaskOnLaunch="true"
-427-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:49:13-45
-428            android:screenOrientation="sensorLandscape"
-428-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:50:13-56
-429            android:stateNotNeeded="true"
-429-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:51:13-42
-430            android:theme="@style/zxing_CaptureTheme"
-430-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:52:13-54
-431            android:windowSoftInputMode="stateAlwaysHidden" />
-431-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\a1ef7c76a8d0224b49c3e7e827a08ab0\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:53:13-60
-432    </application>
-433
-434</manifest>
+50-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:20:9-35
+51        android:theme="@style/AppGJTheme"
+51-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:21:9-42
+52        android:usesCleartextTraffic="true" >
+52-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:22:9-44
+53        <activity
+53-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:23:9-32:20
+54            android:name="com.PDA.gmax.dialog_Loading"
+54-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:24:13-55
+55            android:exported="false"
+55-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:25:13-37
+56            android:label="@string/title_activity_loading"
+56-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:26:13-59
+57            android:theme="@style/AppGJTheme.NoActionBar" >
+57-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:27:13-58
+58            <meta-data
+58-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:29:13-31:36
+59                android:name="android.app.lib_name"
+59-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:30:17-52
+60                android:value="" />
+60-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:31:17-33
+61        </activity>
+62
+63        <provider
+64            android:name="androidx.core.content.FileProvider"
+64-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:35:13-62
+65            android:authorities="com.PDA.gmax.fileprovider"
+65-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:36:13-64
+66            android:exported="false"
+66-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:37:13-37
+67            android:grantUriPermissions="true" >
+67-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:38:13-47
+68            <meta-data
+68-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:39:13-41:63
+69                android:name="android.support.FILE_PROVIDER_PATHS"
+69-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:40:17-67
+70                android:resource="@xml/file_provider_paths" />
+70-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:41:17-60
+71        </provider>
+72
+73        <activity
+73-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:44:9-52:20
+74            android:name="com.PDA.gmax.SplashActivity"
+74-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:45:13-55
+75            android:exported="true"
+75-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:47:13-36
+76            android:screenOrientation="portrait" >
+76-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:46:13-49
+77            <intent-filter>
+77-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:48:13-51:29
+78                <action android:name="android.intent.action.MAIN" />
+78-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:49:17-68
+78-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:49:25-66
+79
+80                <category android:name="android.intent.category.LAUNCHER" />
+80-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:50:17-77
+80-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:50:27-74
+81            </intent-filter>
+82        </activity>
+83        <activity
+83-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:53:9-56:52
+84            android:name="com.PDA.gmax.ConfigActivity"
+84-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:54:13-55
+85            android:exported="false"
+85-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:55:13-37
+86            android:screenOrientation="portrait" />
+86-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:56:13-49
+87        <activity
+87-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:57:9-60:52
+88            android:name="com.PDA.gmax.MainActivity"
+88-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:58:13-53
+89            android:exported="true"
+89-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:59:13-36
+90            android:screenOrientation="portrait" />
+90-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:60:13-49
+91        <activity
+91-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:61:9-64:52
+92            android:name="com.PDA.gmax.RegisterActivity"
+92-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:62:13-57
+93            android:exported="false"
+93-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:63:13-37
+94            android:screenOrientation="portrait" />
+94-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:64:13-49
+95        <activity
+95-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:65:9-68:52
+96            android:name="com.PDA.gmax.ErrorPopupActivity"
+96-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:66:13-59
+97            android:exported="false"
+97-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:67:13-37
+98            android:screenOrientation="portrait" />
+98-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:68:13-49
+99        <activity
+99-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:69:9-71:59
+100            android:name="com.PDA.gmax.ErrorPopupActivity2"
+100-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:70:13-60
+101            android:theme="@android:style/Theme.Dialog" />
+101-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:71:13-56
+102        <activity
+102-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:72:9-75:52
+103            android:name="com.PDA.gmax.MenuActivity"
+103-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:73:13-53
+104            android:exported="false"
+104-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:74:13-37
+105            android:screenOrientation="portrait" />
+105-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:75:13-49
+106        <activity
+106-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:76:9-79:52
+107            android:name="com.PDA.gmax.M10.M10_Activity"
+107-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:77:13-57
+108            android:exported="false"
+108-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:78:13-37
+109            android:screenOrientation="portrait" />
+109-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:79:13-49
+110        <activity
+110-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:80:9-83:52
+111            android:name="com.PDA.gmax.M10.M11_HDR_Activity"
+111-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:81:13-61
+112            android:exported="false"
+112-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:82:13-37
+113            android:screenOrientation="portrait" />
+113-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:83:13-49
+114        <activity
+114-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:84:9-87:52
+115            android:name="com.PDA.gmax.M10.M11_DTL_Activity"
+115-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:85:13-61
+116            android:exported="false"
+116-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:86:13-37
+117            android:screenOrientation="portrait" />
+117-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:87:13-49
+118        <activity
+118-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:88:9-91:52
+119            android:name="com.PDA.gmax.M10.M12_QUERY_Activity"
+119-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:89:13-63
+120            android:exported="false"
+120-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:90:13-37
+121            android:screenOrientation="portrait" />
+121-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:91:13-49
+122        <activity
+122-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:92:9-96:63
+123            android:name="com.PDA.gmax.M10.M13_DTL_Activity"
+123-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:93:13-61
+124            android:exported="false"
+124-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:94:13-37
+125            android:screenOrientation="portrait"
+125-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:95:13-49
+126            android:windowSoftInputMode="stateAlwaysHidden" /> <!-- 자동으로 키보드 올라오는것 방지(windowSoftInputMode) -->
+126-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:96:13-60
+127        <activity
+127-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:97:9-101:63
+128            android:name="com.PDA.gmax.M10.M13_LOT_Activity"
+128-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:98:13-61
+129            android:exported="false"
+129-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:99:13-37
+130            android:screenOrientation="portrait"
+130-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:100:13-49
+131            android:windowSoftInputMode="stateAlwaysHidden" /> <!-- 자동으로 키보드 올라오는것 방지(windowSoftInputMode) -->
+131-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:101:13-60
+132        <activity
+132-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:102:9-105:52
+133            android:name="com.PDA.gmax.M10.M14_QUERY_Activity"
+133-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:103:13-63
+134            android:exported="false"
+134-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:104:13-37
+135            android:screenOrientation="portrait" />
+135-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:105:13-49
+136        <activity
+136-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:106:9-109:52
+137            android:name="com.PDA.gmax.I70.M20.M20_Activity"
+137-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:107:13-61
+138            android:exported="false"
+138-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:108:13-37
+139            android:screenOrientation="portrait" />
+139-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:109:13-49
+140        <activity
+140-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:110:9-113:52
+141            android:name="com.PDA.gmax.I70.M20.M21_HDR_Activity"
+141-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:111:13-65
+142            android:exported="false"
+142-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:112:13-37
+143            android:screenOrientation="portrait" />
+143-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:113:13-49
+144        <activity
+144-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:114:9-117:52
+145            android:name="com.PDA.gmax.I70.M20.M21_DTL_Activity"
+145-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:115:13-65
+146            android:exported="false"
+146-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:116:13-37
+147            android:screenOrientation="portrait" />
+147-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:117:13-49
+148        <activity
+148-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:118:9-121:52
+149            android:name="com.PDA.gmax.I70.M20.M22_QUERY_Activity"
+149-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:119:13-67
+150            android:exported="false"
+150-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:120:13-37
+151            android:screenOrientation="portrait" />
+151-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:121:13-49
+152        <activity
+152-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:122:9-125:52
+153            android:name="com.PDA.gmax.M40.M40_Activity"
+153-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:123:13-57
+154            android:exported="false"
+154-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:124:13-37
+155            android:screenOrientation="portrait" />
+155-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:125:13-49
+156        <activity
+156-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:126:9-130:55
+157            android:name="com.PDA.gmax.M40.M41_DTL_Activity"
+157-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:127:13-61
+158            android:exported="false"
+158-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:128:13-37
+159            android:screenOrientation="portrait"
+159-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:129:13-49
+160            android:windowSoftInputMode="adjustPan" />
+160-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:130:13-52
+161        <activity
+161-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:131:9-135:55
+162            android:name="com.PDA.gmax.M40.M41_QUERY_Activity"
+162-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:132:13-63
+163            android:exported="false"
+163-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:133:13-37
+164            android:screenOrientation="portrait"
+164-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:134:13-49
+165            android:windowSoftInputMode="adjustPan" />
+165-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:135:13-52
+166        <activity
+166-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:136:9-140:63
+167            android:name="com.PDA.gmax.M40.M42_DTL_Activity"
+167-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:137:13-61
+168            android:exported="false"
+168-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:138:13-37
+169            android:screenOrientation="portrait"
+169-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:139:13-49
+170            android:windowSoftInputMode="stateAlwaysHidden" />
+170-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:140:13-60
+171        <activity
+171-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:141:9-144:52
+172            android:name="com.PDA.gmax.M40.M43_QUERY_Activity"
+172-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:142:13-63
+173            android:exported="false"
+173-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:143:13-37
+174            android:screenOrientation="portrait" />
+174-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:144:13-49
+175        <activity
+175-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:145:9-149:63
+176            android:name="com.PDA.gmax.M40.M43_DTL_Activity"
+176-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:146:13-61
+177            android:exported="false"
+177-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:147:13-37
+178            android:screenOrientation="portrait"
+178-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:148:13-49
+179            android:windowSoftInputMode="stateAlwaysHidden" />
+179-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:149:13-60
+180        <activity
+180-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:150:9-154:63
+181            android:name="com.PDA.gmax.M40.M44_DTL_Activity"
+181-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:151:13-61
+182            android:exported="false"
+182-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:152:13-37
+183            android:screenOrientation="portrait"
+183-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:153:13-49
+184            android:windowSoftInputMode="stateAlwaysHidden" />
+184-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:154:13-60
+185        <activity
+185-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:155:9-158:52
+186            android:name="com.PDA.gmax.I10.I10_Activity"
+186-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:156:13-57
+187            android:exported="false"
+187-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:157:13-37
+188            android:screenOrientation="portrait" />
+188-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:158:13-49
+189        <activity
+189-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:159:9-162:52
+190            android:name="com.PDA.gmax.I10.I11_HDR_Activity"
+190-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:160:13-61
+191            android:exported="false"
+191-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:161:13-37
+192            android:screenOrientation="portrait" />
+192-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:162:13-49
+193        <activity
+193-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:163:9-166:52
+194            android:name="com.PDA.gmax.I10.I11_DTL_Activity"
+194-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:164:13-61
+195            android:exported="false"
+195-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:165:13-37
+196            android:screenOrientation="portrait" />
+196-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:166:13-49
+197        <activity
+197-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:167:9-170:52
+198            android:name="com.PDA.gmax.I10.I13_QUERY_Activity"
+198-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:168:13-63
+199            android:exported="false"
+199-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:169:13-37
+200            android:screenOrientation="portrait" />
+200-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:170:13-49
+201        <activity
+201-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:171:9-174:52
+202            android:name="com.PDA.gmax.I20.I20_Activity"
+202-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:172:13-57
+203            android:exported="false"
+203-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:173:13-37
+204            android:screenOrientation="portrait" />
+204-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:174:13-49
+205        <activity
+205-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:175:9-178:52
+206            android:name="com.PDA.gmax.I20.I21_HDR_Activity"
+206-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:176:13-61
+207            android:exported="false"
+207-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:177:13-37
+208            android:screenOrientation="portrait" />
+208-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:178:13-49
+209        <activity
+209-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:179:9-182:52
+210            android:name="com.PDA.gmax.I20.I21_DTL_Activity"
+210-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:180:13-61
+211            android:exported="false"
+211-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:181:13-37
+212            android:screenOrientation="portrait" />
+212-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:182:13-49
+213        <activity
+213-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:183:9-186:52
+214            android:name="com.PDA.gmax.I20.I22_HDR_Activity"
+214-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:184:13-61
+215            android:exported="false"
+215-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:185:13-37
+216            android:screenOrientation="portrait" />
+216-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:186:13-49
+217        <activity
+217-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:187:9-190:52
+218            android:name="com.PDA.gmax.I20.I22_DTL_Activity"
+218-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:188:13-61
+219            android:exported="false"
+219-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:189:13-37
+220            android:screenOrientation="portrait" />
+220-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:190:13-49
+221        <activity
+221-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:191:9-194:52
+222            android:name="com.PDA.gmax.I20.I25_QUERY_Activity"
+222-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:192:13-63
+223            android:exported="false"
+223-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:193:13-37
+224            android:screenOrientation="portrait" />
+224-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:194:13-49
+225        <activity
+225-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:195:9-198:52
+226            android:name="com.PDA.gmax.I20.I26_HDR_Activity"
+226-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:196:13-61
+227            android:exported="false"
+227-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:197:13-37
+228            android:screenOrientation="portrait" />
+228-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:198:13-49
+229        <activity
+229-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:199:9-202:52
+230            android:name="com.PDA.gmax.I20.I27_HDR_Activity"
+230-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:200:13-61
+231            android:exported="false"
+231-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:201:13-37
+232            android:screenOrientation="portrait" />
+232-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:202:13-49
+233        <activity
+233-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:203:9-206:52
+234            android:name="com.PDA.gmax.I20.I27_DTL_Activity"
+234-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:204:13-61
+235            android:exported="false"
+235-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:205:13-37
+236            android:screenOrientation="portrait" />
+236-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:206:13-49
+237        <activity
+237-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:207:9-210:52
+238            android:name="com.PDA.gmax.I30.I30_Activity"
+238-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:208:13-57
+239            android:exported="false"
+239-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:209:13-37
+240            android:screenOrientation="portrait" />
+240-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:210:13-49
+241        <activity
+241-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:211:9-214:52
+242            android:name="com.PDA.gmax.I30.I31_HDR_Activity"
+242-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:212:13-61
+243            android:exported="false"
+243-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:213:13-37
+244            android:screenOrientation="portrait" />
+244-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:214:13-49
+245        <activity
+245-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:215:9-218:52
+246            android:name="com.PDA.gmax.I30.I31_DTL_Activity"
+246-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:216:13-61
+247            android:exported="false"
+247-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:217:13-37
+248            android:screenOrientation="portrait" />
+248-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:218:13-49
+249        <activity
+249-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:219:9-222:52
+250            android:name="com.PDA.gmax.I30.I34_QUERY_Activity"
+250-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:220:13-63
+251            android:exported="false"
+251-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:221:13-37
+252            android:screenOrientation="portrait" />
+252-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:222:13-49
+253        <activity
+253-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:223:9-226:52
+254            android:name="com.PDA.gmax.I30.I35_HDR_Activity"
+254-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:224:13-61
+255            android:exported="false"
+255-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:225:13-37
+256            android:screenOrientation="portrait" />
+256-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:226:13-49
+257        <activity
+257-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:227:9-230:52
+258            android:name="com.PDA.gmax.I30.I35_DTL_Activity"
+258-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:228:13-61
+259            android:exported="false"
+259-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:229:13-37
+260            android:screenOrientation="portrait" />
+260-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:230:13-49
+261        <activity
+261-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:231:9-234:52
+262            android:name="com.PDA.gmax.I30.I36_QUERY_Activity"
+262-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:232:13-63
+263            android:exported="false"
+263-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:233:13-37
+264            android:screenOrientation="portrait" />
+264-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:234:13-49
+265        <activity
+265-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:235:9-238:52
+266            android:name="com.PDA.gmax.I30.I37_HDR_Activity"
+266-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:236:13-61
+267            android:exported="false"
+267-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:237:13-37
+268            android:screenOrientation="portrait" />
+268-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:238:13-49
+269        <activity
+269-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:239:9-242:52
+270            android:name="com.PDA.gmax.I30.I37_DTL_Activity"
+270-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:240:13-61
+271            android:exported="false"
+271-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:241:13-37
+272            android:screenOrientation="portrait" />
+272-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:242:13-49
+273        <activity
+273-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:243:9-246:52
+274            android:name="com.PDA.gmax.I30.I38_HDR_Activity"
+274-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:244:13-61
+275            android:exported="false"
+275-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:245:13-37
+276            android:screenOrientation="portrait" />
+276-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:246:13-49
+277        <activity
+277-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:247:9-250:52
+278            android:name="com.PDA.gmax.I30.I38_DTL_Activity"
+278-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:248:13-61
+279            android:exported="false"
+279-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:249:13-37
+280            android:screenOrientation="portrait" />
+280-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:250:13-49
+281        <activity
+281-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:251:9-254:52
+282            android:name="com.PDA.gmax.I40.I40_Activity"
+282-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:252:13-57
+283            android:exported="false"
+283-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:253:13-37
+284            android:screenOrientation="portrait" />
+284-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:254:13-49
+285        <activity
+285-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:255:9-258:52
+286            android:name="com.PDA.gmax.I50.I50_Activity"
+286-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:256:13-57
+287            android:exported="false"
+287-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:257:13-37
+288            android:screenOrientation="portrait" />
+288-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:258:13-49
+289        <activity
+289-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:259:9-262:52
+290            android:name="com.PDA.gmax.I60.I60_Activity"
+290-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:260:13-57
+291            android:exported="false"
+291-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:261:13-37
+292            android:screenOrientation="portrait" />
+292-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:262:13-49
+293        <activity
+293-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:263:9-266:52
+294            android:name="com.PDA.gmax.I60.I62_HDR_Activity"
+294-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:264:13-61
+295            android:exported="false"
+295-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:265:13-37
+296            android:screenOrientation="portrait" />
+296-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:266:13-49
+297        <activity
+297-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:267:9-270:52
+298            android:name="com.PDA.gmax.S10.S10_Activity"
+298-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:268:13-57
+299            android:exported="false"
+299-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:269:13-37
+300            android:screenOrientation="portrait" />
+300-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:270:13-49
+301        <activity
+301-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:271:9-274:52
+302            android:name="com.PDA.gmax.S10.S11_QUERY_Activity"
+302-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:272:13-63
+303            android:exported="false"
+303-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:273:13-37
+304            android:screenOrientation="portrait" />
+304-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:274:13-49
+305        <activity
+305-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:275:9-278:52
+306            android:name="com.PDA.gmax.S10.S11_DTL_Activity"
+306-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:276:13-61
+307            android:exported="false"
+307-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:277:13-37
+308            android:screenOrientation="portrait" />
+308-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:278:13-49
+309        <activity
+309-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:279:9-282:52
+310            android:name="com.PDA.gmax.S10.S12_HDR_Activity"
+310-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:280:13-61
+311            android:exported="false"
+311-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:281:13-37
+312            android:screenOrientation="portrait" />
+312-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:282:13-49
+313        <activity
+313-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:283:9-286:52
+314            android:name="com.PDA.gmax.S10.S12_DTL_Activity"
+314-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:284:13-61
+315            android:exported="false"
+315-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:285:13-37
+316            android:screenOrientation="portrait" />
+316-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:286:13-49
+317        <activity
+317-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:287:9-291:63
+318            android:name="com.PDA.gmax.S10.S12_PKG_Activity"
+318-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:288:13-61
+319            android:exported="false"
+319-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:289:13-37
+320            android:screenOrientation="portrait"
+320-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:290:13-49
+321            android:windowSoftInputMode="stateAlwaysHidden" /> <!-- 자동으로 키보드 올라오는것 방지(windowSoftInputMode) -->
+321-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:291:13-60
+322        <activity
+322-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:292:9-295:52
+323            android:name="com.PDA.gmax.S10.S12_LOT_Activity"
+323-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:293:13-61
+324            android:exported="false"
+324-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:294:13-37
+325            android:screenOrientation="portrait" />
+325-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:295:13-49
+326        <activity
+326-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:296:9-300:63
+327            android:name="com.PDA.gmax.S10.S12_CUSTOM_Activity"
+327-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:297:13-64
+328            android:exported="false"
+328-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:298:13-37
+329            android:screenOrientation="portrait"
+329-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:299:13-49
+330            android:windowSoftInputMode="stateAlwaysHidden" /> <!-- 자동으로 키보드 올라오는것 방지(windowSoftInputMode) -->
+330-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:300:13-60
+331        <activity
+331-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:301:9-304:52
+332            android:name="com.PDA.gmax.S10.S13_QUERY_Activity"
+332-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:302:13-63
+333            android:exported="false"
+333-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:303:13-37
+334            android:screenOrientation="portrait" />
+334-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:304:13-49
+335        <activity
+335-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:305:9-308:52
+336            android:name="com.PDA.gmax.S10.S14_HDR_Activity"
+336-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:306:13-61
+337            android:exported="false"
+337-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:307:13-37
+338            android:screenOrientation="portrait" />
+338-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:308:13-49
+339        <activity
+339-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:309:9-312:52
+340            android:name="com.PDA.gmax.S10.S14_DTL_Activity"
+340-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:310:13-61
+341            android:exported="false"
+341-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:311:13-37
+342            android:screenOrientation="portrait" />
+342-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:312:13-49
+343        <activity
+343-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:313:9-316:52
+344            android:name="com.PDA.gmax.S10.S15_QUERY_Activity"
+344-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:314:13-63
+345            android:exported="false"
+345-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:315:13-37
+346            android:screenOrientation="portrait" />
+346-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:316:13-49
+347        <activity
+347-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:317:9-320:52
+348            android:name="com.PDA.gmax.S10.S16_HDR_Activity"
+348-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:318:13-61
+349            android:exported="false"
+349-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:319:13-37
+350            android:screenOrientation="portrait" />
+350-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:320:13-49
+351        <activity
+351-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:321:9-324:52
+352            android:name="com.PDA.gmax.S10.S16_DTL_Activity"
+352-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:322:13-61
+353            android:exported="false"
+353-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:323:13-37
+354            android:screenOrientation="portrait" />
+354-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:324:13-49
+355        <activity
+355-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:325:9-328:52
+356            android:name="com.PDA.gmax.S10.S17_HDR_Activity"
+356-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:326:13-61
+357            android:exported="false"
+357-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:327:13-37
+358            android:screenOrientation="portrait" />
+358-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:328:13-49
+359        <activity
+359-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:329:9-332:52
+360            android:name="com.PDA.gmax.I70.I70_Activity"
+360-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:330:13-57
+361            android:exported="false"
+361-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:331:13-37
+362            android:screenOrientation="portrait" />
+362-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:332:13-49
+363        <activity
+363-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:333:9-336:52
+364            android:name="com.PDA.gmax.I70.I71_Activity"
+364-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:334:13-57
+365            android:exported="false"
+365-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:335:13-37
+366            android:screenOrientation="portrait" />
+366-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:336:13-49
+367        <activity
+367-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:337:9-340:52
+368            android:name="com.PDA.gmax.I70.I72_Activity"
+368-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:338:13-57
+369            android:exported="false"
+369-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:339:13-37
+370            android:screenOrientation="portrait" />
+370-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:340:13-49
+371        <activity
+371-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:341:9-344:52
+372            android:name="com.PDA.gmax.I70.I73_Activity"
+372-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:342:13-57
+373            android:exported="false"
+373-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:343:13-37
+374            android:screenOrientation="portrait" />
+374-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:344:13-49
+375        <activity
+375-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:345:9-348:52
+376            android:name="com.PDA.gmax.I70.I74_Activity"
+376-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:346:13-57
+377            android:exported="false"
+377-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:347:13-37
+378            android:screenOrientation="portrait" />
+378-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:348:13-49
+379        <activity
+379-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:349:9-352:52
+380            android:name="com.PDA.gmax.I70.I75_Activity"
+380-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:350:13-57
+381            android:exported="false"
+381-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:351:13-37
+382            android:screenOrientation="portrait" />
+382-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:352:13-49
+383        <activity
+383-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:353:9-356:52
+384            android:name="com.PDA.gmax.I70.I76_Activity"
+384-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:354:13-57
+385            android:exported="false"
+385-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:355:13-37
+386            android:screenOrientation="portrait" />
+386-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:356:13-49
+387        <activity
+387-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:357:9-360:52
+388            android:name="com.PDA.gmax.I70.I77_Activity"
+388-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:358:13-57
+389            android:exported="false"
+389-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:359:13-37
+390            android:screenOrientation="portrait" />
+390-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:360:13-49
+391        <activity
+391-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:361:9-364:52
+392            android:name="com.PDA.gmax.I70.I78_Activity"
+392-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:362:13-57
+393            android:exported="false"
+393-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:363:13-37
+394            android:screenOrientation="portrait" />
+394-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:364:13-49
+395        <activity
+395-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:365:9-368:52
+396            android:name="com.PDA.gmax.I70.I79_Activity"
+396-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:366:13-57
+397            android:exported="false"
+397-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:367:13-37
+398            android:screenOrientation="portrait" />
+398-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:368:13-49
+399        <activity
+399-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:369:9-372:52
+400            android:name="com.PDA.gmax.P10.P10_Activity"
+400-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:370:13-57
+401            android:exported="false"
+401-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:371:13-37
+402            android:screenOrientation="portrait" />
+402-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:372:13-49
+403        <activity
+403-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:373:9-376:52
+404            android:name="com.PDA.gmax.P10.P14_QUERY_Activity"
+404-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:374:13-63
+405            android:exported="false"
+405-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:375:13-37
+406            android:screenOrientation="portrait" />
+406-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:376:13-49
+407        <activity
+407-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:377:9-380:52
+408            android:name="com.PDA.gmax.P10.P14_SAVE_Activity"
+408-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:378:13-62
+409            android:exported="false"
+409-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:379:13-37
+410            android:screenOrientation="portrait" />
+410-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:380:13-49
+411        <activity
+411-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:381:9-384:52
+412            android:name="com.PDA.gmax.M30.M30_Activity"
+412-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:382:13-57
+413            android:exported="false"
+413-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:383:13-37
+414            android:screenOrientation="portrait" />
+414-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:384:13-49
+415        <activity
+415-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:385:9-388:52
+416            android:name="com.PDA.gmax.M30.M31_HDR_Activity"
+416-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:386:13-61
+417            android:exported="false"
+417-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:387:13-37
+418            android:screenOrientation="portrait" />
+418-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:388:13-49
+419        <activity
+419-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:389:9-393:63
+420            android:name="com.PDA.gmax.S10.S12_LOT_SEARCH_Activity"
+420-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:390:13-68
+421            android:exported="false"
+421-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:391:13-37
+422            android:screenOrientation="portrait"
+422-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:392:13-49
+423            android:windowSoftInputMode="stateAlwaysHidden" /> <!-- 자동으로 키보드 올라오는것 방지(windowSoftInputMode) -->
+423-->E:\TGS\company_dev\gmax\ANDROID\GMAX_real\app\src\main\AndroidManifest.xml:393:13-60
+424        <activity
+424-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:47:9-53:63
+425            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+425-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:48:13-74
+426            android:clearTaskOnLaunch="true"
+426-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:49:13-45
+427            android:screenOrientation="sensorLandscape"
+427-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:50:13-56
+428            android:stateNotNeeded="true"
+428-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:51:13-42
+429            android:theme="@style/zxing_CaptureTheme"
+429-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:52:13-54
+430            android:windowSoftInputMode="stateAlwaysHidden" />
+430-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\User\.gradle\caches\transforms-3\cbc1acff5a9f97538674fff1ad7a8af3\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:53:13-60
+431    </application>
+432
+433</manifest>

@@ -137,12 +137,14 @@ public class TGSClass {
     }
 
     public static void AlertMessage(Context pContext, String pMessage) {
-        AlertMessage(pContext, pMessage, 3000);
+        AlertMessage(pContext, pMessage, 5000);
     }
 
     public static void AlertMessage(Context pContext, String pMessage, int pTime) {
-        final Toast toast = Toast.makeText(pContext, pMessage, Toast.LENGTH_SHORT);
+        final Toast toast = Toast.makeText(pContext, pMessage,Toast.LENGTH_LONG);
         showMyToast(toast, pTime);
+        //AlertMessage(pContext, pMessage, pTime);
+
     }
 
     /**
