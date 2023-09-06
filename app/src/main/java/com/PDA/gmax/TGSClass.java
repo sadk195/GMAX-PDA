@@ -36,7 +36,7 @@ public class TGSClass {
     //public static String ws_name_space = "http://tgs.com/";
     public static String ws_name_space = "http://localhost/";
 
-    //    public static String ws_url = "http://106.245.142.2:8078/MES_ANDROID/webService.asmx"; //-- TGS DB(unierp5_GMAX)
+    //public static String ws_url = "http://106.245.142.2:8078/MES_ANDROID/webService.asmx"; //-- TGS DB(unierp5_GMAX)
     //public static String ws_url = "http://106.245.142.3/WMS_TEST/webService.asmx"; //-- TGS DB(unierp5_GMAX)
     //public static String ws_url = "http://106.245.142.3/WMS_TEST/webService.asmx"; //-- TGS DB(unierp5_GMAX)
     public static String ws_url = "http://203.235.27.247/CKOET00160_Android/WebService.asmx"; //-- GMAX Real DB(unierp5)

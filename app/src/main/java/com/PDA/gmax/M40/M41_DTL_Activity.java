@@ -97,6 +97,7 @@ public class M41_DTL_Activity extends BaseActivity {
         listview.setFocusable(false);
 
         //ListViewAdapter.notifyDataSetChanged();
+        start();
     }
 
 
@@ -148,6 +149,7 @@ public class M41_DTL_Activity extends BaseActivity {
                         QR_Code.setText("");
                         QR_Code.setSelection(QR_Code.getText().length());
 
+                        start();
                         return true;
 
                     }
@@ -164,6 +166,76 @@ public class M41_DTL_Activity extends BaseActivity {
         );
     }
 
+    private void start() {
+        //TGSClass.AlertMessage(getApplicationContext(), BP_CD.getOnItemSelectedListener().toString());
+        dbQuery();
+        System.out.println("sjoson:"+sJson);
+        if (!sJson.equals("")) {
+            try {
+                JSONArray ja = new JSONArray(sJson);
+                ListViewAdapter.ClearItem();
+                //for (int idx = ja.length()-1; idx > 0; idx--) {
+                for (int idx = 0; idx <ja.length(); idx++) {
+                    JSONObject jObject = ja.getJSONObject(idx);
+
+                    M40_DTL item = new M40_DTL();
+                    item.setNO(idx+1);
+                    item.setCODE            (jObject.getString("CODE"));
+                    item.setAREA_DENSITY    (jObject.getString("AREA_DENSITY"));
+                    item.setLOT_NO          (jObject.getString("LOT_NO"));
+                    item.setROLL_NO         (jObject.getString("ROLL_NO"));
+                    item.setWIDTH           (jObject.getString("WIDTH"));
+                    item.setLENGTH          (jObject.getString("LENGTH"));
+                    item.setQR_VALUE_ALL    (jObject.getString("QR_VALUE_ALL"));
+                    item.setSTATUS          (jObject.getString("STATUS"));
+
+                    ListViewAdapter.addPkgItem(item);
+                    ListViewAdapter.notifyDataSetChanged();
+                }
+
+                listview.setAdapter(ListViewAdapter);
+
+
+            } catch (JSONException ex) {
+                TGSClass.AlertMessage(this, ex.getMessage());
+            } catch (Exception e1) {
+                TGSClass.AlertMessage(this, e1.getMessage());
+
+            }
+        }
+    }
+
+    private void dbQuery() {
+        ////////////////////////////// 웹 서비스 호출 시 쓰레드 사용 ////////////////////////////////////////////////////////
+        Thread wkThd_dbQuery = new Thread() {
+            public void run() {
+
+                String sql = "EXEC DBO.XUSP_BLANKET_M41_GET_ANDROID";
+                sql += " @FLAG ='M41_HDR'";//원단 넓이
+
+                System.out.println("sql:"+sql);
+                DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
+
+                ArrayList<PropertyInfo> pParms = new ArrayList<>();
+
+                PropertyInfo parm = new PropertyInfo();
+                parm.setName("pSQL_Command");
+                parm.setValue(sql);
+                parm.setType(String.class);
+
+                pParms.add(parm);
+
+                sJson = dba.SendHttpMessage("GetSQLData", pParms);
+            }
+        };
+        wkThd_dbQuery.start();   //스레드 시작
+        try {
+            wkThd_dbQuery.join();  //workingThread가 종료될때까지 Main 쓰레드를 정지함.
+
+        } catch (InterruptedException ex) {
+
+        }
+    }
 
     //리스트 데이터 조회
     private void dbSave(String Datetime) {
@@ -184,6 +256,8 @@ public class M41_DTL_Activity extends BaseActivity {
                 sql += " @STATUS       ='R',";
                 sql += " @USER_ID      = '" + vUSER_ID + "'";
 
+
+                System.out.println("sqls:"+sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
@@ -213,7 +287,7 @@ public class M41_DTL_Activity extends BaseActivity {
         try {
             dataSaveLog("입고 스캔","Resling");
             dataSaveLog(tx_QR_Code,"Resling");
-            System.out.println("tx_qr_code:"+tx_QR_Code);
+
             vItem = new M40_DTL();
             vItem.QR_VALUE_ALL = tx_QR_Code;
 
@@ -233,15 +307,12 @@ public class M41_DTL_Activity extends BaseActivity {
             String err ="";
             String err_name="";
 
-            System.out.println("sJson:"+sJson);
             if (!sJson.equals("") && sJson.contains("ERR")) {
                 JSONArray ja = new JSONArray(sJson);
                 JSONObject jObject = ja.getJSONObject(0);
                 err = jObject.getString("ERR");
                 err_name = jObject.getString("ERR_NAME");
             }
-
-
             //일반오류
             if(err.equals("")){
                 dataSaveLog("입고 오류(코드없음)","Resling");
@@ -258,7 +329,7 @@ public class M41_DTL_Activity extends BaseActivity {
                 dataSaveLog("입고 성공","Resling");
                 TGSClass.AlertMessage(getApplicationContext(),  err_name);
 
-                int NO = ListViewAdapter.getCount()+1;
+/*                int NO = ListViewAdapter.getCount()+1;
 
 
                 M40_DTL item = new M40_DTL();
@@ -273,8 +344,9 @@ public class M41_DTL_Activity extends BaseActivity {
                 item.setSTATUS          (vItem.STATUS);
 
                 ListViewAdapter.addPkgItem(item);
-                ListViewAdapter.notifyDataSetChanged();
+                ListViewAdapter.notifyDataSetChanged();*/
 
+                //저장못한 데이터 가져와서 처리
                 SetTempQR();
             }
             //db오류
@@ -291,8 +363,7 @@ public class M41_DTL_Activity extends BaseActivity {
         catch (Exception e){
             dataSaveLog("스캔오류","Resling");
             dataSaveLog(e.getMessage(),"Resling");
-            System.out.println("스캔오류:"+e.getMessage());
-            System.out.println("스캔오류:"+e.getStackTrace());
+
 
             TGSClass.AlertMessage(getApplicationContext(), " 오류가 발생하였습니다 다시 스캔하여주십시오",5000);
             return;
@@ -331,7 +402,7 @@ public class M41_DTL_Activity extends BaseActivity {
 
                 //스캔한 당시 시간을 추가하여 저장
                 dbSave(temp[0]);
-
+                System.out.println("sjson2:"+sJson);
                 String err ="";
                 String err_name="";
 
@@ -350,12 +421,12 @@ public class M41_DTL_Activity extends BaseActivity {
 
                     tx_QR_Code="";
 
-                    SetSaveTempData(vItem.QR_VALUE_ALL,"M41");
+                    //SetSaveTempData(vItem.QR_VALUE_ALL,"M41");
 
-                    TGSClass.AlertMessage(getApplicationContext(), " 오류가 발생하였습니다 다시 스캔하여주십시오",5000);
+                    //TGSClass.AlertMessage(getApplicationContext(), " 오류가 발생하였습니다 다시 스캔하여주십시오",5000);
                     return;
                 }
-                else if (err.equals("TRUE")) {
+               /* else if (err.equals("TRUE")) {
 
                     M40_DTL item = new M40_DTL();
                     item.setCODE            ( vItem.CODE);
@@ -369,11 +440,10 @@ public class M41_DTL_Activity extends BaseActivity {
 
                     ListViewAdapter.addPkgItem(item);
                     ListViewAdapter.notifyDataSetChanged();
-                }
+                }*/
 
             }
             catch (JSONException e){
-                System.out.println("JSONException:"+e.getMessage());
 
             }
         }
