@@ -84,7 +84,9 @@ public class S12_LOT_Activity extends BaseActivity {
         btn_lot     = (Button) findViewById(R.id.btn_lot);
         btn_end     = (Button) findViewById(R.id.btn_end);
 
-        S12_LOT_ListViewAdapter ListViewAdapter = new S12_LOT_ListViewAdapter();
+        ListViewAdapter = new S12_LOT_ListViewAdapter();
+        listview.setAdapter(ListViewAdapter);
+        listview.setFocusable(false);
 
     }
 
@@ -96,6 +98,11 @@ public class S12_LOT_Activity extends BaseActivity {
                     return;
                 }
                 dbDelete(selected_Lot);
+                start();
+
+                if (!sJson.equals("")) {
+                    TGSClass.AlertMessage(getApplicationContext(), "요청하신 LOT내역이 삭제되었습니다.");
+                }
             }
         });
         btn_end.setOnClickListener(new View.OnClickListener(){
@@ -113,16 +120,22 @@ public class S12_LOT_Activity extends BaseActivity {
                     lot_no.setText(temp);
                     tx_lot_no=lot_no.getText().toString();
 
-
                     for(S12_LOT list : (ArrayList<S12_LOT>) ListViewAdapter.getItems()){
                         if(list.LOT_NO.equals(tx_lot_no)){
                             dbDelete(list);
+
+                            if (!sJson.equals("")) {
+                                TGSClass.AlertMessage(getApplicationContext(), "요청하신 LOT내역이 삭제되었습니다.");
+                            }
+
                             break;
                         }
                     }
 
                     lot_no.requestFocus();
+                    lot_no.setText("");
                     start();
+
                     return true;
                 }
                 return false;
@@ -136,7 +149,11 @@ public class S12_LOT_Activity extends BaseActivity {
                 selected_Lot = vItem;
 
             }
+
+
+
         });
+
 
     }
 
@@ -155,7 +172,7 @@ public class S12_LOT_Activity extends BaseActivity {
                 // 빈 데이터 리스트 생성.
                 //final ArrayList<String> items = new ArrayList<String>();
 
-                ListViewAdapter = new S12_LOT_ListViewAdapter();
+                ListViewAdapter.ClearItem();
 
                 for (int idx = 0; idx < ja.length(); idx++) {
                     JSONObject jObject = ja.getJSONObject(idx);
@@ -174,8 +191,7 @@ public class S12_LOT_Activity extends BaseActivity {
                     ListViewAdapter.addShipmentHDRItem(item);
                 }
 
-                listview.setAdapter(ListViewAdapter);
-
+                ListViewAdapter.notifyDataSetChanged();
 
             } catch (JSONException ex) {
                 TGSClass.AlertMessage(this, ex.getMessage());
@@ -183,6 +199,9 @@ public class S12_LOT_Activity extends BaseActivity {
                 TGSClass.AlertMessage(this, e1.getMessage());
 
             }
+            lot_no.requestFocus();
+            lot_no.requestFocus();
+
         }
     }
 
@@ -256,11 +275,8 @@ public class S12_LOT_Activity extends BaseActivity {
         wkThd_dbQuery.start();   //스레드 시작
         try {
             wkThd_dbQuery.join();  //workingThread가 종료될때까지 Main 쓰레드를 정지함.
-            start();
 
-            if (!sJson.equals("")) {
-                TGSClass.AlertMessage(getApplicationContext(), "요청하신 LOT내역이 삭제되었습니다.");
-            }
+
         }catch (InterruptedException ex) {
 
         }

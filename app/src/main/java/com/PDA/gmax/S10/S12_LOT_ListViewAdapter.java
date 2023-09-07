@@ -18,6 +18,7 @@ public class S12_LOT_ListViewAdapter extends BaseAdapter {
     public S12_LOT_ListViewAdapter() {
 
     }
+    public void ClearItem() { listViewItem.clear(); }
 
 
     public Object getItems() {

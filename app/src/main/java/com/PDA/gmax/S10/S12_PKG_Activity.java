@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
@@ -43,6 +44,9 @@ public class S12_PKG_Activity extends BaseActivity {
 
     //== View 선언(EditText) ==//
     private EditText lot_no,req_no;
+
+    //== View 선언(TextView) ==//
+    private TextView txt_box_cnt;
 
     //== View 선언(Spinner) ==//
     private Spinner carton_no;
@@ -103,7 +107,7 @@ public class S12_PKG_Activity extends BaseActivity {
         btn_custom = (Button) findViewById(R.id.btn_custom);
         btn_lot     = (Button) findViewById(R.id.btn_lot);
         btn_end     = (Button) findViewById(R.id.btn_end);
-
+        txt_box_cnt     = (TextView) findViewById(R.id.txt_box_cnt);
         //== LOT내역 저장용 클래스 선언 ==//
         s12_lot = new S12_LOT();
 
@@ -213,7 +217,7 @@ public class S12_PKG_Activity extends BaseActivity {
         //TGSClass.AlertMessage(getApplicationContext(), BP_CD.getOnItemSelectedListener().toString());
         //TGSClass.AlertMessage(getApplicationContext(), vPLANT_CD);
         dbQuery(req_no.getText().toString(), str_carton_no);
-
+        int box_cnt =0;
         if (!sJson.equals("")) {
             try {
                 JSONArray ja = new JSONArray(sJson);
@@ -242,11 +246,12 @@ public class S12_PKG_Activity extends BaseActivity {
                     item.CARTON_NO          = jObject.getString("CONT_NO");
                     item.DN_REQ_SEQ         = jObject.getString("DN_REQ_SEQ");
 
+                    box_cnt = box_cnt + Integer.parseInt(item.PACKING_CNT);
                     ListViewAdapter.addShipmentPKGItem(item);
                 }
                 listview.setAdapter(ListViewAdapter);
                 ListViewAdapter.notifyDataSetChanged();
-
+                txt_box_cnt.setText(String.valueOf(box_cnt));
                 lot_no.requestFocus();
 
             } catch (JSONException ex) {
