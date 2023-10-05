@@ -62,7 +62,7 @@ public class S12_PKG_Activity extends BaseActivity {
     //== 오류메시지 관련 변수 선언 ==/
     private String err ="",err_name="";
     //== View 선언(Button) ==//
-    private Button btn_lot,btn_end,btn_custom;
+    private Button btn_lot,btn_end,btn_custom,btn_del;
 
     //== ActivityForResult 관련 변수 선언 ==//
     private final int S12_DTL_REQUEST_CODE = 0;
@@ -107,6 +107,8 @@ public class S12_PKG_Activity extends BaseActivity {
         btn_custom = (Button) findViewById(R.id.btn_custom);
         btn_lot     = (Button) findViewById(R.id.btn_lot);
         btn_end     = (Button) findViewById(R.id.btn_end);
+        btn_del     = (Button) findViewById(R.id.btn_del);
+
         txt_box_cnt     = (TextView) findViewById(R.id.txt_box_cnt);
         //== LOT내역 저장용 클래스 선언 ==//
         s12_lot = new S12_LOT();
@@ -147,6 +149,23 @@ public class S12_PKG_Activity extends BaseActivity {
             public void onClick(View v) {
 
                 finish();
+            }
+        });
+
+        btn_del.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+
+                for(S12_PKG pkg:ListViewAdapter.getItems()){
+                    if(Double.valueOf( pkg.QTY) > 0){
+                        TGSClass.AlertMessage(getApplicationContext(),"해당 CARTON에 포장품목이 남아있습니다.",5000);
+                        return;
+                    }
+                }
+
+                dbCartonDel(req_no.getText().toString(), String.valueOf(selected_no));
+                dbQuery_getComboData(false);
+                TGSClass.AlertMessage(getApplicationContext(),"해당 CARTON이 삭제되었습니다.",5000);
+
             }
         });
 
@@ -275,7 +294,6 @@ public class S12_PKG_Activity extends BaseActivity {
                 sql += " @LOT_NO = '" + pLotNo + "',";
                 sql += " @USER_ID = '" + vUSER_ID + "'";
                 sql += ";";
-                System.out.println("lot save : "+sql);
 
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
@@ -302,6 +320,41 @@ public class S12_PKG_Activity extends BaseActivity {
         }
     }
 
+    private void dbCartonDel(final String pReqNo, final String pCartonNo) {
+        ////////////////////////////// 웹 서비스 호출 시 쓰레드 사용 ////////////////////////////////////////////////////////
+        Thread wkThd_dbQuery = new Thread() {
+            public void run() {
+                String sql = " EXEC DBO.XUSP_MES_S2002PA2_DEL_CARTON ";
+                sql += " @PACKING_NO = '" + pReqNo + "',";
+                sql += " @DN_REQ_NO = '" + pReqNo + "',";
+                sql += " @CONT_NO = '" + pCartonNo + "',";
+                sql += " @USER_ID = '" + vUSER_ID + "'";
+                sql += ";";
+                System.out.println("sql del:"+sql);
+                DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
+
+                ArrayList<PropertyInfo> pParms = new ArrayList<>();
+
+                PropertyInfo parm = new PropertyInfo();
+                parm.setName("pSQL_Command");
+                parm.setValue(sql);
+                parm.setType(String.class);
+
+                pParms.add(parm);
+
+                sJson = dba.SendHttpMessage("GetSQLData", pParms);
+
+            }
+        };
+        wkThd_dbQuery.start();   //스레드 시작
+        try {
+            wkThd_dbQuery.join();  //workingThread가 종료될때까지 Main 쓰레드를 정지함.
+
+
+        } catch (InterruptedException ex) {
+
+        }
+    }
 
 
     //리스트 데이터 조회
@@ -415,7 +468,6 @@ public class S12_PKG_Activity extends BaseActivity {
                 sql += "@USER_ID ='" + vUSER_ID + "'";
                 sql += ";";
 
-                System.out.println("combo sql:"+sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
@@ -440,7 +492,6 @@ public class S12_PKG_Activity extends BaseActivity {
 
         try {
             JSONArray ja = new JSONArray(sJsonCombo);
-            System.out.println("sJsonCombo:"+sJsonCombo);
 
             final ArrayList<GetComboData> lstItem = new ArrayList<>();
 
@@ -449,7 +500,6 @@ public class S12_PKG_Activity extends BaseActivity {
 
             //첫번째 항목 빈값으로 처리하고 선택시 모든 데이터 표출되도록 표시
             //MINOR_NM에 SELECT 조건 저장
-            System.out.println("lstItem:"+lstItem);
 
             GetComboData item = new GetComboData();
             item.setMINOR_CD("");
@@ -457,10 +507,7 @@ public class S12_PKG_Activity extends BaseActivity {
             item.setNUM(0);
             lstItem.add(item);
 
-            System.out.println("lstItem1:"+lstItem);
-
             for (int i = 0; i < ja.length(); i++) {
-                System.out.println("ja:"+i);
 
                 CartonCount++;
 
@@ -470,9 +517,6 @@ public class S12_PKG_Activity extends BaseActivity {
                 final String vMINOR_CD  = jObject.getString("CONT_NO");
                 final String vMINOR_NM  = jObject.getString("CONT_NO");
 
-                System.out.println("vMINOR_CD"+vMINOR_CD);
-                System.out.println("vMINOR_NM"+vMINOR_NM);
-
                 item = new GetComboData();
                 item.setMINOR_CD(vMINOR_CD);
                 item.setMINOR_NM(vMINOR_NM);
@@ -481,7 +525,6 @@ public class S12_PKG_Activity extends BaseActivity {
             }
 
             ArrayAdapter<GetComboData> adapter = new ArrayAdapter<GetComboData>(this, android.R.layout.simple_dropdown_item_1line, lstItem);
-            System.out.println("carton_no"+carton_no);
 
             carton_no.setAdapter(adapter);
 
@@ -502,7 +545,6 @@ public class S12_PKG_Activity extends BaseActivity {
 
             //로딩시 기본값 세팅(사용하지 않음)
             //carton_no.setSelection(adapter.getPosition(itemBase));
-            System.out.println("Scan:"+Scan);
 
             //scan하면
             if(Scan){
@@ -516,21 +558,16 @@ public class S12_PKG_Activity extends BaseActivity {
                     return;
                 }
             }
-            System.out.println("first:"+first);
 
             //최초1회만 동작
             if(first){
                 //등록된 carton이 있을경우 첫번째 carton으로 설정
                 //없을경우 신규로 설정
                 if(CartonCount>0){
-                    System.out.println("first >0:"+CartonCount);
-
                     carton_no.setSelection(1);
                     str_carton_no="1";
                 }
                 else{
-                    System.out.println("first else:"+CartonCount);
-
                     carton_no.setSelection(0);
                     str_carton_no="0";
                 }
@@ -562,7 +599,6 @@ public class S12_PKG_Activity extends BaseActivity {
             case S12_CUSTOM_REQUEST_CODE:
                 if(data == null) return;
                 //str_carton_no = data.getStringExtra("CONT_NO");
-                System.out.println("cont1:"+str_carton_no);
                 if(str_carton_no ==null){
                     selected_no =0;
                 }
@@ -575,13 +611,10 @@ public class S12_PKG_Activity extends BaseActivity {
                         selected_no = Integer.parseInt(str_carton_no);
                     }
                     catch(Exception e){
-                        System.out.println("error:"+e.getMessage());
                         selected_no =0;
                     }
 
                 }
-                System.out.println("cont2:"+selected_no);
-
                 dbQuery_getComboData(true);
                 start();
                 break;

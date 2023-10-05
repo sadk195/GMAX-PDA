@@ -30,6 +30,9 @@ public class S12_PKG_ListViewAdapter extends BaseAdapter {
     public Object getItem(int position) {
         return listViewItem.get(position);
     }
+    public ArrayList<S12_PKG> getItems() {
+        return listViewItem;
+    }
 
     @Override
     public long getItemId(int position) {

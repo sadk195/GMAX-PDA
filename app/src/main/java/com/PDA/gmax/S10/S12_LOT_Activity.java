@@ -45,6 +45,8 @@ public class S12_LOT_Activity extends BaseActivity {
     //== View 선언(Button) ==//
     private Button btn_lot,btn_end;
 
+    private int lot_idx;
+
     private S12_LOT_ListViewAdapter ListViewAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,16 +89,22 @@ public class S12_LOT_Activity extends BaseActivity {
         ListViewAdapter = new S12_LOT_ListViewAdapter();
         listview.setAdapter(ListViewAdapter);
         listview.setFocusable(false);
-
+        lot_idx=0;
     }
 
 
     private void initializeListener() {
         btn_lot.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                if(selected_Lot== null){
+                if(lot_idx <0){
                     return;
                 }
+                if(lot_idx >= ListViewAdapter.getCount()){
+                    return;
+                }
+                S12_LOT vItem = (S12_LOT) ListViewAdapter.getItem(lot_idx);
+                selected_Lot = vItem;
+
                 dbDelete(selected_Lot);
                 start();
 
@@ -145,8 +153,8 @@ public class S12_LOT_Activity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView parent, View v, int position, long id) {
 
-                S12_LOT vItem = (S12_LOT) parent.getItemAtPosition(position);
-                selected_Lot = vItem;
+                lot_idx  = position;
+
 
             }
 
@@ -257,7 +265,7 @@ public class S12_LOT_Activity extends BaseActivity {
 
                 sql += ";";
 
-                System.out.println("sql:" + sql);
+                System.out.println(" sql:"+ sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();

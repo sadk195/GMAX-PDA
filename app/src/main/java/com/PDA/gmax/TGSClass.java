@@ -39,14 +39,14 @@ public class TGSClass {
     //public static String ws_url = "http://106.245.142.2:8078/MES_ANDROID/webService.asmx"; //-- TGS DB(unierp5_GMAX)
     //public static String ws_url = "http://106.245.142.3/WMS_TEST/webService.asmx"; //-- TGS DB(unierp5_GMAX)
     //public static String ws_url = "http://106.245.142.3/WMS_TEST/webService.asmx"; //-- TGS DB(unierp5_GMAX)
-    public static String ws_url = "http://203.235.27.247/CKOET00160_Android/WebService.asmx"; //-- GMAX Real DB(unierp5)
-    //public static String ws_url = "http://203.235.27.247/CKOET00160_Android_Test/WebService.asmx"; //-- GMAX Test DB(unierp5)
+    //public static String ws_url = "http://203.235.27.247/CKOET00160_Android/WebService.asmx"; //-- GMAX Real DB(unierp5)
+    public static String ws_url = "http://203.235.27.247/CKOET00160_Android_Test/WebService.asmx"; //-- GMAX Test DB(unierp5)
 
     public TGSClass() {
 
     }
 
-    /**
+     /**
      * 변경할 Intent 반환
      * @param pPackageName /패키지 명칭(네임스페이스)
      * @param pClassName /클래스 네임(뷰 클래스 이름)

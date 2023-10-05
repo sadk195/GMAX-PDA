@@ -3072,6 +3072,7 @@ id txt_Scan_move_SL_CD
 id txt_Scan_move_location
 id txt_Scan_prodt_order_no
 id txt_Scan_sl_cd
+id txt_box_cnt
 id txt_contents
 id txt_down
 id txt_good_qty

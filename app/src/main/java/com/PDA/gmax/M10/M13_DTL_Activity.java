@@ -580,16 +580,6 @@ public class M13_DTL_Activity extends BaseActivity {
                 String user_id_parm             = vUSER_ID;
                 plant_cd_parm ="1000";
 
-                System.out.println("po_no_parm:"+po_no_parm);
-                System.out.println("po_seq_no_parm:"+po_seq_no_parm);
-                System.out.println("lot_no_parm:"+lot_no_parm);
-                System.out.println("pur_type_cd_parm:"+pur_type_cd_parm);
-                System.out.println("prodt_order_no_parm:"+prodt_order_no_parm);
-                System.out.println("opr_no_parm:"+opr_no_parm);
-                System.out.println("dlv_no_parm:"+dlv_no_parm);
-                System.out.println("ser_no_parm:"+ser_no_parm);
-                System.out.println("mvmt_qty_parm:"+mvmt_qty_parm);
-
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
 
