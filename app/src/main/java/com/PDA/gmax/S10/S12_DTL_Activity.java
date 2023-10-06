@@ -266,18 +266,6 @@ public class S12_DTL_Activity extends BaseActivity {
                 String inv_mgr_parm = inv_mgr;        //담당자
                 String unit_cd = vUNIT_CD;        //단말기코드
 
-                System.out.println("cud_flag:"+cud_flag);
-                System.out.println("flag:"+flag);
-                System.out.println("bp_cd:"+bp_cd);
-                System.out.println("dn_req_no:"+dn_req_no);
-                System.out.println("dn_req_seq:"+dn_req_seq);
-                System.out.println("actual_gi_dt:"+actual_gi_dt);
-                System.out.println("trans_meth:"+trans_meth);
-                System.out.println("ar_flag:"+ar_flag);
-                System.out.println("vat_flag:"+vat_flag);
-                System.out.println("inv_mgr:"+inv_mgr);
-                System.out.println("vUNIT_CD:"+vUNIT_CD);
-
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
 
@@ -893,11 +881,10 @@ public class S12_DTL_Activity extends BaseActivity {
             return;
         }
 
-        //출하 BL 실행
+       /* //출하 BL 실행
         if (dbQuery_GET_BL(cud_flag_st, flag_st, cmbBizPartner_st, dn_req_no_st, dn_req_seq, dn_rq_dt_st,
                 cmbTrans_st, ar_flag_st, vat_flag_st, cmbMgmtUser_st) == true) {
             System.out.println("returnmessage:"+result_msg);
-
         }
 
         if (!result_msg.contains("출하번호")) {
@@ -906,7 +893,7 @@ public class S12_DTL_Activity extends BaseActivity {
         }
         else{
             result_msg = result_msg.replace("출하번호 : ","");
-        }
+        }*/
 
         if (dbSave_HDR(result_msg) == false) {
             TGSClass.AlertMessage(getApplicationContext(), sJson_hdr, 50000);
@@ -1039,7 +1026,7 @@ public class S12_DTL_Activity extends BaseActivity {
             TGSClass.AlertMessage(getApplicationContext(), "catch : ex");
         }
 
-        if (sJson.equals("[]")) {
+        if (sJson_hdr.equals("[]")) {
             return false;
         } else {
             return true;
