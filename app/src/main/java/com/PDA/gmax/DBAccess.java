@@ -44,7 +44,7 @@ public class DBAccess {
         envelope.dotNet = true;
         envelope.setOutputSoapObject(request); // prepare request
         envelope.bodyOut = request;
-        HttpTransportSE androidHttpTransport = new HttpTransportSE(URL, 3000);
+        HttpTransportSE androidHttpTransport = new HttpTransportSE(URL, 10000);
         Object response= null;
         try
         {

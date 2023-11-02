@@ -881,7 +881,7 @@ public class S12_DTL_Activity extends BaseActivity {
             return;
         }
 
-       /* //출하 BL 실행
+        //출하 BL 실행
         if (dbQuery_GET_BL(cud_flag_st, flag_st, cmbBizPartner_st, dn_req_no_st, dn_req_seq, dn_rq_dt_st,
                 cmbTrans_st, ar_flag_st, vat_flag_st, cmbMgmtUser_st) == true) {
             System.out.println("returnmessage:"+result_msg);
@@ -893,7 +893,7 @@ public class S12_DTL_Activity extends BaseActivity {
         }
         else{
             result_msg = result_msg.replace("출하번호 : ","");
-        }*/
+        }
 
         if (dbSave_HDR(result_msg) == false) {
             TGSClass.AlertMessage(getApplicationContext(), sJson_hdr, 50000);

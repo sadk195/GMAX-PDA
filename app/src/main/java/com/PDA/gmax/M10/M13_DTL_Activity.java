@@ -15,9 +15,9 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-import com.PDA.gmax.ErrorList_Popup;
 import com.PDA.gmax.BaseActivity;
 import com.PDA.gmax.DBAccess;
+import com.PDA.gmax.ErrorList_Popup;
 import com.PDA.gmax.R;
 import com.PDA.gmax.TGSClass;
 
@@ -65,6 +65,9 @@ public class M13_DTL_Activity extends BaseActivity {
     private final int M13_DTL_REQUEST_CODE = 0;
 
     private ErrorList_Popup Error_Popup;
+
+    //SCM에 거래명세서와 함께 로트 등록하지 않고 따로 LOT 부착한 경우 TRUE
+    private boolean LotAddMode = true;
 
     //== ListView Adapter 선언 ==//
     M13_DTL_ListViewAdapter ListViewAdapter; //데이터를 완전히 초기화 하는것이 아니라 수정처리 하기때문에 전역 선언
@@ -207,6 +210,13 @@ public class M13_DTL_Activity extends BaseActivity {
                     SetTimerTask();
 
                     start();
+                    //SCM에 거래명세서와 함께 로트 등록하지 않고 따로 LOT 부착한 경우 TRUE
+                    if(LotAddMode){
+                        btn_custom.setEnabled(false);
+                    }
+                    else{
+                        btn_custom.setEnabled(true);
+                    }
 
                     lot_no.requestFocus();
 
@@ -230,9 +240,15 @@ public class M13_DTL_Activity extends BaseActivity {
                     lot_no.setText(temp);
                     tx_lot_no = lot_no.getText().toString();
 
-                    //일반등록
-                    Auto_Input();
-
+                    if(LotAddMode)
+                    {
+                        //스캔한 로트 추가
+                        Auto_Add();
+                    }
+                    else{
+                        //일반등록
+                        Auto_Input();
+                    }
 
                     lot_no.setText(tx_lot_no);
                     lot_no.setText("");
@@ -247,90 +263,15 @@ public class M13_DTL_Activity extends BaseActivity {
 
     }
 
-    private void initializeData() {
-
-        start();
-
-    }
 
     //액티비티 시작,데이터 조회
     private void start() {
         dataSaveLog("거래명세서 스캔","CKD_IN");
         dataSaveLog(dn_no.getText().toString(),"CKD_IN");
 
-        dbQuery(dn_no.getText().toString());
+        dbQuery(tx_dn_no);
 
-        System.out.println("sjson:"+sJson);
-        if (!sJson.equals("")) {
-            try {
-                JSONArray ja = new JSONArray(sJson);
-
-                // 빈 데이터 리스트 생성.
-                //final ArrayList<String> items = new ArrayList<String>();
-
-                //M13_DTL_ListViewAdapter ListViewAdapter = new M13_DTL_ListViewAdapter();
-                ListViewAdapter.ClearItem();
-
-                for (int idx = 0; idx < ja.length(); idx++) {
-
-                    JSONObject jObject = ja.getJSONObject(idx);
-
-                    M13_DTL item = new M13_DTL();
-                    item.setSER_NO             (jObject.getString("SER_NO"));           //순번
-                    item.setITEM_CD            (jObject.getString("ITEM_CD"));          //품번
-                    item.setITEM_NM            (jObject.getString("ITEM_NM"));          //품명
-                    item.setSPEC               (jObject.getString("SPEC"));             //규격
-                    item.setDLV_QTY            (jObject.getString("DLV_QTY"));          //수량
-                    item.setCONFIRM_DLV_QTY    (jObject.getString("CONFIRM_DLV_QTY"));   //확인수량
-                    item.setINSPECT_FLG        (jObject.getString("INSPECT_FLG"));      //검사여부
-                    item.setSL_NM              (jObject.getString("SL_NM"));            //입고창고
-                    item.setLOT_NO             (jObject.getString("LOT_NO"));           //LOT NO
-                    item.setSUB_SEQ_NO         (jObject.getString("SUB_SEQ_NO"));       //하위 순번
-                    item.setPUR_TYPE           (jObject.getString("PUR_TYPE"));         //발주유형
-                    item.setPUR_TYPE_CD        (jObject.getString("PUR_TYPE_CD"));      //
-                    item.setPLANT_CD           (jObject.getString("PLANT_CD"));         //공장코드
-                    item.setDLV_NO             (jObject.getString("DLV_NO"));           //거래명세서
-                    item.setSL_CD              (jObject.getString("SL_CD"));            //창고코드
-                    item.setPO_NO              (jObject.getString("PO_NO"));            //발주번호
-                    item.setPO_SEQ_NO          (jObject.getString("PO_SEQ_NO"));        //발주순번
-                    item.setPROCUR_TYPE        (jObject.getString("PROCUR_TYPE"));
-                    item.setBP_CD              (jObject.getString("BP_CD"));
-                    //item.MVMT_QTY          = jObject.getString("MVMT_QTY");         //입하수량
-                    item.setPRODT_ORDER_NO     (jObject.getString("PRODT_ORDER_NO"));
-                    item.setOPR_NO             (jObject.getString("OPR_NO"));
-                    item.setTRACKING_NO        (jObject.getString("TRACKING_NO"));
-                    item.setCHK                (jObject.getString("CHK_FLAG").equals("Y") ? true:false);//로트스캔 여부
-                    item.setIDX                (idx);
-                    item.setEND_CUST_NM        (jObject.getString("END_CUST_NM")); //최종고객
-                    item.setINSP_FLG           (jObject.getString("INSP_FLG"));
-                    ListViewAdapter.addPkgItem(item);
-                }
-
-                //최종고객 표시
-                if(ListViewAdapter.getCount()>0){
-                    M13_DTL item = (M13_DTL) ListViewAdapter.getItem(0);
-                    end_cust_nm.setText(item.getEND_CUST_NM());
-                }
-
-
-                listview.setAdapter(ListViewAdapter);
-                ListViewAdapter.notifyDataSetChanged();
-
-                TGSClass.AlertMessage(getApplicationContext(), ja.length() + " 건 조회되었습니다.");
-
-            } catch (JSONException ex) {
-                TGSClass.AlertMessage(this, ex.getMessage());
-                //System.out.println("json:"+ex.getStackTrace());
-                //System.out.println("json:"+ex.getMessage());
-
-            } catch (Exception e1) {
-               TGSClass.AlertMessage(this, e1.getMessage());
-                //System.out.println("e1:"+e1.getStackTrace());
-
-            }
-        }
     }
-
 
     //리스트 데이터 조회
     private void dbQuery(final String pDN_NO) {
@@ -343,7 +284,6 @@ public class M13_DTL_Activity extends BaseActivity {
                 sql += " @DLV_NO ='" + pDN_NO + "',";
                 sql += " @USER_ID    = '" + vUSER_ID + "'";
 
-                System.out.println("sql:"+sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
@@ -362,12 +302,127 @@ public class M13_DTL_Activity extends BaseActivity {
         try {
             wkThd_dbQuery.join();  //workingThread가 종료될때까지 Main 쓰레드를 정지함.
 
-        } catch (InterruptedException ex) {
+            if (!sJson.equals("")) {
+
+                JSONArray ja = new JSONArray(sJson);
+
+                ListViewAdapter.ClearItem();
+
+                for (int idx = 0; idx < ja.length(); idx++) {
+
+                    JSONObject jObject = ja.getJSONObject(idx);
+
+                    M13_DTL item = new M13_DTL();
+                    item.setSER_NO(jObject.getString("SER_NO"));           //순번
+                    item.setITEM_CD(jObject.getString("ITEM_CD"));          //품번
+                    item.setITEM_NM(jObject.getString("ITEM_NM"));          //품명
+                    item.setSPEC(jObject.getString("SPEC"));             //규격
+                    item.setDLV_QTY(jObject.getString("DLV_QTY"));          //수량
+                    item.setCONFIRM_DLV_QTY(jObject.getString("CONFIRM_DLV_QTY"));   //확인수량
+                    item.setINSPECT_FLG(jObject.getString("INSPECT_FLG"));      //검사여부
+                    item.setSL_NM(jObject.getString("SL_NM"));            //입고창고
+                    item.setLOT_NO(jObject.getString("LOT_NO"));           //LOT NO
+                    item.setSUB_SEQ_NO(jObject.getString("SUB_SEQ_NO"));       //하위 순번
+                    item.setPUR_TYPE(jObject.getString("PUR_TYPE"));         //발주유형
+                    item.setPUR_TYPE_CD(jObject.getString("PUR_TYPE_CD"));      //
+                    item.setPLANT_CD(jObject.getString("PLANT_CD"));         //공장코드
+                    item.setDLV_NO(jObject.getString("DLV_NO"));           //거래명세서
+                    item.setSL_CD(jObject.getString("SL_CD"));            //창고코드
+                    item.setPO_NO(jObject.getString("PO_NO"));            //발주번호
+                    item.setPO_SEQ_NO(jObject.getString("PO_SEQ_NO"));        //발주순번
+                    item.setPROCUR_TYPE(jObject.getString("PROCUR_TYPE"));
+                    item.setBP_CD(jObject.getString("BP_CD"));
+                    //item.MVMT_QTY          = jObject.getString("MVMT_QTY");         //입하수량
+                    item.setPRODT_ORDER_NO(jObject.getString("PRODT_ORDER_NO"));
+                    item.setOPR_NO(jObject.getString("OPR_NO"));
+                    item.setTRACKING_NO(jObject.getString("TRACKING_NO"));
+                    item.setCHK(jObject.getString("CHK_FLAG").equals("Y") ? true : false);//로트스캔 여부
+                    item.setIDX(idx);
+                    item.setEND_CUST_NM(jObject.getString("END_CUST_NM")); //최종고객
+                    item.setINSP_FLG(jObject.getString("INSP_FLG"));
+                    ListViewAdapter.addPkgItem(item);
+                }
+
+                //최종고객 표시
+                if (ListViewAdapter.getCount() > 0) {
+                    M13_DTL item = (M13_DTL) ListViewAdapter.getItem(0);
+                    end_cust_nm.setText(item.getEND_CUST_NM());
+                }
+
+                listview.setAdapter(ListViewAdapter);
+                ListViewAdapter.notifyDataSetChanged();
+
+                TGSClass.AlertMessage(getApplicationContext(), ja.length() + " 건 조회되었습니다.");
+
+            }
+        } catch (JSONException ex) {
+            TGSClass.AlertMessage(this, ex.getMessage());
+            //System.out.println("json:"+ex.getStackTrace());
+            //System.out.println("json:"+ex.getMessage());
+
+        } catch (Exception e1) {
+            TGSClass.AlertMessage(this, e1.getMessage());
+            //System.out.println("e1:"+e1.getStackTrace());
 
         }
     }
 
+    //리스트 데이터 조회
+    private void dbQueryTagFlag(final String pDN_NO) {
+        ////////////////////////////// 웹 서비스 호출 시 쓰레드 사용 ////////////////////////////////////////////////////////
+        Thread wkThd_dbQuery = new Thread() {
+            public void run() {
 
+                String sql = "SELECT ISNULL(PROD_TAG_USED_FLAG,'N') AS PROD_TAG_USED_FLAG FROM MD02 WHERE ";
+                sql +=  "DLV_NO  = "+pDN_NO+"'";
+
+                DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
+
+                ArrayList<PropertyInfo> pParms = new ArrayList<>();
+
+                PropertyInfo parm = new PropertyInfo();
+                parm.setName("pSQL_Command");
+                parm.setValue(sql);
+                parm.setType(String.class);
+
+                pParms.add(parm);
+
+                sJson = dba.SendHttpMessage("GetSQLData", pParms);
+            }
+        };
+        wkThd_dbQuery.start();   //스레드 시작
+        try {
+            wkThd_dbQuery.join();  //workingThread가 종료될때까지 Main 쓰레드를 정지함.
+
+            if (!sJson.equals("")) {
+
+                JSONArray ja = new JSONArray(sJson);
+
+                for (int idx = 0; idx < ja.length(); idx++) {
+
+                    JSONObject jObject = ja.getJSONObject(idx);
+
+                    String flag =jObject.getString("SER_NO");           //순번
+
+                    if(flag.equals("Y")){
+                        LotAddMode=true;
+                    }
+                }
+
+            }
+        } catch (JSONException ex) {
+            TGSClass.AlertMessage(this, ex.getMessage());
+            //System.out.println("json:"+ex.getStackTrace());
+            //System.out.println("json:"+ex.getMessage());
+
+        } catch (Exception e1) {
+            TGSClass.AlertMessage(this, e1.getMessage());
+            //System.out.println("e1:"+e1.getStackTrace());
+
+        }
+    }
+
+    //입고 BL 및 SP 처리
     private void dbSave(int saveCnt) {
 
         //쿼리중복 방지(쓰레드 중복 방지)
@@ -433,6 +488,7 @@ public class M13_DTL_Activity extends BaseActivity {
     }
 
 
+    //dbsasve에서 저장될 데이터 set
     private  ArrayList<M13_DTL> SetSaveData(){
 
         M13_DTL temp_dtl = new M13_DTL();
@@ -479,7 +535,8 @@ public class M13_DTL_Activity extends BaseActivity {
         }
         return result;
     }
-    //LOT번호 스캔하여 데이터 저장
+
+    //LOT번호 스캔(혹은 수기등록)하여 LOT 데이터 스캔처리 저장
     private void dbLotSave(M13_DTL dtl) {
                 ////////////////////////////// 웹 서비스 호출 시 쓰레드 사용 ////////////////////////////////////////////////////////
                 Thread wkThd_dbQuery = new Thread() {
@@ -682,20 +739,60 @@ public class M13_DTL_Activity extends BaseActivity {
         return true;
     }
 
+    //일반등록으로 스캔한 데이터만 입력처리
+    private void Auto_Input(){
+
+        for(M13_DTL dtl : ListViewAdapter.getLotArray()){
+
+            if(dtl.getLOT_NO().equals(tx_lot_no)){
+
+                dtl.setCHK(true);
+                ListViewAdapter.updatePkgItem(dtl);
+
+                listview.setAdapter(ListViewAdapter);
+                ListViewAdapter.notifyDataSetChanged();
+
+                dbLotSave(dtl);
+                TGSClass.AlertMessage(getApplicationContext(), "입고처리 되었습니다.");
+
+            }
+        }
+
+    }
+
+    private void Auto_Add(){
+        String dlvCodes ="";
+        String[] lot_sub = tx_lot_no.split("\\$");
+
+        dlvCodes = lot_sub[3];
+
+        String[] dlv_code = dlvCodes.split("-");
+
+        String ser_no = dlv_code[1];
+        String seq_no = dlv_code[2];
+
+
+
+        dbAddLotSave(ser_no,seq_no);
+    }
+
     //LOT번호 스캔하여 데이터 저장
-    private void dbResultSave(M13_DTL dtl) {
+    private void dbAddLotSave(String ser_no,String seq_no) {
         ////////////////////////////// 웹 서비스 호출 시 쓰레드 사용 ////////////////////////////////////////////////////////
         Thread wkThd_dbQuery = new Thread() {
             public void run() {
 
-                dataSaveLog("로트 스캔 저장","CKD_IN");
-                dataSaveLog("로트번호// "+dtl.getLOT_NO(),"CKD_IN");
-                dataSaveLog("거래명세서 번호// "+dtl.getDLV_NO(),"CKD_IN");
 
-                String sql = " EXEC DBO.XUSP_TPC_M1003MA1_SET_RESULT_ANDROID ";
-                sql += " @DN_NO	     = '"+dtl.getDLV_NO()+"',";
-                sql += " @SER_NO     = '" + dtl.getSER_NO() + "',";
-                sql += " @SUB_SEQ_NO = '" + dtl.getSUB_SEQ_NO() + "',";
+                dataSaveLog("로트 추가 스캔 저장","CKD_IN");
+                dataSaveLog("로트번호// "+tx_lot_no,"CKD_IN");
+                dataSaveLog("거래명세서 번호// "+tx_dn_no,"CKD_IN");
+
+                String sql = " EXEC DBO.XUSP_TPC_M1003MA1_ADD_LOT_ANDROID ";
+                sql += " @DN_NO	     = '"+tx_dn_no+"',";
+                sql += " @LOT_NO     = '" + tx_lot_no + "',";
+                sql += " @SER_NO     = '" + ser_no + "',";
+                sql += " @SUB_SEQ_NO     = '" + seq_no + "',";
+
                 sql += " @USER_ID    = '" + vUSER_ID + "'";
                 sql += ";";
 
@@ -719,59 +816,11 @@ public class M13_DTL_Activity extends BaseActivity {
         wkThd_dbQuery.start();   //스레드 시작
         try {
             wkThd_dbQuery.join();  //workingThread가 종료될때까지 Main 쓰레드를 정지함.
-
+            start();
         } catch (InterruptedException ex) {
 
         }
     }
-
-
-    //수기등록 페이지로 이동하여 처리
-    private void Custom_Input(){
-
-        Intent intent = TGSClass.ChangeView(getPackageName(), M13_LOT_Activity.class);
-
-        vItem = (M13_DTL) ListViewAdapter.getItemFromLotno(tx_lot_no);
-
-        if(vItem == null){
-            TGSClass.AlertMessage(getApplicationContext(), "일치하는 항목이 없습니다.");
-
-            return;
-        }
-        intent.putExtra("DN_NO", dn_no.getText().toString());
-        intent.putExtra("ITEM_CD", vItem.getITEM_CD() );
-        intent.putExtra("ITEM_NM", vItem.getITEM_NM());
-        intent.putExtra("LOT_NO", vItem.getLOT_NO());
-
-        intent.putExtra("LOT", ListViewAdapter.getLotArray());
-
-        startActivityForResult(intent, 0);
-    }
-
-    //일반등록으로 스캔한 데이터만 입력처리
-    private void Auto_Input(){
-
-        for(M13_DTL dtl : ListViewAdapter.getLotArray()){
-
-            System.out.println("dtl lot ='"+dtl.getLOT_NO()+"'");
-            System.out.println("tx lot ='"+tx_lot_no+"'");
-
-            if(dtl.getLOT_NO().equals(tx_lot_no)){
-
-                dtl.setCHK(true);
-                ListViewAdapter.updatePkgItem(dtl);
-
-                listview.setAdapter(ListViewAdapter);
-                ListViewAdapter.notifyDataSetChanged();
-
-                dbLotSave(dtl);
-                TGSClass.AlertMessage(getApplicationContext(), "입고처리 되었습니다.");
-
-            }
-        }
-
-    }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
