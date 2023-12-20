@@ -38,7 +38,7 @@ public class M13_DTL_Activity extends BaseActivity {
 
     //== Intent에서 받을 변수 선언 ==//
     private String vMenuID, vMenuNm, vMenuRemark, vStartCommand;
-    private String tx_dn_no,tx_lot_no;
+    private String tx_dn_no,tx_lot_no,sel_lot_no;
 
     //== M13_LOT와 주고 받을 변수 선언 ==//
     private M13_DTL vItem;
@@ -67,7 +67,7 @@ public class M13_DTL_Activity extends BaseActivity {
     private ErrorList_Popup Error_Popup;
 
     //SCM에 거래명세서와 함께 로트 등록하지 않고 따로 LOT 부착한 경우 TRUE
-    private boolean LotAddMode = true;
+    private boolean LotAddMode = false;
 
     //== ListView Adapter 선언 ==//
     M13_DTL_ListViewAdapter ListViewAdapter; //데이터를 완전히 초기화 하는것이 아니라 수정처리 하기때문에 전역 선언
@@ -132,7 +132,9 @@ public class M13_DTL_Activity extends BaseActivity {
             public void onItemClick(AdapterView parent, View v, int position, long id) {
                 vItem = (M13_DTL) parent.getItemAtPosition(position);
                 vIDX = position;
-
+                sel_lot_no = vItem.getLOT_NO();
+                System.out.println("sel_lot_no:"+sel_lot_no);
+                ListViewAdapter.setSelected(position);
                 ListViewAdapter.notifyDataSetChanged();
                 //parent.getItemAtPosition(position)
                 //parent.setBackgroundColor(Color.parseColor("#00D8FF"));
@@ -178,14 +180,21 @@ public class M13_DTL_Activity extends BaseActivity {
         });
         btn_custom.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
+                //SCM에 거래명세서와 함께 로트 등록하지 않고 따로 LOT 부착한 경우 TRUE
+                if(LotAddMode){
 
-                Intent intent = TGSClass.ChangeView(getPackageName(), M13_LOT_Activity.class);
+                    dbAddLotDelete();
+                }
+                else{
+                    Intent intent = TGSClass.ChangeView(getPackageName(), M13_LOT_Activity.class);
 
-                intent.putExtra("DN_NO", dn_no.getText().toString());
+                    intent.putExtra("DN_NO", dn_no.getText().toString());
 
-                intent.putExtra("LOT", ListViewAdapter.getLotArray());
+                    intent.putExtra("LOT", ListViewAdapter.getLotArray());
 
-                startActivityForResult(intent, 0);
+                    startActivityForResult(intent, 0);
+                }
+
 
             }
         });
@@ -212,10 +221,10 @@ public class M13_DTL_Activity extends BaseActivity {
                     start();
                     //SCM에 거래명세서와 함께 로트 등록하지 않고 따로 LOT 부착한 경우 TRUE
                     if(LotAddMode){
-                        btn_custom.setEnabled(false);
+                        btn_custom.setText("삭제");
                     }
                     else{
-                        btn_custom.setEnabled(true);
+                        btn_custom.setText("수기등록");
                     }
 
                     lot_no.requestFocus();
@@ -268,8 +277,9 @@ public class M13_DTL_Activity extends BaseActivity {
     private void start() {
         dataSaveLog("거래명세서 스캔","CKD_IN");
         dataSaveLog(dn_no.getText().toString(),"CKD_IN");
-
+        dbQueryTagFlag(tx_dn_no);
         dbQuery(tx_dn_no);
+
 
     }
 
@@ -283,6 +293,7 @@ public class M13_DTL_Activity extends BaseActivity {
                 sql += " @PLANT_CD ='" + vPLANT_CD+ "',";//현재 공장 코드 번호
                 sql += " @DLV_NO ='" + pDN_NO + "',";
                 sql += " @USER_ID    = '" + vUSER_ID + "'";
+                System.out.println("sql:"+sql);
 
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
@@ -374,7 +385,7 @@ public class M13_DTL_Activity extends BaseActivity {
             public void run() {
 
                 String sql = "SELECT ISNULL(PROD_TAG_USED_FLAG,'N') AS PROD_TAG_USED_FLAG FROM MD02 WHERE ";
-                sql +=  "DLV_NO  = "+pDN_NO+"'";
+                sql +=  " DLV_NO  = '"+pDN_NO+"'";
 
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
@@ -402,9 +413,9 @@ public class M13_DTL_Activity extends BaseActivity {
 
                     JSONObject jObject = ja.getJSONObject(idx);
 
-                    String flag =jObject.getString("SER_NO");           //순번
-
+                    String flag =jObject.getString("PROD_TAG_USED_FLAG");           //순번
                     if(flag.equals("Y")){
+
                         LotAddMode=true;
                     }
                 }
@@ -555,6 +566,7 @@ public class M13_DTL_Activity extends BaseActivity {
                         sql += " @LOT_QTY    = '" + dtl.getDLV_QTY() + "',";
                         sql += " @USER_ID    = '" + vUSER_ID + "'";
                         sql += ";";
+                        System.out.println("sql:"+sql);
                         dataSaveLog("저장 SQL// "+sql,"CKD_IN");
 
                         DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
@@ -744,6 +756,9 @@ public class M13_DTL_Activity extends BaseActivity {
 
         for(M13_DTL dtl : ListViewAdapter.getLotArray()){
 
+            System.out.println("getLOT_NO:"+dtl.getLOT_NO()+"'");
+            System.out.println("tx_lot_no:"+tx_lot_no+"'");
+
             if(dtl.getLOT_NO().equals(tx_lot_no)){
 
                 dtl.setCHK(true);
@@ -760,7 +775,9 @@ public class M13_DTL_Activity extends BaseActivity {
 
     }
 
+    //2023-11-03 박준하 생산로트 추가 로직
     private void Auto_Add(){
+        //로트번호에서 ser,seq 번호 분리
         String dlvCodes ="";
         String[] lot_sub = tx_lot_no.split("\\$");
 
@@ -768,9 +785,8 @@ public class M13_DTL_Activity extends BaseActivity {
 
         String[] dlv_code = dlvCodes.split("-");
 
-        String ser_no = dlv_code[1];
-        String seq_no = dlv_code[2];
-
+        String ser_no = dlv_code[2];
+        String seq_no = dlv_code[3];
 
 
         dbAddLotSave(ser_no,seq_no);
@@ -792,7 +808,51 @@ public class M13_DTL_Activity extends BaseActivity {
                 sql += " @LOT_NO     = '" + tx_lot_no + "',";
                 sql += " @SER_NO     = '" + ser_no + "',";
                 sql += " @SUB_SEQ_NO     = '" + seq_no + "',";
+                sql += " @USER_ID    = '" + vUSER_ID + "'";
+                sql += ";";
 
+                System.out.println("sql:"+sql);
+
+
+                dataSaveLog("결과 저장 SQL// "+sql,"CKD_IN");
+
+                DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
+
+                ArrayList<PropertyInfo> pParms = new ArrayList<>();
+
+                PropertyInfo parm = new PropertyInfo();
+                parm.setName("pSQL_Command");
+                parm.setValue(sql);
+                parm.setType(String.class);
+
+                pParms.add(parm);
+
+                sJson = dba.SendHttpMessage("GetSQLData", pParms);
+
+            }
+        };
+        wkThd_dbQuery.start();   //스레드 시작
+        try {
+            wkThd_dbQuery.join();  //workingThread가 종료될때까지 Main 쓰레드를 정지함.
+            start();
+        } catch (InterruptedException ex) {
+
+        }
+    }
+    //LOT번호 선택하여 삭제
+    private void dbAddLotDelete() {
+        ////////////////////////////// 웹 서비스 호출 시 쓰레드 사용 ////////////////////////////////////////////////////////
+        Thread wkThd_dbQuery = new Thread() {
+            public void run() {
+
+
+                dataSaveLog("로트 추가 스캔 삭제","CKD_IN");
+                dataSaveLog("로트번호// "+sel_lot_no,"CKD_IN");
+                dataSaveLog("거래명세서 번호// "+tx_dn_no,"CKD_IN");
+
+                String sql = " EXEC DBO.XUSP_TPC_M1003MA1_DEL_LOT_ANDROID ";
+                sql += " @DN_NO	     = '"+tx_dn_no+"',";
+                sql += " @LOT_NO     = '" + sel_lot_no + "',";
                 sql += " @USER_ID    = '" + vUSER_ID + "'";
                 sql += ";";
 

@@ -42,6 +42,16 @@ public class M13_DTL_ListViewAdapter extends BaseAdapter {
         return null;
     }
 
+    protected void setSelected(int idx) {
+
+        for (int i = 0; i < listViewItem.size(); i++) {
+            if (idx == i) {
+                listViewItem.get(i).setSelected(true);
+                continue;
+            }
+            listViewItem.get(i).setSelected(false);
+        }
+    }
 
     @Override
     public long getItemId(int position) {
@@ -75,25 +85,25 @@ public class M13_DTL_ListViewAdapter extends BaseAdapter {
 
 
         // Data Set(listViewItemList)에서 position에 위치한 데이터 참조 획득
-        M13_DTL item2 = listViewItem.get(position);
+        M13_DTL item = listViewItem.get(position);
 
         // 아이템 내 각 위젯에 데이터 반영
-        item_cd.setText(item2.getITEM_CD());
-        item_nm.setText(item2.getITEM_NM());
-        //dlv_qty.setText(item2.getDLV_QTY());
-        lot_no.setText(item2.getLOT_NO());
-        //chk_qty.setText(item2.getCHK_QTY());
+        item_cd.setText(item.getITEM_CD());
+        item_nm.setText(item.getITEM_NM());
+        //dlv_qty.setText(item.getDLV_QTY());
+        lot_no.setText(item.getLOT_NO());
+        //chk_qty.setText(item.getCHK_QTY());
 
-        chk.setText(item2.getCHK()? "OK":"X");
+        chk.setText(item.getCHK()? "OK":"X");
 
 
-        if(item2.getCHK()){
+        if(item.getCHK()){
             //chk.setBackgroundColor(Color.parseColor("#99CCFF"));
 
             item_nm.setBackgroundColor(Color.parseColor("#82FF66"));
             lot_no.setBackgroundColor(Color.parseColor("#82FF66"));
             chk.setBackgroundColor(Color.parseColor("#82FF66"));
-            if(item2.getINSP_FLG().equals("Y")){
+            if(item.getINSP_FLG().equals("Y")){
                 item_nm.setBackgroundColor(Color.parseColor("#FFFF33"));
                 lot_no.setBackgroundColor(Color.parseColor("#FFFF33"));
                 chk.setBackgroundColor(Color.parseColor("#FFFF33"));
@@ -106,6 +116,14 @@ public class M13_DTL_ListViewAdapter extends BaseAdapter {
             item_nm.setBackgroundColor(Color.parseColor("#FFFFFF"));
             lot_no.setBackgroundColor(Color.parseColor("#FFFFFF"));
 
+        }
+
+        System.out.println("item.selected:"+item.getSelected());
+        if(item.getSelected()){
+            convertView.setBackgroundColor(Color.parseColor("#DDDDDD"));
+            chk.setBackgroundColor(Color.parseColor("#DDDDDD"));
+            item_nm.setBackgroundColor(Color.parseColor("#DDDDDD"));
+            lot_no.setBackgroundColor(Color.parseColor("#DDDDDD"));
         }
 
         return convertView;

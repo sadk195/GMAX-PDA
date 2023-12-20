@@ -3467,6 +3467,7 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph
 plurals mtrl_badge_content_description
+raw errorsound
 raw zxing_beep
 string I10_sub_title
 string I10_title

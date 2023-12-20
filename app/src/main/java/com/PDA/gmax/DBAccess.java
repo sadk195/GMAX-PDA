@@ -60,7 +60,6 @@ public class DBAccess {
         catch (Exception exception)
         {
             response= "-2" + exception.toString();
-            System.out.println("exception:"+exception.getMessage());
 
         }
 

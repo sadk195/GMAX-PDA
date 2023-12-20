@@ -100,6 +100,8 @@ public class S12_HDR_Activity extends BaseActivity {
         cal2 = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
         cal2.setTime(new Date());
         cal2.add(Calendar.DATE, 10);
+
+
     }
 
     private void initializeListener() {
@@ -137,7 +139,6 @@ public class S12_HDR_Activity extends BaseActivity {
         });
         work_fr_dt.addTextChangedListener(textWatcher);
         work_to_dt.addTextChangedListener(textWatcher);
-
         BP_CD.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

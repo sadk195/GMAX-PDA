@@ -62,6 +62,9 @@ public class M13_DTL implements Serializable {   //Serializable 객체를 파라
 
     private String INSP_FLG;
 
+    //선택 체크
+    private boolean Selected;
+
 
     public String getITEM_CD(){return ITEM_CD;}
 
@@ -181,5 +184,11 @@ public class M13_DTL implements Serializable {   //Serializable 객체를 파라
 
     public void setINSP_FLG(String insp_flg) { INSP_FLG = insp_flg;}
 
+    public void setSelected(boolean selected) {
+        Selected = selected;
+    }
+    public boolean getSelected() {
+        return Selected;
+    }
 
 }

@@ -1,5 +1,7 @@
 package com.PDA.gmax.S10;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -154,17 +156,14 @@ public class S12_PKG_Activity extends BaseActivity {
 
         btn_del.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-
-                for(S12_PKG pkg:ListViewAdapter.getItems()){
+                //2023-12-20 박준하 카톤 삭제시 카톤에 포함된 항목 모두 삭제
+               /* for(S12_PKG pkg:ListViewAdapter.getItems()){
                     if(Double.valueOf( pkg.QTY) > 0){
                         TGSClass.AlertMessage(getApplicationContext(),"해당 CARTON에 포장품목이 남아있습니다.",5000);
                         return;
                     }
-                }
-
-                dbCartonDel(req_no.getText().toString(), String.valueOf(selected_no));
-                dbQuery_getComboData(false);
-                TGSClass.AlertMessage(getApplicationContext(),"해당 CARTON이 삭제되었습니다.",5000);
+                }*/
+                Check_Carton();
 
             }
         });
@@ -330,7 +329,7 @@ public class S12_PKG_Activity extends BaseActivity {
                 sql += " @CONT_NO = '" + pCartonNo + "',";
                 sql += " @USER_ID = '" + vUSER_ID + "'";
                 sql += ";";
-                System.out.println("sql del:"+sql);
+
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
@@ -582,6 +581,26 @@ public class S12_PKG_Activity extends BaseActivity {
         } catch (Exception ex) {
             TGSClass.AlertMessage(getApplicationContext(), ex.getMessage());
         }
+    }
+
+    //카톤 삭제시 확인메시지 표출
+    private void Check_Carton() {
+        new AlertDialog.Builder(this)
+                .setTitle("carton삭제 확인")
+                .setMessage("해당 carton에 등록된 포장내역이 있습니다 삭제하시겠습니까?")
+                .setIcon(android.R.drawable.ic_menu_save)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dbCartonDel(req_no.getText().toString(), String.valueOf(selected_no));
+                        dbQuery_getComboData(false);
+                        TGSClass.AlertMessage(getApplicationContext(),"해당 CARTON이 삭제되었습니다.",5000);
+                    }
+                }).setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+
+                    }
+                })
+                .show();
     }
 
     @Override

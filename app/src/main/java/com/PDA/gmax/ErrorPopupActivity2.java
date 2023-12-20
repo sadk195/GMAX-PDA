@@ -2,6 +2,7 @@ package com.PDA.gmax;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -29,6 +30,9 @@ public class ErrorPopupActivity2 extends Activity {
         //== 이전 Intent에서 MSG라고 받은 값을 가져온다 ==//
         String vErrorMSG = getIntent().getStringExtra("MSG");
 
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.errorsound);
+
+        mp.start();
         //== 가져온 값을 바인딩 ==//
         lbl_error_msg.setText(vErrorMSG);
 
