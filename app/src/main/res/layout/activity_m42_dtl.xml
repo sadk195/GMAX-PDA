@@ -106,7 +106,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="품목명  |  ROLL NO  |  길이  "
+                android:text=" 순번 | 품목명  |  ROLL NO  |  길이  "
                 android:textColor="@color/design_default_color_primary"
                 android:textSize="15dp" />
 

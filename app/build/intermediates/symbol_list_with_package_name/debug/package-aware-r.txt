@@ -1,4 +1,4 @@
-com.example.gmax
+com.PDA.gmax
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -3072,6 +3072,7 @@ id txt_Scan_move_SL_CD
 id txt_Scan_move_location
 id txt_Scan_prodt_order_no
 id txt_Scan_sl_cd
+id txt_box_cnt
 id txt_contents
 id txt_down
 id txt_good_qty
@@ -3213,6 +3214,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_config
 layout activity_error_popup
+layout activity_error_popup2
 layout activity_i10
 layout activity_i11_dtl
 layout activity_i11_hdr
@@ -3465,6 +3467,7 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph
 plurals mtrl_badge_content_description
+raw errorsound
 raw zxing_beep
 string I10_sub_title
 string I10_title
