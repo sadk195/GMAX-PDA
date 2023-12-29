@@ -27,7 +27,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
-import com.PDA.gmax.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputLayout;
@@ -555,8 +554,6 @@ public class MainActivity extends AppCompatActivity {
         strVersionNm = pInfo.versionName;
         intVersionNo = pInfo.versionCode;
 
-        System.out.println("version:"+intVersionNo);
-
         /* 현재 설치된 APP 의 버전 정보와 다운로드 받을 경로 정보를 데이터베이스에서 받아옵니다. */
         if (!getVersionFromServer()) {
             Intent error_intent = TGSClass.ChangeView(getPackageName(), ErrorPopupActivity.class);
@@ -641,8 +638,6 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 String sql = " EXEC XUSP_AND_APP_VERSION_GET @FILENAME = '" + FILE_NAME + "'";
 
-                System.out.println("sqls:"+sql);
-
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParams = new ArrayList<>();
@@ -655,7 +650,6 @@ public class MainActivity extends AppCompatActivity {
                 pParams.add(param);
 
                 strJsonVersion = dba.SendHttpMessage("GetSQLData", pParams);
-                System.out.println("strJsonVersion:"+strJsonVersion);
 
             }
         };
@@ -735,11 +729,9 @@ public class MainActivity extends AppCompatActivity {
         }
         @Override
         public void run() {
-            System.out.println("running1:"+running);
             while (running) {
                 try {
                     sleep(500);
-                    System.out.println("running2:"+running);
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -762,18 +754,15 @@ public class MainActivity extends AppCompatActivity {
                     //다운로드 받을 파일명 설정
                     File outputFile = new File(filePath, FILE_NAME);
                     FileOutputStream fos = new FileOutputStream(outputFile);
-                    System.out.println("running3:"+running);
 
                     //파일 다운로드 진행
                     InputStream is = c.getInputStream();
-                    System.out.println("running4:"+running);
 
                     byte[] buffer = new byte[1024];
                     int len1 = 0;
                     while ((len1 = is.read(buffer)) != -1) {
                         fos.write(buffer, 0, len1);
                     }
-                    System.out.println("running5:"+running);
 
                     fos.close();
                     is.close(); //till here, it works fine - .apk is download to my sdcard in download file

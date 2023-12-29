@@ -269,8 +269,6 @@ public class S13_QUERY_Activity extends BaseActivity {
                 sql += "@USER_ID = '" + vUSER_ID + "'";
                 sql += ";";
 
-
-                System.out.println("sql:"+sql);
                 dataSaveLog("출하 현황 검색","Shipment");
                 dataSaveLog(sql,"Shipment");
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);

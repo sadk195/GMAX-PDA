@@ -358,7 +358,6 @@ public class M42_DTL_Activity extends BaseActivity {
 
             }
             catch (JSONException e){
-                System.out.println("JSONException:"+e.getMessage());
 
             }
         }

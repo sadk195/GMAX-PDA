@@ -243,7 +243,6 @@ public class S12_HDR_Activity extends BaseActivity {
                 sql += " ,@BP_CD = '" + str_BP_CD + "'";
                 sql += " ,@PLANT_CD = '" + vPLANT_CD + "'";
 
-                System.out.println("sql:"+sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();

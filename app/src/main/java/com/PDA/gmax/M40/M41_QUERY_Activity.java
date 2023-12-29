@@ -106,7 +106,6 @@ public class M41_QUERY_Activity extends BaseActivity {
     //액티비티 시작,데이터 조회
     private void start() {
         dbQuery();
-        System.out.println("json:"+sJson);
         if (!sJson.equals("")) {
             try {
                 JSONArray ja = new JSONArray(sJson);

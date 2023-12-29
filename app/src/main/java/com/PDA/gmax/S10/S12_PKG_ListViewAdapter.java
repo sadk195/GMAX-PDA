@@ -102,8 +102,6 @@ public class S12_PKG_ListViewAdapter extends BaseAdapter {
 
     public void setShipmentItem(String ITEM_CD,String PACKING_CNT,String QTY) {
 
-
-        System.out.println("setshipmentitem");
         int listIdx=0;
         for (S12_PKG pkg:listViewItem) {
             if(pkg.ITEM_CD.equals(ITEM_CD)){
@@ -111,7 +109,6 @@ public class S12_PKG_ListViewAdapter extends BaseAdapter {
             }
             listIdx++;
         }
-        System.out.println("listIdx:"+listIdx);
 
         S12_PKG item = (S12_PKG)listViewItem.get((listIdx));
 
@@ -121,10 +118,6 @@ public class S12_PKG_ListViewAdapter extends BaseAdapter {
         //item.setREQ_STOCK(REQ_STOCK);
         item.setPACKING_CNT(PACKING_CNT);
         item.setQTY(QTY);
-
-        System.out.println("ITEM_CD:"+ITEM_CD);
-        System.out.println("PACKING_CNT:"+PACKING_CNT);
-        System.out.println("QTY:"+QTY);
 
         listViewItem.set(listIdx,item);
     }

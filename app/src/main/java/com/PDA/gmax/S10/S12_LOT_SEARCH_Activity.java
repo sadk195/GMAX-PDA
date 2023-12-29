@@ -149,7 +149,6 @@ public class S12_LOT_SEARCH_Activity extends BaseActivity {
         dbQuery();
 
         if (!sJson.equals("")) {
-            System.out.println("SJSON:"+sJson);
             try {
                 JSONArray ja = new JSONArray(sJson);
 
@@ -188,8 +187,6 @@ public class S12_LOT_SEARCH_Activity extends BaseActivity {
                 sql += "@USER_ID =''";
                 sql += ";";
 
-
-                System.out.println("sql:"+sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();

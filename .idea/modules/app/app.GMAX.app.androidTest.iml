@@ -98,5 +98,4 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.zxing:core:3.3.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.code.gson:gson:2.8.6" level="project" />
   </component>
-  <component name="TestModuleProperties" production-module="GMAX.app.main" />
 </module>

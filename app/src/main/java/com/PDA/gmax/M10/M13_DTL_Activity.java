@@ -133,7 +133,7 @@ public class M13_DTL_Activity extends BaseActivity {
                 vItem = (M13_DTL) parent.getItemAtPosition(position);
                 vIDX = position;
                 sel_lot_no = vItem.getLOT_NO();
-                System.out.println("sel_lot_no:"+sel_lot_no);
+
                 ListViewAdapter.setSelected(position);
                 ListViewAdapter.notifyDataSetChanged();
                 //parent.getItemAtPosition(position)
@@ -293,7 +293,6 @@ public class M13_DTL_Activity extends BaseActivity {
                 sql += " @PLANT_CD ='" + vPLANT_CD+ "',";//현재 공장 코드 번호
                 sql += " @DLV_NO ='" + pDN_NO + "',";
                 sql += " @USER_ID    = '" + vUSER_ID + "'";
-                System.out.println("sql:"+sql);
 
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
@@ -368,12 +367,9 @@ public class M13_DTL_Activity extends BaseActivity {
             }
         } catch (JSONException ex) {
             TGSClass.AlertMessage(this, ex.getMessage());
-            //System.out.println("json:"+ex.getStackTrace());
-            //System.out.println("json:"+ex.getMessage());
 
         } catch (Exception e1) {
             TGSClass.AlertMessage(this, e1.getMessage());
-            //System.out.println("e1:"+e1.getStackTrace());
 
         }
     }
@@ -423,12 +419,10 @@ public class M13_DTL_Activity extends BaseActivity {
             }
         } catch (JSONException ex) {
             TGSClass.AlertMessage(this, ex.getMessage());
-            //System.out.println("json:"+ex.getStackTrace());
-            //System.out.println("json:"+ex.getMessage());
+
 
         } catch (Exception e1) {
             TGSClass.AlertMessage(this, e1.getMessage());
-            //System.out.println("e1:"+e1.getStackTrace());
 
         }
     }
@@ -491,7 +485,6 @@ public class M13_DTL_Activity extends BaseActivity {
 
 
         } catch (Exception e1) {
-            System.out.println(e1.getMessage());
             TGSClass.AlertMessage(getApplicationContext(), "catch :"+e1);
         }
 
@@ -566,7 +559,7 @@ public class M13_DTL_Activity extends BaseActivity {
                         sql += " @LOT_QTY    = '" + dtl.getDLV_QTY() + "',";
                         sql += " @USER_ID    = '" + vUSER_ID + "'";
                         sql += ";";
-                        System.out.println("sql:"+sql);
+
                         dataSaveLog("저장 SQL// "+sql,"CKD_IN");
 
                         DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
@@ -601,7 +594,6 @@ public class M13_DTL_Activity extends BaseActivity {
                 String sql = " EXEC XUSP_Udate_ISSUE_MTHD_LIST ";
                 sql += " @PLANT_CD = '" + vPLANT_CD + "' ";
                 sql += " ,@DLV_NO = '" + dlv_no + "' ";
-                System.out.println("sql:"+sql);
 
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
@@ -614,7 +606,7 @@ public class M13_DTL_Activity extends BaseActivity {
                 pParms.add(parm);
 
                 sJson = dba.SendHttpMessage("GetSQLData", pParms);
-                System.out.println("sJson:"+sJson);
+
 
             }
 
@@ -756,9 +748,6 @@ public class M13_DTL_Activity extends BaseActivity {
 
         for(M13_DTL dtl : ListViewAdapter.getLotArray()){
 
-            System.out.println("getLOT_NO:"+dtl.getLOT_NO()+"'");
-            System.out.println("tx_lot_no:"+tx_lot_no+"'");
-
             if(dtl.getLOT_NO().equals(tx_lot_no)){
 
                 dtl.setCHK(true);
@@ -810,9 +799,6 @@ public class M13_DTL_Activity extends BaseActivity {
                 sql += " @SUB_SEQ_NO     = '" + seq_no + "',";
                 sql += " @USER_ID    = '" + vUSER_ID + "'";
                 sql += ";";
-
-                System.out.println("sql:"+sql);
-
 
                 dataSaveLog("결과 저장 SQL// "+sql,"CKD_IN");
 

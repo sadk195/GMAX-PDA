@@ -118,7 +118,6 @@ public class M13_DTL_ListViewAdapter extends BaseAdapter {
 
         }
 
-        System.out.println("item.selected:"+item.getSelected());
         if(item.getSelected()){
             convertView.setBackgroundColor(Color.parseColor("#DDDDDD"));
             chk.setBackgroundColor(Color.parseColor("#DDDDDD"));

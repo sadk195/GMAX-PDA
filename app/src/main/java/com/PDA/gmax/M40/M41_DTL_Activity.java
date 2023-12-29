@@ -154,7 +154,6 @@ public class M41_DTL_Activity extends BaseActivity {
 
                     }
                     catch(Exception e){
-                        System.out.println("err:"+e.getMessage());
                         TGSClass.AlertMessage(getApplicationContext(), " 오류가 발생하였습니다 다시 스캔하여주십시오");
                     }
                     return true;
@@ -169,7 +168,7 @@ public class M41_DTL_Activity extends BaseActivity {
     private void start() {
         //TGSClass.AlertMessage(getApplicationContext(), BP_CD.getOnItemSelectedListener().toString());
         dbQuery();
-        System.out.println("sjoson:"+sJson);
+
         if (!sJson.equals("")) {
             try {
                 JSONArray ja = new JSONArray(sJson);
@@ -213,7 +212,6 @@ public class M41_DTL_Activity extends BaseActivity {
                 String sql = "EXEC DBO.XUSP_BLANKET_M41_GET_ANDROID";
                 sql += " @FLAG ='M41_HDR'";//원단 넓이
 
-                System.out.println("sql:"+sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
@@ -256,8 +254,6 @@ public class M41_DTL_Activity extends BaseActivity {
                 sql += " @STATUS       ='R',";
                 sql += " @USER_ID      = '" + vUSER_ID + "'";
 
-
-                System.out.println("sqls:"+sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
@@ -402,7 +398,7 @@ public class M41_DTL_Activity extends BaseActivity {
 
                 //스캔한 당시 시간을 추가하여 저장
                 dbSave(temp[0]);
-                System.out.println("sjson2:"+sJson);
+
                 String err ="";
                 String err_name="";
 

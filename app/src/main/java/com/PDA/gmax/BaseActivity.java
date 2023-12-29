@@ -116,14 +116,12 @@ public class BaseActivity extends AppCompatActivity {
             public void run() {
                 // 반복실행할 구문
                 QueryCount++;
-                System.out.println("timer check:"+QueryCount);
-                System.out.println("thread QueryOn:"+QueryOn);
+
 
                 if(QueryCount>QueryMaxTime){
                     // timer 종료
                     Query_Timer.cancel();
                     QueryOn = true;
-                    System.out.println("timer end:"+QueryOn);
 
                 }
             }
@@ -491,7 +489,6 @@ public class BaseActivity extends AppCompatActivity {
     public static void dataSaveLog(String _log, String _fileName) {
         /* SD CARD 하위에 LOG 폴더를 생성하기 위해 미리 dirPath에 생성 할 폴더명을 추가 */
         String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/LOG/";
-        System.out.println("dir:"+dirPath);
         File file = new File(dirPath);
 
         //현재날짜 시간 가져오기
@@ -526,7 +523,6 @@ public class BaseActivity extends AppCompatActivity {
     public static void SetSaveTempData(String _log, String _fileName) {
         /* SD CARD 하위에 LOG 폴더를 생성하기 위해 미리 dirPath에 생성 할 폴더명을 추가 */
         String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Temp/";
-        System.out.println("dir:"+dirPath);
         File file = new File(dirPath);
 
         //현재날짜 시간 가져오기
@@ -560,7 +556,6 @@ public class BaseActivity extends AppCompatActivity {
     public static List<String> GetTempData(String _fileName) {
         /* SD CARD 하위에 LOG 폴더를 생성하기 위해 미리 dirPath에 생성 할 폴더명을 추가 */
         String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Temp/";
-        System.out.println("dir:"+dirPath);
         File file = new File(dirPath);
 
         // 일치하는 폴더가 없으면 생성

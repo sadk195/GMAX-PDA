@@ -64,11 +64,10 @@ public class S12_PKG_Activity extends BaseActivity {
     //== 오류메시지 관련 변수 선언 ==/
     private String err ="",err_name="";
     //== View 선언(Button) ==//
-    private Button btn_lot,btn_end,btn_custom,btn_del;
+    private Button btn_lot,btn_end,btn_custom,btn_del,btn_copy;
 
     //== ActivityForResult 관련 변수 선언 ==//
-    private final int S12_DTL_REQUEST_CODE = 0;
-    private final int S12_CUSTOM_REQUEST_CODE = 1;
+    private final int S12_DTL_REQUEST_CODE = 0,S12_CUSTOM_REQUEST_CODE = 1,S12_COPY_REQUEST_CODE = 2;
 
     //== ListView Adapter 선언 ==//
     S12_PKG_ListViewAdapter ListViewAdapter; //데이터를 완전히 초기화 하는것이 아니라 수정처리 하기때문에 전역 선언
@@ -110,6 +109,7 @@ public class S12_PKG_Activity extends BaseActivity {
         btn_lot     = (Button) findViewById(R.id.btn_lot);
         btn_end     = (Button) findViewById(R.id.btn_end);
         btn_del     = (Button) findViewById(R.id.btn_del);
+        btn_copy    = (Button) findViewById(R.id.btn_copy);
 
         txt_box_cnt     = (TextView) findViewById(R.id.txt_box_cnt);
         //== LOT내역 저장용 클래스 선언 ==//
@@ -151,6 +151,19 @@ public class S12_PKG_Activity extends BaseActivity {
             public void onClick(View v) {
 
                 finish();
+            }
+        });
+
+        btn_copy.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+
+                Intent intent = TGSClass.ChangeView(getPackageName(), S12_CPY_Activity.class);
+                intent.putExtra("REQ_NO", tx_req_no);
+                str_carton_no = String.valueOf(selected_no);
+                intent.putExtra("CARTON_NO",str_carton_no);
+                intent.putExtra("Adapter",(ArrayList<S12_PKG>) ListViewAdapter.getItems());
+
+                startActivityForResult(intent, 2);
             }
         });
 
@@ -211,10 +224,11 @@ public class S12_PKG_Activity extends BaseActivity {
         btn_custom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = TGSClass.ChangeView(getPackageName(), S12_CUSTOM_Activity.class);
+                Intent intent = TGSClass.ChangeView(getPackageName(), S12_CPY_Activity.class);
                 intent.putExtra("REQ_NO", tx_req_no);
                 str_carton_no = String.valueOf(selected_no);
                 intent.putExtra("CARTON_NO",str_carton_no);
+                intent.putExtra("Adapter",ListViewAdapter.getItems());
                 startActivityForResult(intent, 1);
             }
         });
@@ -379,8 +393,6 @@ public class S12_PKG_Activity extends BaseActivity {
                 sql += "@USER_ID ='" + vUSER_ID + "'";
                 sql += ";";
 
-
-                System.out.println("GETLIST:"+sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
@@ -408,7 +420,6 @@ public class S12_PKG_Activity extends BaseActivity {
         if (!sJson.equals("")) {
             try {
                 JSONArray ja = new JSONArray(sJson);
-                System.out.println("sjson:"+sJson);
 
                 if(sJson.contains("ERR")){
                     JSONObject jObject = ja.getJSONObject(0);
@@ -446,7 +457,6 @@ public class S12_PKG_Activity extends BaseActivity {
                 dbQuery_getComboData(true);
 
             } catch (JSONException ex) {
-                System.out.println(ex.getMessage());
                 //TGSClass.AlertMessage(this, ex.getMessage());
             } catch (Exception e1) {
                 TGSClass.AlertMessage(this, e1.getMessage(),5000);
@@ -611,10 +621,12 @@ public class S12_PKG_Activity extends BaseActivity {
 
         }
         switch (requestCode){
+            case S12_COPY_REQUEST_CODE:
             case S12_DTL_REQUEST_CODE:
                 dbQuery_getComboData(false);
                 start();
                 break;
+
             case S12_CUSTOM_REQUEST_CODE:
                 if(data == null) return;
                 //str_carton_no = data.getStringExtra("CONT_NO");

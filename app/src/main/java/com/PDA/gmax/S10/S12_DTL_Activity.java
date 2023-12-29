@@ -359,7 +359,6 @@ public class S12_DTL_Activity extends BaseActivity {
     private void start() {
         //dbQuery(vGetHDRItem.getPLANT_CD(), vGetHDRItem.getDN_REQ_NO());
         dbQuery(vPLANT_CD, vGetHDRItem.getDN_REQ_NO());
-        System.out.println("sjson:" + sJson);
 
         try {
             JSONArray ja = new JSONArray(sJson);
@@ -424,8 +423,6 @@ public class S12_DTL_Activity extends BaseActivity {
                 String sql = " EXEC XUSP_TPC_SHIPMENT_QUERY_DETAIL ";
                 sql += " @PLANT_CD = '" + plant_cd + "'";
                 sql += " ,@DN_REQ_NO = '" + dn_req_no + "'";
-
-                System.out.println("sql:"+sql);
 
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
@@ -739,8 +736,6 @@ public class S12_DTL_Activity extends BaseActivity {
                 sql += ", @VALUE = '" + Value + "'";
                 sql += " ,@PLANT_CD = '" + vPLANT_CD + "'";
 
-                System.out.println("SQL:"+sql);
-
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
@@ -807,7 +802,6 @@ public class S12_DTL_Activity extends BaseActivity {
                 sql += "@ACTUAL_GI_DT ='" + Actual_gi_dt +"'";
                 sql += ";";
 
-                System.out.println("GET approval:"+sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
@@ -825,7 +819,6 @@ public class S12_DTL_Activity extends BaseActivity {
         wkThd_dbQuery.start();   //스레드 시작
         try {
             wkThd_dbQuery.join();  //workingThread가 종료될때까지 Main 쓰레드를 정지함.
-            System.out.println("GET sjson:"+sJson);
 
             if (!sJson.equals("")&& sJson.contains("ERR_MSG")) {
                 try {
@@ -884,7 +877,6 @@ public class S12_DTL_Activity extends BaseActivity {
         //출하 BL 실행
         if (dbQuery_GET_BL(cud_flag_st, flag_st, cmbBizPartner_st, dn_req_no_st, dn_req_seq, dn_rq_dt_st,
                 cmbTrans_st, ar_flag_st, vat_flag_st, cmbMgmtUser_st) == true) {
-            System.out.println("returnmessage:"+result_msg);
         }
 
         if (!result_msg.contains("출하번호")) {
@@ -946,7 +938,6 @@ public class S12_DTL_Activity extends BaseActivity {
 
     //포장상태 변경 메소드
     private void set_PackingViews(String result){
-        System.out.println("packing:"+result);
         // p=> 포장중 / s=> 포장완료 / N => 포장기록 없음(초기상태) / default => 즉시 출고
         switch (result){
             case "P":
@@ -1003,7 +994,6 @@ public class S12_DTL_Activity extends BaseActivity {
                 sql += ",@RTN_ITEM_DOCUMENT_NO = ''";
                 sql += ",@DLV_NO = '"+ dlv_no+"'";
 
-                System.out.println("sql:"+sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
 

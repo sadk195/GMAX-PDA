@@ -158,7 +158,6 @@ public class S12_CUSTOM_Activity extends BaseActivity {
                 for(S12_CUSTOM dtl : ListViewAdapter.getLotArray()){
 
                     if(dtl.CHK ){
-                        System.out.println("tx_carton_no:"+current_cont);
                         dbSave(tx_req_no,current_cont, dtl.LOT_NO);
                         if(!SaveResult()){
                             start();
@@ -200,7 +199,6 @@ public class S12_CUSTOM_Activity extends BaseActivity {
         dbQuery();
 
         if (!sJson.equals("")) {
-            System.out.println("SJSON:"+sJson);
             try {
                 JSONArray ja = new JSONArray(sJson);
 
@@ -252,8 +250,6 @@ public class S12_CUSTOM_Activity extends BaseActivity {
                 sql += "@USER_ID ='" + vUSER_ID + "'";
                 sql += ";";
 
-
-                System.out.println("sql lot:"+sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
@@ -299,7 +295,6 @@ public class S12_CUSTOM_Activity extends BaseActivity {
                 //sql += " SELECT  @RTN_MSG AS RTN_MSG ";
 
                 sql += ";";
-                System.out.println("lot save : " + sql);
 
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
@@ -367,7 +362,6 @@ public class S12_CUSTOM_Activity extends BaseActivity {
         if (!sJson.equals("")) {
             try {
                 JSONArray ja = new JSONArray(sJson);
-                System.out.println("sjson:"+sJson);
 
                 if(sJson.contains("ERR")){
                     JSONObject jObject = ja.getJSONObject(0);
@@ -380,7 +374,6 @@ public class S12_CUSTOM_Activity extends BaseActivity {
                     return false;
                 }
             } catch (JSONException ex) {
-                System.out.println(ex.getMessage());
                 //TGSClass.AlertMessage(this, ex.getMessage());
                 return false;
             } catch (Exception e1) {
@@ -398,15 +391,12 @@ public class S12_CUSTOM_Activity extends BaseActivity {
         if (!sJson.equals("")) {
             try {
                 JSONArray ja = new JSONArray(sJson);
-                System.out.println("sjson:"+sJson);
 
                 if(sJson.contains("CONT_NO")){
                     JSONObject jObject = ja.getJSONObject(0);
                     current = jObject.getString("CONT_NO");
-                    System.out.println("cont_no update : "+current);
                 }
             } catch (JSONException ex) {
-                System.out.println(ex.getMessage());
                 //TGSClass.AlertMessage(this, ex.getMessage());
             } catch (Exception e1) {
                 TGSClass.AlertMessage(this, e1.getMessage(),5000);

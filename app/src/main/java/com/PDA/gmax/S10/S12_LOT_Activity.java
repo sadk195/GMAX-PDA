@@ -265,7 +265,6 @@ public class S12_LOT_Activity extends BaseActivity {
 
                 sql += ";";
 
-                System.out.println(" sql:"+ sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
