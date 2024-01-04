@@ -1,4 +1,4 @@
-#Fri Dec 29 15:53:51 KST 2023
+#Thu Jan 04 11:42:33 KST 2024
 base.0=E\:\\TGS\\company_dev\\gmax\\ANDROID\\GMAX_real\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=E\:\\TGS\\company_dev\\gmax\\ANDROID\\GMAX_real\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.10=E\:\\TGS\\company_dev\\gmax\\ANDROID\\GMAX_real\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex

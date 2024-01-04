@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-mergeDebugResources-26:\\layout\\fragment_menu.xml",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\fragment_menu.xml"
-    },
-    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-mergeDebugResources-26:\\layout\\activity_s12_lot.xml",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\activity_s12_lot.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-mergeDebugResources-26:\\layout\\fragment_menu.xml",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\fragment_menu.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-mergeDebugResources-26:\\layout\\list_view_s12_dtl.xml",
@@ -342,6 +342,10 @@
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-mergeDebugResources-26:\\layout\\activity_i22_dtl.xml",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\activity_i22_dtl.xml"
+    },
+    {
+        "merged": "com.PDA.gmax.app-mergeDebugResources-26:/layout/activity_s12_pkg.xml",
+        "source": "com.PDA.gmax.app-main-29:/layout/activity_s12_pkg.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-mergeDebugResources-26:\\layout\\activity_s12_dtl.xml",

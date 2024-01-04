@@ -224,7 +224,7 @@ public class S12_PKG_Activity extends BaseActivity {
         btn_custom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = TGSClass.ChangeView(getPackageName(), S12_CPY_Activity.class);
+                Intent intent = TGSClass.ChangeView(getPackageName(), S12_CUSTOM_Activity.class);
                 intent.putExtra("REQ_NO", tx_req_no);
                 str_carton_no = String.valueOf(selected_no);
                 intent.putExtra("CARTON_NO",str_carton_no);
