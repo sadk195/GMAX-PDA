@@ -247,7 +247,7 @@ public class M13_DTL_Activity extends BaseActivity {
 
                     //temp = "M1000221103001001001";
                     lot_no.setText(temp);
-                    tx_lot_no = lot_no.getText().toString();
+                    tx_lot_no = lot_no.getText().toString().replace("\t","");
 
                     if(LotAddMode)
                     {
@@ -294,6 +294,7 @@ public class M13_DTL_Activity extends BaseActivity {
                 sql += " @DLV_NO ='" + pDN_NO + "',";
                 sql += " @USER_ID    = '" + vUSER_ID + "'";
 
+                System.out.println("sql:"+sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
@@ -745,6 +746,7 @@ public class M13_DTL_Activity extends BaseActivity {
 
     //일반등록으로 스캔한 데이터만 입력처리
     private void Auto_Input(){
+
 
         for(M13_DTL dtl : ListViewAdapter.getLotArray()){
 

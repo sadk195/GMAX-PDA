@@ -201,8 +201,8 @@ public class S12_PKG_Activity extends BaseActivity {
                     //String temp=lot_no.getText().toString().replaceFirst(tx_lot_no,"");
                     String temp=lot_no.getText().toString();
 
-                    lot_no.setText(temp);
-                    tx_lot_no=lot_no.getText().toString();
+                    tx_lot_no=temp.replace("\t"," ").toString();
+                    lot_no.setText(tx_lot_no);
 
                     str_carton_no = String.valueOf(selected_no);
                     if(selected_no==0){

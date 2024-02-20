@@ -109,8 +109,9 @@ public class S12_CUSTOM_Activity extends BaseActivity {
 
                     String temp = lot_no.getText().toString().replaceFirst(tx_lot_no, "");
                     //temp = "M1000221103001001001";
-                    lot_no.setText(temp);
-                    tx_lot_no = lot_no.getText().toString();
+                    tx_lot_no=temp.replace("\t"," ").toString();
+                    lot_no.setText(tx_lot_no);
+                   // System.out.println("tx_lot_no:"+tx_lot_no);
 
 
                     start();

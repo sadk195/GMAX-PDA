@@ -148,7 +148,8 @@
             android:text="일일입고 현황"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:visibility="invisible"/>
 
 
         <Button

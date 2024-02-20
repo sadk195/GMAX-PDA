@@ -58,7 +58,7 @@ public class S12_HDR_Activity extends BaseActivity {
     private final int S12_DTL_REQUEST_CODE = 0;
 
     //==포장실적 구분 변수 선언==//
-    private boolean PACKAGE;
+    private boolean PACKAGE,RUN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,7 +114,7 @@ public class S12_HDR_Activity extends BaseActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int cnt) {
                 if (s.length() > 0) { //do your work here }
-                    start();
+                    //start();
                 }
             }
 
@@ -142,7 +142,7 @@ public class S12_HDR_Activity extends BaseActivity {
         BP_CD.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                start();
+                //start();
             }
 
             @Override
@@ -163,10 +163,10 @@ public class S12_HDR_Activity extends BaseActivity {
 
     private void start() {
         //TGSClass.AlertMessage(getApplicationContext(), BP_CD.getOnItemSelectedListener().toString());
-
-
+        if(RUN){return;}
+        RUN = true;
         dbQuery(work_fr_dt.getText().toString(), work_to_dt.getText().toString());
-
+        RUN = false;
         if (!sJson.equals("")) {
             try {
                 JSONArray ja = new JSONArray(sJson);
@@ -243,6 +243,7 @@ public class S12_HDR_Activity extends BaseActivity {
                 sql += " ,@BP_CD = '" + str_BP_CD + "'";
                 sql += " ,@PLANT_CD = '" + vPLANT_CD + "'";
 
+                System.out.println("sql:"+sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();

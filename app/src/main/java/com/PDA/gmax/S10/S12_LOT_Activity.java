@@ -125,8 +125,9 @@ public class S12_LOT_Activity extends BaseActivity {
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) && keyCode == KeyEvent.KEYCODE_ENTER) {
 
                     String temp=lot_no.getText().toString().replaceFirst(tx_lot_no,"");
-                    lot_no.setText(temp);
-                    tx_lot_no=lot_no.getText().toString();
+                    tx_lot_no=temp.replace("\t"," ").toString();
+                    lot_no.setText(tx_lot_no);
+                    System.out.println("tx_lot_no:"+tx_lot_no);
 
                     for(S12_LOT list : (ArrayList<S12_LOT>) ListViewAdapter.getItems()){
                         if(list.LOT_NO.equals(tx_lot_no)){

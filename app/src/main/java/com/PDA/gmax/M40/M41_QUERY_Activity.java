@@ -122,7 +122,7 @@ public class M41_QUERY_Activity extends BaseActivity {
 
                     M41_QUERY item = new M41_QUERY();
                     item.setCODE            (jObject.getString("CODE"));
-                    item.setNO          (jObject.getString("NO"));
+                    item.setNO              (jObject.getString("NO"));
 
                     ListViewAdapter.addPkgItem(item);
                 }

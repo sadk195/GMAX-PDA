@@ -100,11 +100,10 @@ public class M13_LOT_Activity extends BaseActivity {
 
                     //바코드 입력시 텍스트 리프레시를 위해서 설정
 
-
                     String temp = lot_no.getText().toString().replaceFirst(tx_lot_no, "");
                     //temp = "M1000221103001001001";
-                    lot_no.setText(temp);
-                    tx_lot_no = lot_no.getText().toString();
+                    tx_lot_no = temp.replace(" ","");
+                    lot_no.setText(tx_lot_no);
 
                     for(M13_DTL dtl : Lot_info){
                         if(dtl.getLOT_NO().equals(tx_lot_no)){
