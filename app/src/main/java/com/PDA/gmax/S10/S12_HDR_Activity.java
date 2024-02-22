@@ -237,7 +237,7 @@ public class S12_HDR_Activity extends BaseActivity {
         ////////////////////////////// 웹 서비스 호출 시 쓰레드 사용 ////////////////////////////////////////////////////////
         Thread wkThd_dbQuery = new Thread() {
             public void run() {
-                String sql = " EXEC XUSP_TPC_SHIPMENT_QUERY_HEADER ";
+                String sql = " EXEC XUSP_TPC_SHIPMENT_QUERY_HEADER_ANDROID ";
                 sql += "  @START_DT = '" + pStartDate + "'";
                 sql += " ,@END_DT = '" + pEndDate + "'";
                 sql += " ,@BP_CD = '" + str_BP_CD + "'";
