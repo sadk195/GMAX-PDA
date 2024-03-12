@@ -2,9 +2,9 @@ package com.PDA.gmax.M50;
 
 import java.io.Serializable;
 
-public class M52_DTL implements Serializable {   //Serializable 객체를 파라미터로 다른 ACTIVITY에 전달할때 필요함.
+public class M53_DTL implements Serializable {   //Serializable 객체를 파라미터로 다른 ACTIVITY에 전달할때 필요함.
 
-    /*
+     /*
      * CODE
      * AREA_DENSITY	          //순번
      * LOT_NO	              //품번
@@ -17,11 +17,9 @@ public class M52_DTL implements Serializable {   //Serializable 객체를 파라
 
     public int NO;
     public String FABRIC;
-    public String FABRIC_NO;
-
     public String WIDTH;
     public String LENGTH;
-    public String INSRT_DT;
+    public boolean CHK = false;
 
     public String getNO(){return String.valueOf(NO);}
 
@@ -31,10 +29,6 @@ public class M52_DTL implements Serializable {   //Serializable 객체를 파라
 
     public void setFABRIC(String fabric) { FABRIC = fabric; }
 
-    public String getFABRIC_NO(){return FABRIC_NO;}
-
-    public void setFABRIC_NO(String fabric_no) { FABRIC_NO = fabric_no; }
-
     public String getWIDTH(){return WIDTH;}
 
     public void setWIDTH(String width) { WIDTH = width; }
@@ -43,9 +37,10 @@ public class M52_DTL implements Serializable {   //Serializable 객체를 파라
 
     public void setLENGTH(String length) { LENGTH = length;}
 
-    public String getINSRT_DT(){return INSRT_DT;}
+    public boolean getCHK() { return CHK;}
 
-    public void setINSRT_DT(String insrt_dt) { INSRT_DT = insrt_dt;}
+    public void setCHK(boolean chk) { CHK = chk; }
+
 
 
 

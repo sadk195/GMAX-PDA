@@ -10,36 +10,32 @@
         android:id ="@+id/ContentView"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:layout_margin="0dp"
-        android:padding="0dp"
         android:orientation="horizontal"
         android:weightSum="20"
         android:focusable="false">
 
+        <!-- 순번 -->
+        <TextView
+            android:id="@+id/no"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="no"
+            android:textColor="@color/colorHeadTitle"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            />
         <!-- 원단 -->
         <TextView
             android:id="@+id/fabric"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="5"
+            android:layout_weight="7"
             android:gravity="center"
             android:text="fabric"
-            android:paddingLeft="1dp"
             android:textColor="@color/colorHeadTitle"
-            android:textSize="12dp"
-            android:textStyle="bold"
-            />
-        <!-- 원단 -->
-        <TextView
-            android:id="@+id/fabric_no"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="5"
-            android:gravity="center"
-            android:paddingLeft="1dp"
-            android:text="fabric_no"
-            android:textColor="@color/colorHeadTitle"
-            android:textSize="12dp"
+            android:textSize="15dp"
             android:textStyle="bold"
             />
         <!-- 길이 -->
@@ -47,36 +43,24 @@
             android:id="@+id/width"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="5"
             android:gravity="center"
-            android:paddingLeft="1dp"
+            android:paddingLeft="5dp"
             android:text="width"
             android:textColor="@color/colorHeadTitle"
-            android:textSize="12dp"
+            android:textSize="15dp"
             android:textStyle="bold" />
         <!-- 길이 -->
         <TextView
             android:id="@+id/length"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="5"
             android:gravity="center"
-            android:paddingLeft="1dp"
+            android:paddingLeft="5dp"
             android:text="length"
             android:textColor="@color/colorHeadTitle"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-        <!-- 입고일자 -->
-        <TextView
-            android:id="@+id/insrt_dt"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="4"
-            android:gravity="center"
-            android:paddingLeft="1dp"
-            android:text="2024-03-11 23:59:59"
-            android:textColor="@color/colorHeadTitle"
-            android:textSize="12dp"
+            android:textSize="15dp"
             android:textStyle="bold" />
 
 

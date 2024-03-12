@@ -2,6 +2,8 @@ package com.PDA.gmax.M50;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,7 +26,9 @@ import org.json.JSONObject;
 import org.ksoap2.serialization.PropertyInfo;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
 
 public class M51_DTL_Activity extends BaseActivity {
@@ -36,10 +40,10 @@ public class M51_DTL_Activity extends BaseActivity {
     private String vMenuID, vMenuNm, vMenuRemark, vStartCommand;
 
     //== m41 스캔 데이터 변수 ==//
-    private M50_DTL vItem;
+    private M51_DTL vItem;
 
     //== View 선언(EditText) ==//
-    private EditText QR_Code;
+    private EditText QR_Code,work_fr_dt,work_to_dt;
     private String tx_QR_Code="";
 
     //== View 선언(ListView) ==//
@@ -54,8 +58,12 @@ public class M51_DTL_Activity extends BaseActivity {
     //== View 선언(CheckBox) ==//
     private CheckBox chk_custom;
 
+    //== 날짜 관련 변수 선언 ==//
+    private Calendar cal1, cal2;
+
+
     //== ActivityForResult 관련 변수 선언 ==//
-    private final int M41_DTL_REQUEST_CODE = 0;
+    private final int M51_DTL_REQUEST_CODE = 0;
 
     //== ListView Adapter 선언 ==//
     M51_DTL_ListViewAdapter ListViewAdapter; //데이터를 완전히 초기화 하는것이 아니라 수정처리 하기때문에 전역 선언
@@ -63,14 +71,35 @@ public class M51_DTL_Activity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_m41_dtl);
+        setContentView(R.layout.activity_m51_dtl);
 
         this.initializeView();
 
+        this.initializeCalendar();
+
         this.initializeListener();
+
+        this.initializeData();
 
     }
 
+    private void initializeData() {
+
+        start();
+    }
+
+    private void initializeCalendar() {
+        cal1 = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+        cal1.setTime(new Date());
+        cal1.add(Calendar.DATE, -5);
+
+        cal2 = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+        cal2.setTime(new Date());
+
+        work_fr_dt.setText(df.format(cal1.getTime()));
+        work_to_dt.setText(df.format(cal2.getTime()));
+
+    }
     private void initializeView() {
         //== BaseActivity 에서 SESSION 값 셋팅 ==//
         this.init();
@@ -87,17 +116,20 @@ public class M51_DTL_Activity extends BaseActivity {
         listview    = (ListView) findViewById(R.id.listPacking);
         btn_query    = (Button) findViewById(R.id.btn_query);
 
+        work_fr_dt    = (EditText) findViewById(R.id.work_fr_dt);
+        work_to_dt = (EditText) findViewById(R.id.work_to_dt);
+
         btn_end    = (Button) findViewById(R.id.btn_end);
         chk_custom  = (CheckBox) findViewById(R.id.custom);
         img_barcode     = (ImageView) findViewById(R.id.img_barcode);
+
 
         //== Adapter 선언 ==//
         ListViewAdapter = new M51_DTL_ListViewAdapter();
         listview.setAdapter(ListViewAdapter);
         listview.setFocusable(false);
 
-        //ListViewAdapter.notifyDataSetChanged();
-        start();
+
     }
 
 
@@ -118,12 +150,45 @@ public class M51_DTL_Activity extends BaseActivity {
         });
         btn_query.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                Intent intent = TGSClass.ChangeView(getPackageName(), M51_QUERY_Activity.class);
+                Intent intent = TGSClass.ChangeView(getPackageName(), M52_DTL_Activity.class);
                 startActivityForResult(intent, 0);
             }
         });
         //== 바코드 이벤트 ==//
         img_barcode.setOnClickListener(qrClickListener);
+        TextWatcher textWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int cnt, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int cnt) {
+                if (s.length() > 0) { //do your work here }
+                    //start();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                start();
+            }
+        };
+        work_fr_dt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPopupDate(v, work_fr_dt, cal1);
+            }
+        });
+
+        work_to_dt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPopupDate(v, work_to_dt, cal2);
+            }
+        });
+        work_fr_dt.addTextChangedListener(textWatcher);
+        work_to_dt.addTextChangedListener(textWatcher);
         QR_Code.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -144,7 +209,7 @@ public class M51_DTL_Activity extends BaseActivity {
                         //중복방지 타이머 실행
                         SetTimerTask();
 
-                        Scan_QR();
+                        dbSave();
 
                         QR_Code.setText("");
                         QR_Code.setSelection(QR_Code.getText().length());
@@ -174,19 +239,18 @@ public class M51_DTL_Activity extends BaseActivity {
                 JSONArray ja = new JSONArray(sJson);
                 ListViewAdapter.ClearItem();
                 //for (int idx = ja.length()-1; idx > 0; idx--) {
+                System.out.println("sJson:"+sJson);
+
                 for (int idx = 0; idx <ja.length(); idx++) {
                     JSONObject jObject = ja.getJSONObject(idx);
 
-                    M50_DTL item = new M50_DTL();
-                    item.setNO(idx+1);
-                    item.setCODE            (jObject.getString("CODE"));
-                    item.setAREA_DENSITY    (jObject.getString("AREA_DENSITY"));
-                    item.setLOT_NO          (jObject.getString("LOT_NO"));
-                    item.setROLL_NO         (jObject.getString("ROLL_NO"));
+                    M51_DTL item = new M51_DTL();
+                   // item.setNO(idx+1);
+                    item.setFABRIC           (jObject.getString("FABRIC"));
+                    item.setFABRIC_NO           (jObject.getString("FABRIC_NO"));
                     item.setWIDTH           (jObject.getString("WIDTH"));
                     item.setLENGTH          (jObject.getString("LENGTH"));
-                    item.setQR_VALUE_ALL    (jObject.getString("QR_VALUE_ALL"));
-                    item.setSTATUS          (jObject.getString("STATUS"));
+                    item.setINSRT_DT        (jObject.getString("INSRT_DT"));
 
                     ListViewAdapter.addPkgItem(item);
                     ListViewAdapter.notifyDataSetChanged();
@@ -209,8 +273,10 @@ public class M51_DTL_Activity extends BaseActivity {
         Thread wkThd_dbQuery = new Thread() {
             public void run() {
 
-                String sql = "EXEC DBO.XUSP_BLANKET_M41_GET_ANDROID";
-                sql += " @FLAG ='M41_HDR'";//원단 넓이
+                String sql = "EXEC DBO.XUSP_BLANKET_M51_GET_ANDROID";
+                sql += " @DT_FROM ='"+work_fr_dt.getText().toString()+"',";
+                sql += " @DT_TO ='"+work_to_dt.getText().toString()+"',";
+                sql += " @TYPE ='R'";
 
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
@@ -236,22 +302,13 @@ public class M51_DTL_Activity extends BaseActivity {
     }
 
     //리스트 데이터 조회
-    private void dbSave(String Datetime) {
+    private void dbSave() {
         ////////////////////////////// 웹 서비스 호출 시 쓰레드 사용 ////////////////////////////////////////////////////////
         Thread wkThd_dbQuery = new Thread() {
             public void run() {
 
-                String sql = "EXEC DBO.XUSP_BLANKET_M41_SET_ANDROID ";
-                sql += " @CUD_FLAG     ='C',";//현재 공장 코드 번호
-                sql += " @CODE	       ='" + vItem.CODE + "',";
-                sql += " @AREA_DENSITY ='" + vItem.AREA_DENSITY + "',";
-                sql += " @LOT_NO	   ='" + vItem.LOT_NO + "',";
-                sql += " @ROLL_NO      ='" + vItem.ROLL_NO + "',";
-                sql += " @WIDTH		   ='" + vItem.WIDTH + "',";
-                sql += " @LENGTH       ='" + vItem.LENGTH + "',";
-                sql += " @QR_VALUE_ALL ='" + vItem.QR_VALUE_ALL + "',";
-                sql += " @FR_DT        ='" + Datetime +"',";
-                sql += " @STATUS       ='R',";
+                String sql = "EXEC DBO.XUSP_BLANKET_M51_SET_ANDROID ";
+                sql += " @QR	       ='" +tx_QR_Code + "',";
                 sql += " @USER_ID      = '" + vUSER_ID + "'";
 
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
@@ -278,98 +335,11 @@ public class M51_DTL_Activity extends BaseActivity {
     }
 
 
-    private void Scan_QR(){
-        ////////////////////////////// 웹 서비스 호출 시 쓰레드 사용 ////////////////////////////////////////////////////////
-        try {
-            dataSaveLog("입고 스캔","Resling");
-            dataSaveLog(tx_QR_Code,"Resling");
-
-            vItem = new M50_DTL();
-            vItem.QR_VALUE_ALL = tx_QR_Code;
-
-            String splited[] = vItem.QR_VALUE_ALL.split("%");
-            vItem.CODE = splited[2].substring(1);
-            vItem.AREA_DENSITY = vItem.CODE.substring(2,6);
-            vItem.WIDTH = vItem.CODE.substring(6,10);
-
-            vItem.LOT_NO = splited[3].substring(1,9);
-            vItem.ROLL_NO = splited[3].substring(12,15);
-            vItem.LENGTH = splited[7].substring(1);
-
-            vItem.setSTATUS("R");
-
-            dbSave("");
-
-            String err ="";
-            String err_name="";
-
-            if (!sJson.equals("") && sJson.contains("ERR")) {
-                JSONArray ja = new JSONArray(sJson);
-                JSONObject jObject = ja.getJSONObject(0);
-                err = jObject.getString("ERR");
-                err_name = jObject.getString("ERR_NAME");
-            }
-            //일반오류
-            if(err.equals("")){
-                dataSaveLog("입고 오류(코드없음)","Resling");
-                dataSaveLog(tx_QR_Code,"Resling");
-
-                tx_QR_Code="";
-
-                SetSaveTempData(vItem.QR_VALUE_ALL,"M41");
-
-                TGSClass.AlertMessage(getApplicationContext(), " 오류가 발생하였습니다 다시 스캔하여주십시오",5000);
-                return;
-            }
-            else if (err.equals("TRUE")) {
-                dataSaveLog("입고 성공","Resling");
-                TGSClass.AlertMessage(getApplicationContext(),  err_name);
-
-/*                int NO = ListViewAdapter.getCount()+1;
 
 
-                M50_DTL item = new M50_DTL();
-                item.setNO              (NO);
-                item.setCODE            ( vItem.CODE);
-                item.setAREA_DENSITY    (vItem.AREA_DENSITY);
-                item.setLOT_NO          (vItem.LOT_NO);
-                item.setROLL_NO         (vItem.ROLL_NO);
-                item.setWIDTH           (vItem.WIDTH);
-                item.setLENGTH          (vItem.LENGTH);
-                item.setQR_VALUE_ALL    (vItem.QR_VALUE_ALL);
-                item.setSTATUS          (vItem.STATUS);
 
-                ListViewAdapter.addPkgItem(item);
-                ListViewAdapter.notifyDataSetChanged();*/
-
-                //저장못한 데이터 가져와서 처리
-                SetTempQR();
-            }
-            //db오류
-            else{
-                dataSaveLog("입고 실패","Resling");
-                dataSaveLog(err_name,"Resling");
-
-                TGSClass.AlertMessage(getApplicationContext(), err_name,5000);
-
-            }
-            tx_QR_Code = vItem.LOT_NO;
-
-        }
-        catch (Exception e){
-            dataSaveLog("스캔오류","Resling");
-            dataSaveLog(e.getMessage(),"Resling");
-
-
-            TGSClass.AlertMessage(getApplicationContext(), " 오류가 발생하였습니다 다시 스캔하여주십시오",5000);
-            return;
-        }
-
-    }
-
-
-    private void SetTempQR(){
-        List<String> stringList = GetTempData("M41");
+    /*private void SetTempQR(){
+        List<String> stringList = GetTempData("M51");
         List<String[]> tempDatas = new ArrayList<>();
 
         for(String temp : stringList){
@@ -417,12 +387,12 @@ public class M51_DTL_Activity extends BaseActivity {
 
                     tx_QR_Code="";
 
-                    //SetSaveTempData(vItem.QR_VALUE_ALL,"M41");
+                    //SetSaveTempData(vItem.QR_VALUE_ALL,"M51");
 
                     //TGSClass.AlertMessage(getApplicationContext(), " 오류가 발생하였습니다 다시 스캔하여주십시오",5000);
                     return;
                 }
-               /* else if (err.equals("TRUE")) {
+               *//* else if (err.equals("TRUE")) {
 
                     M50_DTL item = new M50_DTL();
                     item.setCODE            ( vItem.CODE);
@@ -436,14 +406,14 @@ public class M51_DTL_Activity extends BaseActivity {
 
                     ListViewAdapter.addPkgItem(item);
                     ListViewAdapter.notifyDataSetChanged();
-                }*/
+                }*//*
 
             }
             catch (JSONException e){
 
             }
         }
-    }
+    }*/
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -451,7 +421,7 @@ public class M51_DTL_Activity extends BaseActivity {
 
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
-                case M41_DTL_REQUEST_CODE:
+                case M51_DTL_REQUEST_CODE:
 
                 default:
                     break;

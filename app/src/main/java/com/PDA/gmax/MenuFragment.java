@@ -16,7 +16,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.PDA.gmax.R;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 
@@ -148,7 +147,7 @@ public class MenuFragment extends Fragment {
 
                             //TGSClass.AlertMessage(getApplicationContext(),vMenuID);
                             String vActivityName = vMenuID + "." + vMenuID + "_Activity";
-
+                            System.out.println("vActivityName:"+vActivityName);
                             if (menuActivity.start_grant(vMenuID, vMenuName) == true) { //== 권한 적용 ==//
                                 //ACTIVITY 존재여부 확인.
                                 boolean bCheck = TGSClass.isIntentAvailable(con.getApplicationContext(), menuActivity.getPackageName(), vActivityName);

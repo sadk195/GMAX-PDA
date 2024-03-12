@@ -41,13 +41,13 @@ public class M54_QUERY_Activity extends BaseActivity {
     private ListView listview;
 
     //== View 선언(Button) ==//
-    private Button btn_dtl,btn_open,btn_hide,btn_query,btn_end;
+    private Button btn_open,btn_hide,btn_query,btn_end;
 
     //== View 선언(DrawerLayout) ==//
     private DrawerLayout DrawerView;
 
     //== ActivityForResult 관련 변수 선언 ==//
-    private final int M43_QUERY_REQUEST_CODE = 0;
+    private final int M54_QUERY_REQUEST_CODE = 0;
 
     //== ListView Adapter 선언 ==//
     M54_QUERY_ListViewAdapter ListViewAdapter; //데이터를 완전히 초기화 하는것이 아니라 수정처리 하기때문에 전역 선언
@@ -55,7 +55,7 @@ public class M54_QUERY_Activity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_m43_query);
+        setContentView(R.layout.activity_m54_query);
 
         this.initializeView();
 
@@ -87,7 +87,6 @@ public class M54_QUERY_Activity extends BaseActivity {
 
         DrawerView       = (DrawerLayout) findViewById(R.id.drawer);
 
-        btn_dtl    = (Button) findViewById(R.id.btn_dtl);
         btn_end    = (Button) findViewById(R.id.btn_end);
         //== Adapter 선언 ==//
         ListViewAdapter = new M54_QUERY_ListViewAdapter();
@@ -100,40 +99,13 @@ public class M54_QUERY_Activity extends BaseActivity {
 
             }
         });
-        btn_dtl.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v) {
 
-                Intent intent = TGSClass.ChangeView(getPackageName(), M53_DTL_Activity.class);
-
-                startActivityForResult(intent, 0);
-            }
-        });
         btn_end.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
 
               finish();
             }
         });
-
-/*        TextWatcher textWatcher = new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int cnt, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int cnt) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                start();
-            }
-        };
-
-        edt_length.addTextChangedListener(textWatcher);
-        edt_width.addTextChangedListener(textWatcher);*/
 
         btn_query.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -179,9 +151,9 @@ public class M54_QUERY_Activity extends BaseActivity {
 
                     JSONObject jObject = ja.getJSONObject(idx);
 
-                    M50_DTL item = new M50_DTL();
-                    item.setCODE            (jObject.getString("CODE"));
-                    item.setLOT_NO          (jObject.getString("LOT_NO"));
+                    M51_DTL item = new M51_DTL();
+                    item.setNO(idx+1);
+                    item.setFABRIC          (jObject.getString("LOT_NO"));
                     item.setWIDTH           (jObject.getString("WIDTH"));
                     item.setLENGTH          (jObject.getString("LENGTH"));
 
@@ -208,8 +180,8 @@ public class M54_QUERY_Activity extends BaseActivity {
         Thread wkThd_dbQuery = new Thread() {
             public void run() {
 
-                String sql = "EXEC DBO.XUSP_BLANKET_M41_GET_ANDROID";
-                sql += " @FLAG ='M43_DTL',";//원단 넓이
+                String sql = "EXEC DBO.XUSP_BLANKET_M54_GET_ANDROID";
+                sql += " @FLAG ='M54_QUERY',";//원단 넓이
                 sql += " @WIDTH ='"+edt_width.getText().toString()+"',";//원단 넓이
                 sql += " @LENGTH ='"+edt_length.getText().toString()+"'";//원단 길이
 
@@ -244,8 +216,7 @@ public class M54_QUERY_Activity extends BaseActivity {
 
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
-                case M43_QUERY_REQUEST_CODE:
-                    start();
+                case M54_QUERY_REQUEST_CODE:
                 default:
                     break;
             }

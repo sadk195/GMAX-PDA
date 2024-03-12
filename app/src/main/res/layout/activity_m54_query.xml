@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="리즐링 원단 재고"
+            android:text="원단 관리 > 재고 현황"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="20dp" />
@@ -84,18 +84,7 @@
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp">
 
-                    <Button
-                        android:id="@+id/btn_dtl"
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
-                        android:layout_alignParentLeft="true"
-                        android:background="@drawable/bg_btn_end"
-                        android:focusable="false"
-                        android:gravity="center"
-                        android:text="예외출고"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/white"
-                        android:textSize="18dp" />
+
 
                     <Button
                         android:id="@+id/btn_end"

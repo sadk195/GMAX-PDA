@@ -47,7 +47,7 @@
                 android:weightSum="2">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_Mat_Stored"
+                    android:id="@+id/btn_Seal_Stored"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginRight="5dp"
@@ -58,7 +58,7 @@
                     app:elevation="@dimen/el_5dp" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_Seal_Stored"
+                    android:id="@+id/btn_Mat_Stored"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"

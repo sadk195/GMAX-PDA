@@ -12,8 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.PDA.gmax.R;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -54,6 +52,7 @@ public class Menu2Fragment extends Fragment {
                     JSONObject jObj = ja.getJSONObject(idx);
 
                     menuList.add(jObj);
+                    System.out.println("jObj:"+jObj);
                 }
 
                 menuAdapter = new MenuAdapter(menuList);

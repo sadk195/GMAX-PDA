@@ -2,12 +2,13 @@ package com.PDA.gmax.M50;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.annotation.Nullable;
@@ -40,18 +41,16 @@ public class M52_DTL_Activity extends BaseActivity {
     private M52_DTL vItem;
 
     //== View 선언(EditText) ==//
-    private EditText QR_Code ,con_dt_fr, con_dt_to,edtItemCD;
+    private EditText fabric_nm ,bcd_length, txt_width,bcd_run_no,txt_batch_no,work_fr_dt,work_to_dt;;
 
     //== View 선언(Button) ==//
-    private Button btn_end;
+    private Button btn_end,btn_save;
 
-    private String tx_QR_Code="";
+    private String tx_length="",tx_run_no="",tx_fabric_nm="";
 
     //== View 선언(ListView) ==//
     private ListView listview;
 
-    //== View 선언(ImageView) ==//
-    private ImageView img_barcode;
 
     //== ActivityForResult 관련 변수 선언 ==//
     private final int M52_DTL_REQUEST_CODE = 0;
@@ -88,13 +87,21 @@ public class M52_DTL_Activity extends BaseActivity {
 
 
         //== ID값 바인딩 ==//
-        QR_Code       = (EditText) findViewById(R.id.QR_Code);
-        con_dt_fr       = (EditText) findViewById(R.id.con_dt_fr);
-        con_dt_to       = (EditText) findViewById(R.id.con_dt_to);
 
-        listview    = (ListView) findViewById(R.id.listPacking);
+        fabric_nm       = (EditText) findViewById(R.id.fabric_nm);
+        bcd_length      = (EditText) findViewById(R.id.bcd_length);
+        txt_width       = (EditText) findViewById(R.id.txt_width);
+        bcd_run_no      = (EditText) findViewById(R.id.bcd_run_no);
+        txt_batch_no    = (EditText) findViewById(R.id.txt_batch_no);;
 
-        img_barcode     = (ImageView) findViewById(R.id.img_barcode);
+        work_fr_dt      = (EditText) findViewById(R.id.work_fr_dt);
+        work_to_dt      = (EditText) findViewById(R.id.work_to_dt);
+
+        btn_end         = (Button) findViewById(R.id.btn_end);
+        btn_save        = (Button) findViewById(R.id.btn_save);
+
+
+        listview    = (ListView) findViewById(R.id.listStored);
 
         //== Adapter 선언 ==//
         ListViewAdapter = new M52_DTL_ListViewAdapter();
@@ -105,39 +112,24 @@ public class M52_DTL_Activity extends BaseActivity {
 
     private void initializeData() {
 
-        con_dt_fr.setText(df.format(cal1.getTime()));
-        con_dt_to.setText(df.format(cal2.getTime()));
-
         start();
+
     }
-
-
     private void initializeCalendar() {
+
         cal1 = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
         cal1.setTime(new Date());
-        cal1.add(Calendar.MONTH, -1);
+        cal1.add(Calendar.DATE, -5);
 
         cal2 = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
         cal2.setTime(new Date());
+
+        work_fr_dt.setText(df.format(cal1.getTime()));
+        work_to_dt.setText(df.format(cal2.getTime()));
     }
 
 
-
     private void initializeListener() {
-
-        con_dt_fr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openPopupDate(v, con_dt_fr, cal1);
-            }
-        });
-
-        con_dt_to.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openPopupDate(v, con_dt_to, cal2);
-            }
-        });
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -151,34 +143,49 @@ public class M52_DTL_Activity extends BaseActivity {
             }
         });
 
-        //== 바코드 이벤트 ==//
-        img_barcode.setOnClickListener(qrClickListener);
-        QR_Code.setOnKeyListener(new View.OnKeyListener() {
+        btn_save.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                dbSave();
+            }
+        });
+
+        fabric_nm.setOnKeyListener(new View.OnKeyListener() {@Override
+           public boolean onKey(View v, int keyCode, KeyEvent event) {
+               if ((event.getAction() == KeyEvent.ACTION_DOWN) && keyCode == KeyEvent.KEYCODE_ENTER) {
+
+                   try{
+                       //바코드 입력시 텍스트 리프레시를 위해서 설정
+                       String temp=fabric_nm.getText().toString().replaceFirst(tx_fabric_nm,"");
+                       //temp="MD221104-001";
+                       fabric_nm.setText(temp);
+                       tx_length=fabric_nm.getText().toString();
+
+                       return true;
+
+                   }
+                   catch(Exception e){
+                       System.out.println("err:"+e.getMessage());
+                       TGSClass.AlertMessage(getApplicationContext(), " 오류가 발생하였습니다 다시 스캔하여주십시오");
+                   }
+                   return true;
+               }
+
+               return false;
+           }
+       }
+        );
+        bcd_length.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) && keyCode == KeyEvent.KEYCODE_ENTER) {
 
                     try{
                         //바코드 입력시 텍스트 리프레시를 위해서 설정
-                        String temp=QR_Code.getText().toString();//.replaceFirst(tx_QR_Code,"");
+                        String temp=bcd_length.getText().toString().replaceFirst(tx_length,"");
                         //temp="MD221104-001";
-                        QR_Code.setText(temp);
-                        tx_QR_Code=QR_Code.getText().toString();
+                        bcd_length.setText(temp);
+                        tx_length=bcd_length.getText().toString();
 
-                        //쿼리중복 방지(쓰레드 중복 방지)
-                        if(!QueryOn){
-                            return false;
-                        }
-                        QueryOn = false;
-                        //중복방지 타이머 실행
-                        SetTimerTask();
-
-                        dbSave(tx_QR_Code);
-
-                        QR_Code.setText("");
-                        QR_Code.setSelection(QR_Code.getText().length());
-
-                        start();
                         return true;
 
                     }
@@ -192,6 +199,67 @@ public class M52_DTL_Activity extends BaseActivity {
             }
         }
         );
+
+        bcd_run_no.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) && keyCode == KeyEvent.KEYCODE_ENTER) {
+
+                    try{
+                        //바코드 입력시 텍스트 리프레시를 위해서 설정
+                        String temp=bcd_run_no.getText().toString().replaceFirst(tx_run_no,"");
+
+                        //temp="MD221104-001";
+                        bcd_run_no.setText(temp);
+                        tx_run_no=bcd_run_no.getText().toString();
+
+                        return true;
+
+                    }
+                    catch(Exception e){
+                        TGSClass.AlertMessage(getApplicationContext(), " 오류가 발생하였습니다 다시 스캔하여주십시오");
+                    }
+                    return true;
+                }
+
+                return false;
+            }
+        }
+        );
+
+
+        TextWatcher textWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int cnt, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int cnt) {
+                if (s.length() > 0) { //do your work here }
+                    //start();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                start();
+            }
+        };
+        work_fr_dt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPopupDate(v, work_fr_dt, cal1);
+            }
+        });
+        work_to_dt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPopupDate(v, work_to_dt, cal2);
+            }
+        });
+        work_fr_dt.addTextChangedListener(textWatcher);
+        work_to_dt.addTextChangedListener(textWatcher);
     }
 
     private void start() {
@@ -207,10 +275,11 @@ public class M52_DTL_Activity extends BaseActivity {
                     JSONObject jObject = ja.getJSONObject(idx);
 
                     M52_DTL item = new M52_DTL();
-                    item.setNO(idx+1);
-                    item.setITEM_NM            (jObject.getString("ITEM_NM"));
+                    item.setFABRIC          (jObject.getString("FABRIC"));
+                    item.setFABRIC_NO       (jObject.getString("FABRIC_NO"));
+                    item.setWIDTH           (jObject.getString("WIDTH"));
                     item.setLENGTH          (jObject.getString("LENGTH"));
-                    item.setINPUT_DT        (jObject.getString("INPUT_DT"));
+                    item.setINSRT_DT        (jObject.getString("INSRT_DT"));
 
                     ListViewAdapter.addPkgItem(item);
                     ListViewAdapter.notifyDataSetChanged();
@@ -233,11 +302,12 @@ public class M52_DTL_Activity extends BaseActivity {
         Thread wkThd_dbQuery = new Thread() {
             public void run() {
 
-                String sql = "EXEC DBO.XUSP_FABRIC_M52_GET_ANDROID";
-                sql += " @DT_FR ='"+con_dt_fr.getText()+"',";//원단 넓이
-                sql += " @DT_TO ='"+con_dt_to.getText()+"'";//원단 넓이
+                String sql = "EXEC DBO.XUSP_BLANKET_M51_GET_ANDROID";
+                sql += " @DT_FROM ='"+work_fr_dt.getText().toString()+"',";
+                sql += " @DT_TO ='"+work_to_dt.getText().toString()+"',";
+                sql += " @TYPE ='U'";
 
-
+                System.out.println("sql:"+sql);
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
                 ArrayList<PropertyInfo> pParms = new ArrayList<>();
@@ -262,14 +332,17 @@ public class M52_DTL_Activity extends BaseActivity {
     }
 
     //리스트 데이터 조회
-    private void dbSave(String lot_no) {
+    private void dbSave() {
         ////////////////////////////// 웹 서비스 호출 시 쓰레드 사용 ////////////////////////////////////////////////////////
         Thread wkThd_dbQuery = new Thread() {
             public void run() {
 
-                String sql = "EXEC DBO.XUSP_FABRIC_M52_SET_ANDROID ";
-                sql += " @CUD_FLAG     ='C',";//현재 공장 코드 번호
-                sql += " @LOT_NO	   ='" + lot_no + "',";
+                String sql = "EXEC DBO.XUSP_BLANKET_M52_SET_ANDROID ";
+                sql += " @SAP_ID	   ='" + fabric_nm.getText().toString() + "',";
+                sql += " @LENGTH       ='" + bcd_length.getText().toString() + "',";
+                sql += " @WIDTH		   ='" + txt_width.getText().toString() + "',";
+                sql += " @RUN_NO       ='" + bcd_run_no.getText().toString() + "',";
+                sql += " @BATCH_NO      ='" + txt_batch_no.getText().toString() + "',";
                 sql += " @USER_ID      = '" + vUSER_ID + "'";
 
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
@@ -290,6 +363,17 @@ public class M52_DTL_Activity extends BaseActivity {
         try {
 
             wkThd_dbQuery.join();  //workingThread가 종료될때까지 Main 쓰레드를 정지함.
+
+            //입고처리후 컨트롤 초기화
+            fabric_nm.setText("");
+            bcd_length.setText("");
+            txt_width.setText("");
+            bcd_run_no.setText("");
+            txt_batch_no.setText("");
+            tx_length="";
+            tx_run_no="";
+            tx_fabric_nm="";
+
         } catch (InterruptedException ex) {
 
         }

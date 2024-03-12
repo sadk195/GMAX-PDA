@@ -2278,6 +2278,8 @@ id barrier
 id base_unit
 id baseline
 id basic_unit
+id bcd_length
+id bcd_run_no
 id beginOnFirstDraw
 id beginning
 id bestChoice
@@ -2313,9 +2315,12 @@ id bp_nm
 id btn_End
 id btn_Fabric_Input
 id btn_Fabric_Inventory_status
+id btn_Fabric_Pro_Input
 id btn_Fabric_Receiving
+id btn_Fabric_Stock
 id btn_Fabric_Success
 id btn_Login
+id btn_Mat_Stored
 id btn_OK
 id btn_Prodt_Warehousing_Out_query
 id btn_Prodt_Warehousing_Out_save
@@ -2323,6 +2328,7 @@ id btn_Purchase_Warehousing_Out_query
 id btn_Purchase_Warehousing_Out_save
 id btn_Purchase_Warehousing_query
 id btn_Purchase_Warehousing_save
+id btn_Seal_Stored
 id btn_add
 id btn_add_edit_qty
 id btn_apk_download
@@ -2551,6 +2557,9 @@ id et_start_dt
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fabric
+id fabric_nm
+id fabric_no
 id fade
 id fill
 id fill_horizontal
@@ -2599,6 +2608,7 @@ id img_barcode_item_cd
 id img_barcode_location
 id img_barcode_prodt_order_no
 id img_barcode_sl_cd
+id img_fabric
 id img_item_cd_barcode
 id img_logo
 id img_lot
@@ -2737,6 +2747,7 @@ id listOrder_edit_qty
 id listOrder_popup
 id listOrder_shipment_status
 id listPacking
+id listStored
 id list_item
 id list_view_title
 id lo_left
@@ -3078,6 +3089,7 @@ id txt_Scan_move_SL_CD
 id txt_Scan_move_location
 id txt_Scan_prodt_order_no
 id txt_Scan_sl_cd
+id txt_batch_no
 id txt_box_cnt
 id txt_contents
 id txt_down
@@ -3105,6 +3117,7 @@ id txt_stockyard
 id txt_sub_title
 id txt_title
 id txt_tracking_no
+id txt_width
 id unchecked
 id uniform
 id unlabeled
@@ -3278,6 +3291,11 @@ layout activity_m42_dtl
 layout activity_m43_dtl
 layout activity_m43_query
 layout activity_m44_dtl
+layout activity_m50
+layout activity_m51_dtl
+layout activity_m52_dtl
+layout activity_m53_dtl
+layout activity_m54_query
 layout activity_main
 layout activity_menu
 layout activity_p10
@@ -3370,6 +3388,10 @@ layout list_view_m42_dtl
 layout list_view_m43_dtl
 layout list_view_m43_query
 layout list_view_m44_dtl
+layout list_view_m51_dtl
+layout list_view_m52_dtl
+layout list_view_m53_dtl
+layout list_view_m54_query
 layout list_view_s11_dtl
 layout list_view_s11_query
 layout list_view_s12_cpy
@@ -3543,6 +3565,10 @@ string M41_btn_title
 string M42_btn_title
 string M43_btn_title
 string M44_btn_title
+string M51_btn_title
+string M52_btn_title
+string M53_btn_title
+string M54_btn_title
 string P10_sub_title
 string P10_title
 string P11_btn_title

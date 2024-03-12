@@ -2,9 +2,9 @@ package com.PDA.gmax.M50;
 
 import java.io.Serializable;
 
-public class M52_DTL implements Serializable {   //Serializable 객체를 파라미터로 다른 ACTIVITY에 전달할때 필요함.
+public class M51_DTL implements Serializable {   //Serializable 객체를 파라미터로 다른 ACTIVITY에 전달할때 필요함.
 
-    /*
+     /*
      * CODE
      * AREA_DENSITY	          //순번
      * LOT_NO	              //품번

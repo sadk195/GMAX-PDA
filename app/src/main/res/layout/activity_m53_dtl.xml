@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:background="@color/step1"
             android:gravity="center"
-            android:text="리즐링 원단 관리 > 리즐링 원단 투입"
+            android:text="원단 관리 > 원단 투입"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="20dp" />

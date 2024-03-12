@@ -49,31 +49,38 @@ public class M52_DTL_ListViewAdapter extends BaseAdapter {
 
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
         LinearLayout ContentView    = (LinearLayout)convertView.findViewById(R.id.ContentView);
-        TextView no                 = (TextView) convertView.findViewById(R.id.no);            //품번
-        TextView item_nm               = (TextView) convertView.findViewById(R.id.item_nm);            //품번
-        TextView length             = (TextView) convertView.findViewById(R.id.length);          //길이
-        TextView input_dt             = (TextView) convertView.findViewById(R.id.input_dt);          //길이
+        // TextView no                 = (TextView) convertView.findViewById(R.id.no);            //순번
+        TextView fabric               = (TextView) convertView.findViewById(R.id.fabric);        //원단
+        TextView fabric_no               = (TextView) convertView.findViewById(R.id.fabric_no);        //원단
+
+        TextView width             = (TextView) convertView.findViewById(R.id.width);         //폭
+        TextView length             = (TextView) convertView.findViewById(R.id.length);        //길이
+        TextView insrt_dt             = (TextView) convertView.findViewById(R.id.insrt_dt);        //길이
 
         // Data Set(listViewItemList)에서 position에 위치한 데이터 참조 획득
         M52_DTL item2 = listViewItem.get(position);
 
         // 아이템 내 각 위젯에 데이터 반영
-        no.setText(item2.getNO());
-        item_nm.setText(item2.getITEM_NM());
+        //no.setText(item2.getNO());
+        fabric.setText(item2.getFABRIC());
+        fabric_no.setText(item2.getFABRIC_NO());
+        width.setText(item2.getWIDTH());
         length.setText(item2.getLENGTH());
-        input_dt.setText(item2.getINPUT_DT());
+        insrt_dt.setText(item2.getINSRT_DT());
 
         return convertView;
     }
 
 
-    public void addItem(int NO,String ITEM_NM,String LENGTH,String INPUT_DT) {
+    public void addItem(int NO,String FABRIC,String FABRIC_NO,String WIDTH,String LENGTH,String INSRT_DT) {
         M52_DTL item = new M52_DTL();
 
         item.setNO(NO);
-        item.setITEM_NM(ITEM_NM);
+        item.setFABRIC(FABRIC);
+        item.setFABRIC_NO(FABRIC_NO);
+        item.setWIDTH(WIDTH);
         item.setLENGTH(LENGTH);
-        item.setINPUT_DT(INPUT_DT);
+        item.setINSRT_DT(INSRT_DT);
 
     }
 
