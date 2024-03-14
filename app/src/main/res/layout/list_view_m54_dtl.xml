@@ -9,74 +9,70 @@
     <LinearLayout
         android:id ="@+id/ContentView"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_margin="0dp"
-        android:padding="0dp"
+        android:layout_height="37dp"
         android:orientation="horizontal"
         android:weightSum="20"
         android:focusable="false">
 
-        <!-- 원단 -->
+        <!-- 상태 -->
         <TextView
-            android:id="@+id/fabric"
+            android:id="@+id/status"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="4"
+            android:layout_weight="2.5"
+            android:gravity="center"
+            android:text="SEAL"
+            android:textColor="@color/colorHeadTitle"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            />
+        <!-- 원단 -->
+        <TextView
+            android:id="@+id/fabric_nm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5.5"
             android:gravity="center"
             android:text="fabric"
-            android:paddingLeft="1dp"
             android:textColor="@color/colorHeadTitle"
-            android:textSize="12dp"
+            android:textSize="15dp"
             android:textStyle="bold"
             />
         <!-- 원단 -->
         <TextView
-            android:id="@+id/fabric_no"
+            android:id="@+id/qty"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="6.5"
+            android:layout_weight="2"
             android:gravity="center"
-            android:paddingLeft="1dp"
-            android:text="fabric_no"
+            android:text="2"
             android:textColor="@color/colorHeadTitle"
-            android:textSize="12dp"
+            android:textSize="15dp"
             android:textStyle="bold"
             />
-        <!-- 길이 -->
+        <!-- 폭 -->
         <TextView
             android:id="@+id/width"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2.75"
+            android:layout_weight="5"
             android:gravity="center"
-            android:paddingLeft="1dp"
+            android:paddingLeft="5dp"
             android:text="width"
             android:textColor="@color/colorHeadTitle"
-            android:textSize="12dp"
+            android:textSize="15dp"
             android:textStyle="bold" />
         <!-- 길이 -->
         <TextView
             android:id="@+id/length"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2.75"
+            android:layout_weight="5"
             android:gravity="center"
-            android:paddingLeft="1dp"
+            android:paddingLeft="5dp"
             android:text="length"
             android:textColor="@color/colorHeadTitle"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-        <!-- 입고일자 -->
-        <TextView
-            android:id="@+id/insrt_dt"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="4"
-            android:gravity="center"
-            android:paddingLeft="1dp"
-            android:text="2024-03-11 23:59:59"
-            android:textColor="@color/colorHeadTitle"
-            android:textSize="12dp"
+            android:textSize="15dp"
             android:textStyle="bold" />
 
 

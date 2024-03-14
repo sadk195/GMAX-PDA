@@ -22,23 +22,21 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcbd5754-e15f-44b2-a046-e35df29f8671" name="Default Changelist" comment="PDA 원단관리 생성">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M53_DTL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_view_m51_dtl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_view_m53_dtl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_view_m54_query.xml" afterDir="false" />
+    <list default="true" id="bcbd5754-e15f-44b2-a046-e35df29f8671" name="Default Changelist" comment="리즐링,미국수입 원단 입고등록 개발 완료">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M54_DTL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M54_DTL_Activity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M54_DTL_ListViewAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M54_HDR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M54_HDR_Activity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M54_HDR_ListViewAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_m54_dtl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_m54_hdr.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_view_m54_dtl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_view_m54_hdr.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/apk_ide_redirect_file/debug/redirect.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/apk_ide_redirect_file/debug/redirect.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_0/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_0/graph.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_1/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_1/graph.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_2/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_2/graph.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_3/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_3/graph.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_4/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_4/graph.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_5/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_5/graph.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/2/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/2/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/3/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/3/classes.dex" afterDir="false" />
@@ -65,32 +63,27 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/signing_config_versions/debug/signing-config-versions.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/signing_config_versions/debug/signing-config-versions.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/debug/stableIds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/debug/stableIds.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M50_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M50_Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M50_DTL.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M51_DTL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M51_DTL_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M51_DTL_Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M51_DTL_ListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M51_DTL_ListViewAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M52_DTL.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M52_DTL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M52_DTL_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M52_DTL_Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M52_DTL_ListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M52_DTL_ListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M53_DTL.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M53_DTL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M53_DTL_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M53_DTL_Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M53_DTL_ListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M53_DTL_ListViewAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M54_QUERY_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M54_QUERY_Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M54_QUERY_ListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M54_QUERY_ListViewAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/Menu2Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/Menu2Fragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/MenuFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/MenuFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/TGSClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/TGSClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M54_QUERY_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M55_QUERY_Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M54_QUERY_ListViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/M50/M55_QUERY_ListViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/S10/S12_HDR_Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/PDA/gmax/S10/S12_HDR_Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_m50.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_m50.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_m51_dtl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_m51_dtl.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_m52_dtl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_m52_dtl.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_m53_dtl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_m53_dtl.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_m54_query.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_m54_query.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_view_m52_dtl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_view_m52_dtl.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_m54_query.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_m55_query.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_view_m53_dtl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_view_m53_dtl.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_view_m54_query.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_view_m55_query.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -522,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708591715221</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="리즐링,미국수입 원단 입고등록 개발 완료">
+      <created>1710221217812</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1710221217813</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -561,7 +561,8 @@
     <MESSAGE value="카톤 수기등록 화면이동 오류 수정" />
     <MESSAGE value="lot 번호 \t 삭제" />
     <MESSAGE value="PDA 원단관리 생성" />
-    <option name="LAST_COMMIT_MESSAGE" value="PDA 원단관리 생성" />
+    <MESSAGE value="리즐링,미국수입 원단 입고등록 개발 완료" />
+    <option name="LAST_COMMIT_MESSAGE" value="리즐링,미국수입 원단 입고등록 개발 완료" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

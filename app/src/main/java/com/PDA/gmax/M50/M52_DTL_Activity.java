@@ -145,6 +145,26 @@ public class M52_DTL_Activity extends BaseActivity {
 
         btn_save.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
+                if(fabric_nm.getText().toString().equals("")){
+                    TGSClass.AlertMessage(getApplicationContext(), "원단 바코드를 입력해 주세요.",5000);
+                    return;
+                }
+                if(bcd_length.getText().toString().equals("")){
+                    TGSClass.AlertMessage(getApplicationContext(), "원단 길이를 입력해 주세요.",5000);
+                    return;
+                }
+                if(txt_width.getText().toString().equals("")){
+                    TGSClass.AlertMessage(getApplicationContext(), "원단 폭을 입력해 주세요.",5000);
+                    return;
+                }
+                if(bcd_run_no.getText().toString().equals("")){
+                    TGSClass.AlertMessage(getApplicationContext(), "원단 RUN NO를 입력해 주세요.",5000);
+                    return;
+                }
+                if(txt_batch_no.getText().toString().equals("")){
+                    TGSClass.AlertMessage(getApplicationContext(), "원단 BATCH NO를 입력해 주세요.",5000);
+                    return;
+                }
                 dbSave();
             }
         });
@@ -185,6 +205,27 @@ public class M52_DTL_Activity extends BaseActivity {
                         //temp="MD221104-001";
                         bcd_length.setText(temp);
                         tx_length=bcd_length.getText().toString();
+                        txt_width.requestFocus();
+                        return true;
+
+                    }
+                    catch(Exception e){
+                        TGSClass.AlertMessage(getApplicationContext(), " 오류가 발생하였습니다 다시 스캔하여주십시오");
+                    }
+                    return true;
+                }
+
+                return false;
+            }
+        }
+        );
+        txt_width.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) && keyCode == KeyEvent.KEYCODE_ENTER) {
+
+                    try{
+                        bcd_run_no.requestFocus();
 
                         return true;
 
@@ -212,7 +253,7 @@ public class M52_DTL_Activity extends BaseActivity {
                         //temp="MD221104-001";
                         bcd_run_no.setText(temp);
                         tx_run_no=bcd_run_no.getText().toString();
-
+                        txt_batch_no.requestFocus();
                         return true;
 
                     }

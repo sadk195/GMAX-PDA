@@ -47,7 +47,7 @@
                 android:weightSum="2">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_Seal_Stored"
+                    android:id="@+id/btn_Rea_Stored"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginRight="5dp"
@@ -58,7 +58,7 @@
                     app:elevation="@dimen/el_5dp" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_Mat_Stored"
+                    android:id="@+id/btn_US_Stored"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
@@ -77,7 +77,7 @@
                 android:weightSum="2"
                 >
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_Fabric_Pro_Input"
+                    android:id="@+id/btn_JS_Stored"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginRight="5dp"
@@ -88,7 +88,7 @@
                     app:elevation="@dimen/el_5dp" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_Fabric_Stock"
+                    android:id="@+id/btn_Fabric_Pro_Input"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
@@ -100,7 +100,36 @@
                     />
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                >
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_Fabric_Stock"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/M55_btn_title"
+                    android:textSize="@dimen/menu_btn_size"
+                    app:shapeAppearance="@style/ShapeAppearance.App.SmallComponent"
+                    app:elevation="@dimen/el_5dp" />
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_Fabric_Stock2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/M54_btn_title"
+                    android:textSize="@dimen/menu_btn_size"
+                    app:shapeAppearance="@style/ShapeAppearance.App.SmallComponent"
+                    android:visibility="invisible"
+                    />
+
+            </LinearLayout>
         </LinearLayout>
 
     </RelativeLayout>

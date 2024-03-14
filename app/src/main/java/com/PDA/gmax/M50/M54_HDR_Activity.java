@@ -2,15 +2,17 @@ package com.PDA.gmax.M50;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.annotation.Nullable;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.PDA.gmax.BaseActivity;
 import com.PDA.gmax.DBAccess;
@@ -23,9 +25,12 @@ import org.json.JSONObject;
 import org.ksoap2.serialization.PropertyInfo;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
 
-public class M54_QUERY_Activity extends BaseActivity {
+public class M54_HDR_Activity extends BaseActivity {
 
     //== JSON 선언 ==//
     private String sJson = "",lJson = "", sJsonConfigSet = "", sJsonCombo = "";
@@ -33,36 +38,53 @@ public class M54_QUERY_Activity extends BaseActivity {
     //== Intent에서 받을 변수 선언 ==//
     private String vMenuID, vMenuNm, vMenuRemark, vStartCommand;
 
+    //== M42 스캔 데이터 변수 ==//
+    private M54_DTL vItem;
+
     //== View 선언(EditText) ==//
-    private EditText edt_length,edt_width;
-    private String tx_QR_Code;
+    private EditText work_fr_dt,work_to_dt;
+    private String tx_QR_Code="";
 
     //== View 선언(ListView) ==//
     private ListView listview;
 
     //== View 선언(Button) ==//
-    private Button btn_open,btn_hide,btn_query,btn_end;
+    private Button btn_end;
 
-    //== View 선언(DrawerLayout) ==//
-    private DrawerLayout DrawerView;
+    //== View 선언(ImageView) ==//
+    private ImageView img_barcode;
+
+    //== View 선언(CheckBox) ==//
+    private CheckBox chk_custom;
 
     //== ActivityForResult 관련 변수 선언 ==//
-    private final int M54_QUERY_REQUEST_CODE = 0;
+    private final int M54_HDR_REQUEST_CODE = 0;
+
+
+    //== 날짜 관련 변수 선언 ==//
+    private Calendar cal1, cal2;
+
 
     //== ListView Adapter 선언 ==//
-    M54_QUERY_ListViewAdapter ListViewAdapter; //데이터를 완전히 초기화 하는것이 아니라 수정처리 하기때문에 전역 선언
+    M54_HDR_ListViewAdapter ListViewAdapter; //데이터를 완전히 초기화 하는것이 아니라 수정처리 하기때문에 전역 선언
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_m54_query);
+        setContentView(R.layout.activity_m54_hdr);
 
         this.initializeView();
+
+        this.initializeCalendar();
 
         this.initializeListener();
 
         this.initializeData();
 
+    }
+
+    private void initializeData() {
+       start();
     }
 
     private void initializeView() {
@@ -77,19 +99,30 @@ public class M54_QUERY_Activity extends BaseActivity {
 
 
         //== ID값 바인딩 ==//
-        edt_length       = (EditText) findViewById(R.id.length);
-        edt_width       = (EditText) findViewById(R.id.width);
+        work_fr_dt     = (EditText) findViewById(R.id.work_fr_dt);
+        work_to_dt     = (EditText) findViewById(R.id.work_to_dt);
 
-        listview         = (ListView) findViewById(R.id.listOrder);
-        btn_hide         = (Button) findViewById(R.id.btn_hide);
-        btn_open         = (Button) findViewById(R.id.btn_open);
-        btn_query        = (Button) findViewById(R.id.btn_query);
-
-        DrawerView       = (DrawerLayout) findViewById(R.id.drawer);
-
+        listview    = (ListView) findViewById(R.id.listOrder);
         btn_end    = (Button) findViewById(R.id.btn_end);
+
         //== Adapter 선언 ==//
-        ListViewAdapter = new M54_QUERY_ListViewAdapter();
+        ListViewAdapter = new M54_HDR_ListViewAdapter();
+        listview.setAdapter(ListViewAdapter);
+        listview.setFocusable(false);
+
+    }
+
+    private void initializeCalendar() {
+        cal1 = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+        cal1.setTime(new Date());
+        cal1.add(Calendar.MONTH, -1);
+
+        cal2 = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+        cal2.setTime(new Date());
+        cal2.add(Calendar.DATE, 10);
+
+        work_fr_dt.setText(df.format(cal1.getTime()));
+        work_to_dt.setText(df.format(cal2.getTime()));
     }
 
     private void initializeListener() {
@@ -97,46 +130,59 @@ public class M54_QUERY_Activity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView parent, View v, int position, long id) {
 
+                M54_HDR vItem = (M54_HDR) parent.getItemAtPosition(position);
+
+                //Toast.makeText(P_OEM11_Activity.this ,vSelectItem,Toast.LENGTH_LONG).show();
+
+                Intent intent = TGSClass.ChangeView(getPackageName(), M54_DTL_Activity.class);
+                intent.putExtra("HDR", vItem);
+
+                startActivityForResult(intent, 0);
             }
         });
-
         btn_end.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v) {
-
-              finish();
-            }
+            public void onClick(View v) {finish();}
         });
-
-        btn_query.setOnClickListener(new Button.OnClickListener() {
+        TextWatcher textWatcher = new TextWatcher() {
             @Override
-            public void onClick(View v) {
+            public void beforeTextChanged(CharSequence s, int start, int cnt, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int cnt) {
+                if (s.length() > 0) { //do your work here }
+                    //start();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
                 start();
             }
-        });
-        btn_open.setOnClickListener(new Button.OnClickListener() {
+        };
+
+        work_fr_dt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DrawerView.openDrawer(Gravity.LEFT);
-            }
-        });
-        btn_hide.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DrawerView.closeDrawer(Gravity.LEFT);
+                openPopupDate(v, work_fr_dt, cal1);
             }
         });
 
+        work_to_dt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPopupDate(v, work_to_dt, cal2);
+            }
+        });
+        work_fr_dt.addTextChangedListener(textWatcher);
+        work_to_dt.addTextChangedListener(textWatcher);
 
     }
 
-    private void initializeData(){
-        start();
-    }
 
-    //액티비티 시작,데이터 조회
     private void start() {
         dbQuery();
-
         if (!sJson.equals("")) {
             try {
                 JSONArray ja = new JSONArray(sJson);
@@ -144,46 +190,40 @@ public class M54_QUERY_Activity extends BaseActivity {
                 // 빈 데이터 리스트 생성.
                 //final ArrayList<String> items = new ArrayList<String>();
 
-                //M13_DTL_ListViewAdapter ListViewAdapter = new M13_DTL_ListViewAdapter();
-                ListViewAdapter.ClearItem();
+                M54_HDR_ListViewAdapter ListViewAdapter = new M54_HDR_ListViewAdapter();
 
                 for (int idx = 0; idx < ja.length(); idx++) {
-
                     JSONObject jObject = ja.getJSONObject(idx);
 
-                    M51_DTL item = new M51_DTL();
-                    item.setNO(idx+1);
-                    item.setFABRIC          (jObject.getString("LOT_NO"));
-                    item.setWIDTH           (jObject.getString("WIDTH"));
-                    item.setLENGTH          (jObject.getString("LENGTH"));
+                    M54_HDR item = new M54_HDR();
+                    item.setWK_ORD_NO(jObject.getString("WK_ORD_NO"));    //지시번호
+                    item.setITEM_CD(jObject.getString("ITEM_CD"));        //품목
+                    item.setITEM_NM(jObject.getString("ITEM_NM"));        //품명
+                    item.setMAT(jObject.getString("MAT"));                //MAT
+                    item.setSEAL(jObject.getString("SEAL"));              //SEAL
+                    item.setH_CODE(jObject.getString("HCODE"));           //H-CODE
+                    item.setQTY(jObject.getString("QTY"));                //수량
 
-                    ListViewAdapter.addPkgItem(item);
+                    ListViewAdapter.addItem(item);
                 }
-                listview.setAdapter(ListViewAdapter);
-                ListViewAdapter.notifyDataSetChanged();
 
-                TGSClass.AlertMessage(getApplicationContext(), ja.length() + " 건 조회되었습니다.");
+                listview.setAdapter(ListViewAdapter);
 
             } catch (JSONException ex) {
                 TGSClass.AlertMessage(this, ex.getMessage());
-
             } catch (Exception e1) {
                 TGSClass.AlertMessage(this, e1.getMessage());
-
             }
         }
     }
 
-    //리스트 데이터 조회
     private void dbQuery() {
         ////////////////////////////// 웹 서비스 호출 시 쓰레드 사용 ////////////////////////////////////////////////////////
         Thread wkThd_dbQuery = new Thread() {
             public void run() {
-
-                String sql = "EXEC DBO.XUSP_BLANKET_M54_GET_ANDROID";
-                sql += " @FLAG ='M54_QUERY',";//원단 넓이
-                sql += " @WIDTH ='"+edt_width.getText().toString()+"',";//원단 넓이
-                sql += " @LENGTH ='"+edt_length.getText().toString()+"'";//원단 길이
+                String sql = "EXEC DBO.XUSP_BLANKET_M54_HDR_GET_ANDROID";
+                sql += " @DT_FROM ='"+work_fr_dt.getText().toString()+"',";
+                sql += " @DT_TO ='"+work_to_dt.getText().toString()+"'";
 
                 DBAccess dba = new DBAccess(TGSClass.ws_name_space, TGSClass.ws_url);
 
@@ -208,20 +248,17 @@ public class M54_QUERY_Activity extends BaseActivity {
         }
     }
 
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
-                case M54_QUERY_REQUEST_CODE:
+                case M54_HDR_REQUEST_CODE:
+
                 default:
                     break;
             }
         }
     }
-
-
 }

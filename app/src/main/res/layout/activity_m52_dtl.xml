@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:background="@color/step1"
             android:gravity="center"
-            android:text="원단 관리 > MAT 원단 입고"
+            android:text="원단 관리 > 미국 수입 원단 입고"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="20dp" />
@@ -221,6 +221,8 @@
                         android:layout_height="match_parent"
                         android:layout_margin="2dp"
                         android:layout_weight="10"
+                        android:gravity="center"
+
                         android:background="@drawable/bg_text"
                         android:ems="10"
                         android:inputType="date"
@@ -292,6 +294,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="2dp"
                         android:layout_weight="10"
+                        android:gravity="center"
                         android:background="@drawable/bg_text"
                         android:ems="10"
                         android:inputType="date"

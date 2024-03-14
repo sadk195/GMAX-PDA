@@ -51,10 +51,11 @@
     <string name="M43_btn_title">원단\n재고\n현황</string>
     <string name="M44_btn_title">리즐링\n생산\n완료</string>
     <!-- 생산원단관리(M50) -->
-    <string name="M51_btn_title">리즐링\n원단\n입고</string>
-    <string name="M52_btn_title">미국수입\n원단\n입고</string>
-    <string name="M53_btn_title">원단\n투입</string>
-    <string name="M54_btn_title">재고\n현황</string>
+    <string name="M51_btn_title">리즐링\n원단 입고</string>
+    <string name="M52_btn_title">미국 수입\n원단 입고</string>
+    <string name="M53_btn_title">일본 수입\n원단 입고</string>
+    <string name="M54_btn_title">원단\n투입</string>
+    <string name="M55_btn_title">재고\n현황</string>
 
     <!-- 재고조회(I10) -->
     <string name="I11_btn_title">적치장\n재고조회</string>

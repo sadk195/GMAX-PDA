@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    android:focusable="false">
+
+    <LinearLayout
+        android:id ="@+id/ContentView"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:weightSum="20"
+        android:focusable="false">
+
+        <!-- 순번 -->
+        <TextView
+            android:id="@+id/wk_ord_no"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:gravity="center"
+            android:text="WO202402160001"
+            android:textColor="@color/colorHeadTitle"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            />
+        <!-- 품목 -->
+        <TextView
+            android:id="@+id/item_nm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:gravity="center"
+            android:text="item_cd"
+            android:textColor="@color/colorHeadTitle"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/item_cd"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:gravity="center"
+            android:text="item_cd"
+            android:textColor="@color/colorHeadTitle"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            />
+        <!-- H-CODE -->
+        <TextView
+            android:id="@+id/h_code"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:text="H685U"
+            android:textColor="@color/colorHeadTitle"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+        <!-- MAT -->
+        <TextView
+            android:id="@+id/mat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:text="H685U"
+            android:textColor="@color/colorHeadTitle"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+        <!-- SEAL -->
+        <TextView
+            android:id="@+id/seal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:text="H685U"
+            android:textColor="@color/colorHeadTitle"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+        <!-- 수량 -->
+        <TextView
+            android:id="@+id/qty"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:text="20000"
+            android:textColor="@color/colorHeadTitle"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+

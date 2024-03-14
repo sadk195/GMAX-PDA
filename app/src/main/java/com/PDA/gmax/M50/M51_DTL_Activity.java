@@ -239,7 +239,6 @@ public class M51_DTL_Activity extends BaseActivity {
                 JSONArray ja = new JSONArray(sJson);
                 ListViewAdapter.ClearItem();
                 //for (int idx = ja.length()-1; idx > 0; idx--) {
-                System.out.println("sJson:"+sJson);
 
                 for (int idx = 0; idx <ja.length(); idx++) {
                     JSONObject jObject = ja.getJSONObject(idx);

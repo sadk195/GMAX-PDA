@@ -24,8 +24,20 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\list_view_i13_query.xml"
     },
     {
+        "merged": "com.PDA.gmax.app-merged_res-27:/layout_activity_m54_dtl.xml.flat",
+        "source": "com.PDA.gmax.app-main-29:/layout/activity_m54_dtl.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_list_view_i35_dtl.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\list_view_i35_dtl.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_list_view_m54_hdr.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\list_view_m54_hdr.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_activity_m54_dtl.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\activity_m54_dtl.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_list_view_m13_dtl.xml.flat",
@@ -80,12 +92,12 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\drawable\\bg_header.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_activity_s16_hdr.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\activity_s16_hdr.xml"
-    },
-    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_activity_error_popup.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\activity_error_popup.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_activity_s16_hdr.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\activity_s16_hdr.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_activity_s11_query.xml.flat",
@@ -154,6 +166,10 @@
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_activity_s12_cpy.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\activity_s12_cpy.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_list_view_m54_dtl.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\list_view_m54_dtl.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_list_view_s15_query.xml.flat",
@@ -248,12 +264,12 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\list_view_i31_dtl.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_activity_p14_save.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\activity_p14_save.xml"
-    },
-    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\drawable_ic_baseline_person_24.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\drawable\\ic_baseline_person_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_activity_p14_save.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\activity_p14_save.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_activity_splash.xml.flat",
@@ -376,10 +392,6 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\list_view_i73.xml"
     },
     {
-        "merged": "com.PDA.gmax.app-merged_res-27:/layout_activity_m52_dtl.xml.flat",
-        "source": "com.PDA.gmax.app-main-29:/layout/activity_m52_dtl.xml"
-    },
-    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_activity_i37_hdr.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\activity_i37_hdr.xml"
     },
@@ -430,10 +442,6 @@
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_list_view_m43_dtl.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\list_view_m43_dtl.xml"
-    },
-    {
-        "merged": "com.PDA.gmax.app-merged_res-27:/layout_activity_m51_dtl.xml.flat",
-        "source": "com.PDA.gmax.app-main-29:/layout/activity_m51_dtl.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_list_view_m54_query.xml.flat",
@@ -596,6 +604,10 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\list_view_i31_hdr.xml"
     },
     {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_list_view_m55_query.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\list_view_m55_query.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_list_view_s11_dtl.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\list_view_s11_dtl.xml"
     },
@@ -606,6 +618,10 @@
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_popup_errorlist.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\popup_errorlist.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_activity_m55_query.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\activity_m55_query.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\drawable-v24_bg_btn_right_before.xml.flat",
@@ -720,6 +736,10 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\list_view_i27_dtl.xml"
     },
     {
+        "merged": "com.PDA.gmax.app-merged_res-27:/layout_list_view_m54_dtl.xml.flat",
+        "source": "com.PDA.gmax.app-main-29:/layout/list_view_m54_dtl.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\drawable_bg_toggle_blue.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\drawable\\bg_toggle_blue.xml"
     },
@@ -786,6 +806,10 @@
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\drawable-v24_bg_btn_right_after.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\drawable-v24\\bg_btn_right_after.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_activity_m54_hdr.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\activity_m54_hdr.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_activity_m40.xml.flat",

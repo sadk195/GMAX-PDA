@@ -101,7 +101,8 @@ public class S12_HDR_Activity extends BaseActivity {
         cal2.setTime(new Date());
         cal2.add(Calendar.DATE, 10);
 
-
+        work_fr_dt.setText(df.format(cal1.getTime()));
+        work_to_dt.setText(df.format(cal2.getTime()));
     }
 
     private void initializeListener() {
@@ -154,10 +155,6 @@ public class S12_HDR_Activity extends BaseActivity {
     private void initializeData() {
         //공정 리스트 콤보 값을 초기화 한다.
         dbQuery_getComboData();
-
-        work_fr_dt.setText(df.format(cal1.getTime()));
-        work_to_dt.setText(df.format(cal2.getTime()));
-
         start();
     }
 
