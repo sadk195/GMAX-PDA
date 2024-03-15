@@ -2976,6 +2976,7 @@ id skipped
 id sl_cd
 id sl_nm
 id slide
+id slit_item
 id snackbar_action
 id snackbar_text
 id snap
@@ -3129,6 +3130,7 @@ id txt_title
 id txt_tracking_no
 id txt_width
 id txt_wk_ord_no
+id type
 id unchecked
 id uniform
 id unlabeled
@@ -3581,6 +3583,8 @@ string M41_btn_title
 string M42_btn_title
 string M43_btn_title
 string M44_btn_title
+string M50_sub_title
+string M50_title
 string M51_btn_title
 string M52_btn_title
 string M53_btn_title

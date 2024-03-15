@@ -17,9 +17,9 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:elevation="0dp"
-            app:title="@string/M40_title"
+            app:title="@string/M50_title"
             app:titleCentered="true"
-            app:subtitle="@string/M40_sub_title"
+            app:subtitle="@string/M50_sub_title"
             app:subtitleCentered="true"
             app:navigationIcon="@drawable/ic_baseline_menu_24"
             app:navigationContentDescription="@string/menu" />

@@ -16,10 +16,10 @@
 
         <!-- 순번 -->
         <TextView
-            android:id="@+id/no"
+            android:id="@+id/fabric_nm"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="6"
             android:gravity="center"
             android:text="no"
             android:textColor="@color/colorHeadTitle"
@@ -28,12 +28,12 @@
             />
         <!-- 원단 -->
         <TextView
-            android:id="@+id/fabric"
+            android:id="@+id/type"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="7"
+            android:layout_weight="3"
             android:gravity="center"
-            android:text="code"
+            android:text="슬리팅"
             android:textColor="@color/colorHeadTitle"
             android:textSize="15dp"
             android:textStyle="bold"
@@ -43,7 +43,7 @@
             android:id="@+id/width"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="5"
+            android:layout_weight="4"
             android:gravity="center"
             android:paddingLeft="5dp"
             android:text="length"
@@ -55,13 +55,26 @@
             android:id="@+id/length"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="5"
+            android:layout_weight="4"
             android:gravity="center"
             android:paddingLeft="5dp"
             android:text="length"
             android:textColor="@color/colorHeadTitle"
             android:textSize="15dp"
             android:textStyle="bold" />
+        <!-- 수량 -->
+        <TextView
+            android:id="@+id/qty"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:text="length"
+            android:textColor="@color/colorHeadTitle"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
 
 
 

@@ -16,6 +16,8 @@
     <string name="M30_sub_title">메뉴 > 입하관리</string>
     <string name="M40_title">리즐링 원단 관리</string>
     <string name="M40_sub_title">메뉴 > 리즐링 원단 관리</string>
+    <string name="M50_title"> 원단 관리</string>
+    <string name="M50_sub_title">메뉴 > 원단 관리</string>
     <string name="I10_title">재고조회</string>
     <string name="I10_sub_title">메뉴 > 재고조회</string>
     <string name="I20_title">재고이동</string>
@@ -55,7 +57,7 @@
     <string name="M52_btn_title">미국 수입\n원단 입고</string>
     <string name="M53_btn_title">일본 수입\n원단 입고</string>
     <string name="M54_btn_title">원단\n투입</string>
-    <string name="M55_btn_title">재고\n현황</string>
+    <string name="M55_btn_title">원단 재고\n현황</string>
 
     <!-- 재고조회(I10) -->
     <string name="I11_btn_title">적치장\n재고조회</string>

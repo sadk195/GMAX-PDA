@@ -24,10 +24,6 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\list_view_i13_query.xml"
     },
     {
-        "merged": "com.PDA.gmax.app-merged_res-27:/layout_activity_m54_dtl.xml.flat",
-        "source": "com.PDA.gmax.app-main-29:/layout/activity_m54_dtl.xml"
-    },
-    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\layout_list_view_i35_dtl.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\list_view_i35_dtl.xml"
     },
@@ -736,10 +732,6 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\list_view_i27_dtl.xml"
     },
     {
-        "merged": "com.PDA.gmax.app-merged_res-27:/layout_list_view_m54_dtl.xml.flat",
-        "source": "com.PDA.gmax.app-main-29:/layout/list_view_m54_dtl.xml"
-    },
-    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\drawable_bg_toggle_blue.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\drawable\\bg_toggle_blue.xml"
     },
@@ -954,5 +946,9 @@
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-merged_res-27:\\drawable_ic_baseline_system_update_24.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\drawable\\ic_baseline_system_update_24.xml"
+    },
+    {
+        "merged": "com.PDA.gmax.app-merged_res-27:/layout_activity_m55_query.xml.flat",
+        "source": "com.PDA.gmax.app-main-29:/layout/activity_m55_query.xml"
     }
 ]

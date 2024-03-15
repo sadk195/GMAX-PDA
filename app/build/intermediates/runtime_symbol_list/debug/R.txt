@@ -2975,6 +2975,7 @@ int id skipped 0x7f0a0381
 int id sl_cd 0x7f0a0382
 int id sl_nm 0x7f0a0383
 int id slide 0x7f0a0384
+int id slit_item 0x7f0a0451
 int id snackbar_action 0x7f0a0385
 int id snackbar_text 0x7f0a0386
 int id snap 0x7f0a0387
@@ -3128,6 +3129,7 @@ int id txt_title 0x7f0a0417
 int id txt_tracking_no 0x7f0a0418
 int id txt_width 0x7f0a0419
 int id txt_wk_ord_no 0x7f0a044a
+int id type 0x7f0a0452
 int id unchecked 0x7f0a041a
 int id uniform 0x7f0a041b
 int id unlabeled 0x7f0a041c
@@ -3580,6 +3582,8 @@ int string M41_btn_title 0x7f13003e
 int string M42_btn_title 0x7f13003f
 int string M43_btn_title 0x7f130040
 int string M44_btn_title 0x7f130041
+int string M50_sub_title 0x7f1300db
+int string M50_title 0x7f1300dc
 int string M51_btn_title 0x7f130042
 int string M52_btn_title 0x7f130043
 int string M53_btn_title 0x7f130044

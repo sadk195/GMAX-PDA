@@ -236,6 +236,10 @@
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\activity_s14_dtl.xml"
     },
     {
+        "merged": "com.PDA.gmax.app-mergeDebugResources-26:/layout/activity_m55_query.xml",
+        "source": "com.PDA.gmax.app-main-29:/layout/activity_m55_query.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-mergeDebugResources-26:\\layout\\activity_m50.xml",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\activity_m50.xml"
     },
@@ -374,10 +378,6 @@
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-mergeDebugResources-26:\\layout\\list_view_i25_query.xml",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\list_view_i25_query.xml"
-    },
-    {
-        "merged": "com.PDA.gmax.app-mergeDebugResources-26:/layout/activity_m54_dtl.xml",
-        "source": "com.PDA.gmax.app-main-29:/layout/activity_m54_dtl.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-mergeDebugResources-26:\\layout\\activity_m13_dtl.xml",
@@ -642,10 +642,6 @@
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-mergeDebugResources-26:\\layout\\list_view_s12_custom.xml",
         "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-main-29:\\layout\\list_view_s12_custom.xml"
-    },
-    {
-        "merged": "com.PDA.gmax.app-mergeDebugResources-26:/layout/list_view_m54_dtl.xml",
-        "source": "com.PDA.gmax.app-main-29:/layout/list_view_m54_dtl.xml"
     },
     {
         "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.PDA.gmax.app-mergeDebugResources-26:\\layout\\activity_p14_query.xml",

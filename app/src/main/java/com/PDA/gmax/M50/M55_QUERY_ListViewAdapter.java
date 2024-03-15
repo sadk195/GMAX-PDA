@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class M55_QUERY_ListViewAdapter extends BaseAdapter {
 
-    private ArrayList<M51_DTL> listViewItem = new ArrayList<M51_DTL>();
+    private ArrayList<M55_QUERY> listViewItem = new ArrayList<M55_QUERY>();
 
     public M55_QUERY_ListViewAdapter() {
 
@@ -50,35 +50,38 @@ public class M55_QUERY_ListViewAdapter extends BaseAdapter {
 
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
         LinearLayout ContentView    = (LinearLayout)convertView.findViewById(R.id.ContentView);
-        TextView no                 = (TextView) convertView.findViewById(R.id.no);            //순번
-        TextView fabric               = (TextView) convertView.findViewById(R.id.fabric);        //원단
-        TextView width             = (TextView) convertView.findViewById(R.id.width);         //폭
-        TextView length             = (TextView) convertView.findViewById(R.id.length);        //길이
+        TextView fabric_nm          = (TextView) convertView.findViewById(R.id.fabric_nm);
+        TextView type               = (TextView) convertView.findViewById(R.id.type);
+        TextView width              = (TextView) convertView.findViewById(R.id.width);
+        TextView length             = (TextView) convertView.findViewById(R.id.length);
+        TextView qty                = (TextView) convertView.findViewById(R.id.qty);
 
         // Data Set(listViewItemList)에서 position에 위치한 데이터 참조 획득
-        M51_DTL item2 = listViewItem.get(position);
+        M55_QUERY item2 = listViewItem.get(position);
 
-        // 아이템 내 각 위젯에 데이터 반영
-        no.setText(item2.getNO());
-        fabric.setText(item2.getFABRIC());
+        fabric_nm.setText(item2.getFABRIC_NM());
+        type.setText(item2.getTYPE());
         width.setText(item2.getWIDTH());
         length.setText(item2.getLENGTH());
+        qty.setText(item2.getQTY());
 
         return convertView;
     }
 
 
-    public void addItem(int NO,String FABRIC,String AREA_DENSITY,String LOT_NO,String ROLL_NO,String WIDTH,String LENGTH,String QR_VALUE_ALL,String STATUS) {
-        M51_DTL item = new M51_DTL();
+    public void addItem(String FABRIC_NM,String TYPE,String WIDTH,String LENGTH,String QTY) {
+        M55_QUERY item = new M55_QUERY();
 
-        item.setNO(NO);
-        item.setFABRIC(FABRIC);
+
+        item.setFABRIC_NM(FABRIC_NM);
+        item.setTYPE(TYPE);
         item.setWIDTH(WIDTH);
         item.setLENGTH(LENGTH);
+        item.setQTY(QTY);
 
     }
 
-    protected void addPkgItem(M51_DTL item) {
+    protected void addPkgItem(M55_QUERY item) {
         listViewItem.add(0,item);
         //listViewItem.add(item);
         //notifyDataSetChanged();
